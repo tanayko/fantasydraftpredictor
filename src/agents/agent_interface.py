@@ -11,7 +11,10 @@ OPENAI_API_KEY = os.getenv("API_KEY")
 # Define config list
 config_list = [
     {
-        "model": "gpt-4",
+
+        # use gpt-3.5-turbo-1106 or gpt-4o-mini for POC
+        # change to gpt-4 for production
+        "model": "gpt-4o-mini",
         "api_key": OPENAI_API_KEY,
         "base_url": "https://api.openai.com/v1"
     }

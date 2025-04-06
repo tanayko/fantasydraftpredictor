@@ -91,28 +91,4 @@ calculator_agent = BaseAgent(
     tools=[calculate_basic, calculate_scientific],
 ).create_agent()
 
-# # Create a UserProxyAgent without Docker
-# user_proxy = UserProxyAgent(
-#     name="User",
-#     human_input_mode="ALWAYS",
-#     max_consecutive_auto_reply=10,
-#     code_execution_config={
-#         "work_dir": "workspace",
-#         "use_docker": False  # Explicitly disable Docker
-#     }
-# )
-
-# # Initiate a conversation between the agents
-# user_proxy.initiate_chat(
-#     calculator_agent,
-#     message="Calculate the square root of 16"
-# )
-
-# # For another conversation
-# user_proxy.initiate_chat(
-#     calculator_agent,
-#     message="What is 24.5 multiplied by 3?"
-# )
-
-
 prompt_agent(calculator_agent, "Calculate the square root of 16")
