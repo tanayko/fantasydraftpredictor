@@ -21,12 +21,13 @@ config_list = [
 ]
 
 class BaseAgent:
-    def __init__(self, name: str, system_prompt: str, tools: List[Callable], config_list: List[dict] = config_list):
+    def __init__(self, name: str, system_prompt: str, tools: List[Callable], description: str, config_list: List[dict] = config_list):
         
         self.name = name
         self.system_prompt = system_prompt
         self.tools = tools
         self.config_list = config_list
+        self.description = description
 
     def create_agent(self) -> AssistantAgent:
         # Create the assistant agent with system prompt
@@ -36,7 +37,8 @@ class BaseAgent:
             llm_config={
                 "config_list": self.config_list,
                 "temperature": 0,
-            }
+            },
+            description=self.description
         )
 
         # Create a function map from the tools (functions must have __name__ defined)
