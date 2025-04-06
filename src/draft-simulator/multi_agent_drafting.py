@@ -14,7 +14,7 @@ config_list = [{
     # use gpt-3.5-turbo-1106 or gpt-4o-mini for POC
     # # change to gpt-4 for production
     "model": "gpt-3.5-turbo-1106",
-    "api_key": "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",
+    "api_key": "",
     "base_url": "https://api.openai.com/v1",
 }]
 
