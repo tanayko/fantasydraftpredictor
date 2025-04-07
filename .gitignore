@@ -175,3 +175,5 @@ cython_debug/
 
 # Configuration files
 .env
+
+.cache

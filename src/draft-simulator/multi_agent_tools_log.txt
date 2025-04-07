@@ -1,0 +1,340 @@
+/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/autogen/agentchat/conversable_agent.py:3327: UserWarning: Function 'get_player_metric' is being overridden.
+  warnings.warn(f"Function '{name}' is being overridden.", UserWarning)
+User_proxy (to chat_manager):
+
+Here are the available players that can be drafted: 
+QB:
+  1. Trevor Lawrence (Clemson)
+  2. Justin Fields (Ohio State)
+  3. Zach Wilson (BYU)
+  4. Trey Lance (North Dakota State)
+  5. Mac Jones (Alabama)
+
+RB:
+  1. Najee Harris (Alabama)
+  2. Travis Etienne (Clemson)
+  3. Javonte Williams (North Carolina)
+
+WR:
+  1. Ja'Marr Chase (LSU)
+  2. DeVonta Smith (Alabama)
+  3. Jaylen Waddle (Alabama)
+  4. Rashod Bateman (Minnesota)
+  5. Kadarius Toney (Florida)
+Here is your current team: What is your next pick for your team?
+
+--------------------------------------------------------------------------------
+
+Next speaker: head_drafter_agent
+
+head_drafter_agent (to chat_manager):
+
+Let's start by asking each agent for their top player. 
+
+I'll ask the QB agent first. 
+
+**To the QB agent:** Who is your top quarterback?
+
+--------------------------------------------------------------------------------
+
+Next speaker: quarterback_agent
+
+quarterback_agent (to chat_manager):
+
+***** Suggested tool call (call_CY1fzgClnLEdtLi4Z0MZ5D6n): get_player_metric *****
+Arguments: 
+{"name": "Trevor Lawrence"}
+**********************************************************************************
+***** Suggested tool call (call_wT6x9EnH8L9C29bKukvDLHUE): get_player_metric *****
+Arguments: 
+{"name": "Justin Fields"}
+**********************************************************************************
+***** Suggested tool call (call_Gyt0I5DPBI3KamIRIbjWMzSy): get_player_metric *****
+Arguments: 
+{"name": "Zach Wilson"}
+**********************************************************************************
+***** Suggested tool call (call_hymK3WcgK7sVntCLtIHYjZwC): get_player_metric *****
+Arguments: 
+{"name": "Trey Lance"}
+**********************************************************************************
+***** Suggested tool call (call_y7rNG8CAPbau3eD2o84uEceh): get_player_metric *****
+Arguments: 
+{"name": "Mac Jones"}
+**********************************************************************************
+
+--------------------------------------------------------------------------------
+
+Next speaker: User_proxy
+
+
+>>>>>>>> USING AUTO REPLY...
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_CY1fzgClnLEdtLi4Z0MZ5D6n
+Input arguments: {'name': 'Trevor Lawrence'}
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_wT6x9EnH8L9C29bKukvDLHUE
+Input arguments: {'name': 'Justin Fields'}
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_Gyt0I5DPBI3KamIRIbjWMzSy
+Input arguments: {'name': 'Zach Wilson'}
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_hymK3WcgK7sVntCLtIHYjZwC
+Input arguments: {'name': 'Trey Lance'}
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_y7rNG8CAPbau3eD2o84uEceh
+Input arguments: {'name': 'Mac Jones'}
+User_proxy (to chat_manager):
+
+***** Response from calling tool (call_CY1fzgClnLEdtLi4Z0MZ5D6n) *****
+{'name': 'Trevor Lawrence', 'metric': 9.5}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+***** Response from calling tool (call_wT6x9EnH8L9C29bKukvDLHUE) *****
+{'name': 'Justin Fields', 'metric': 9.2}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+***** Response from calling tool (call_Gyt0I5DPBI3KamIRIbjWMzSy) *****
+{'name': 'Zach Wilson', 'metric': 8.9}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+***** Response from calling tool (call_hymK3WcgK7sVntCLtIHYjZwC) *****
+{'name': 'Trey Lance', 'metric': 8.7}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+***** Response from calling tool (call_y7rNG8CAPbau3eD2o84uEceh) *****
+{'name': 'Mac Jones', 'metric': 8.5}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+
+Next speaker: wide_receiver_agent
+
+wide_receiver_agent (to chat_manager):
+
+***** Suggested tool call (call_lnOyvd2ALqA5UQEZ0HH0l3H1): get_player_metric *****
+Arguments: 
+{"name": "Najee Harris"}
+**********************************************************************************
+***** Suggested tool call (call_KGhB5Yn2BKEgGIglbingSVmC): get_player_metric *****
+Arguments: 
+{"name": "Travis Etienne"}
+**********************************************************************************
+***** Suggested tool call (call_RUeRFTT3dTYnukCxMvIprBDs): get_player_metric *****
+Arguments: 
+{"name": "Javonte Williams"}
+**********************************************************************************
+***** Suggested tool call (call_o1F3moEg4ergiSCz5FaAaXio): get_player_metric *****
+Arguments: 
+{"name": "Ja'Marr Chase"}
+**********************************************************************************
+***** Suggested tool call (call_bdM5afziXSwZFmM5d3bMQZnf): get_player_metric *****
+Arguments: 
+{"name": "DeVonta Smith"}
+**********************************************************************************
+***** Suggested tool call (call_Zjj16F1AlrOqzuV2guA6Xtfx): get_player_metric *****
+Arguments: 
+{"name": "Jaylen Waddle"}
+**********************************************************************************
+***** Suggested tool call (call_2ouYjjmR7EqLNoHvp93Q3kiT): get_player_metric *****
+Arguments: 
+{"name": "Rashod Bateman"}
+**********************************************************************************
+***** Suggested tool call (call_uBSITr3gxrzdCTBMJ13FwIpQ): get_player_metric *****
+Arguments: 
+{"name": "Kadarius Toney"}
+**********************************************************************************
+
+--------------------------------------------------------------------------------
+
+Next speaker: User_proxy
+
+
+>>>>>>>> USING AUTO REPLY...
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_lnOyvd2ALqA5UQEZ0HH0l3H1
+Input arguments: {'name': 'Najee Harris'}
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_KGhB5Yn2BKEgGIglbingSVmC
+Input arguments: {'name': 'Travis Etienne'}
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_RUeRFTT3dTYnukCxMvIprBDs
+Input arguments: {'name': 'Javonte Williams'}
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_o1F3moEg4ergiSCz5FaAaXio
+Input arguments: {'name': "Ja'Marr Chase"}
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_bdM5afziXSwZFmM5d3bMQZnf
+Input arguments: {'name': 'DeVonta Smith'}
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_Zjj16F1AlrOqzuV2guA6Xtfx
+Input arguments: {'name': 'Jaylen Waddle'}
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_2ouYjjmR7EqLNoHvp93Q3kiT
+Input arguments: {'name': 'Rashod Bateman'}
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_uBSITr3gxrzdCTBMJ13FwIpQ
+Input arguments: {'name': 'Kadarius Toney'}
+User_proxy (to chat_manager):
+
+***** Response from calling tool (call_lnOyvd2ALqA5UQEZ0HH0l3H1) *****
+{'name': 'Najee Harris', 'metric': 8.9}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+***** Response from calling tool (call_KGhB5Yn2BKEgGIglbingSVmC) *****
+{'name': 'Travis Etienne', 'metric': 8.7}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+***** Response from calling tool (call_RUeRFTT3dTYnukCxMvIprBDs) *****
+{'name': 'Javonte Williams', 'metric': 8.5}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+***** Response from calling tool (call_o1F3moEg4ergiSCz5FaAaXio) *****
+{'name': "Ja'Marr Chase", 'metric': 3.1}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+***** Response from calling tool (call_bdM5afziXSwZFmM5d3bMQZnf) *****
+{'name': 'DeVonta Smith', 'metric': 9.3}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+***** Response from calling tool (call_Zjj16F1AlrOqzuV2guA6Xtfx) *****
+{'name': 'Jaylen Waddle', 'metric': 9.1}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+***** Response from calling tool (call_2ouYjjmR7EqLNoHvp93Q3kiT) *****
+{'name': 'Rashod Bateman', 'metric': 8.7}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+***** Response from calling tool (call_uBSITr3gxrzdCTBMJ13FwIpQ) *****
+{'name': 'Kadarius Toney', 'metric': 8.6}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+
+Next speaker: running_back_agent
+
+running_back_agent (to chat_manager):
+
+***** Suggested tool call (call_7EXiQszroiR8c1XoiE3F8lH0): get_player_metric *****
+Arguments: 
+{"name": "Najee Harris"}
+**********************************************************************************
+***** Suggested tool call (call_HLY6INt0ZpYzjJmTUPNVEoVt): get_player_metric *****
+Arguments: 
+{"name": "Travis Etienne"}
+**********************************************************************************
+***** Suggested tool call (call_WneE5shwnmIKE7IElhyDsNzc): get_player_metric *****
+Arguments: 
+{"name": "Javonte Williams"}
+**********************************************************************************
+
+--------------------------------------------------------------------------------
+
+Next speaker: User_proxy
+
+
+>>>>>>>> USING AUTO REPLY...
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_7EXiQszroiR8c1XoiE3F8lH0
+Input arguments: {'name': 'Najee Harris'}
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_HLY6INt0ZpYzjJmTUPNVEoVt
+Input arguments: {'name': 'Travis Etienne'}
+
+>>>>>>>> EXECUTING FUNCTION get_player_metric...
+Call ID: call_WneE5shwnmIKE7IElhyDsNzc
+Input arguments: {'name': 'Javonte Williams'}
+User_proxy (to chat_manager):
+
+***** Response from calling tool (call_7EXiQszroiR8c1XoiE3F8lH0) *****
+{'name': 'Najee Harris', 'metric': 8.9}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+***** Response from calling tool (call_HLY6INt0ZpYzjJmTUPNVEoVt) *****
+{'name': 'Travis Etienne', 'metric': 8.7}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+***** Response from calling tool (call_WneE5shwnmIKE7IElhyDsNzc) *****
+{'name': 'Javonte Williams', 'metric': 8.5}
+**********************************************************************
+
+--------------------------------------------------------------------------------
+
+Next speaker: head_drafter_agent
+
+head_drafter_agent (to chat_manager):
+
+After gathering information from each agent:
+
+- **QB Agent** suggests **Trevor Lawrence** (Metric: 9.5)
+- **WR Agent** suggests **DeVonta Smith** (Metric: 9.3)
+- **RB Agent** suggests **Najee Harris** (Metric: 8.9)
+
+Now, let’s discuss the players:
+
+- **Trevor Lawrence** as a QB gives a strong performance with a top metric of 9.5, indicating he likely has great passing ability and consistency.
+- **DeVonta Smith** is an excellent WR choice with a solid metric of 9.3, showcasing his ability to make plays and contribute significantly to the offense.
+- **Najee Harris** at RB has a decent metric of 8.9 which suggests he's a reliable option in the backfield.
+
+Given that QB is often a crucial position, I would prioritize **Trevor Lawrence** as my quarterback pick given his highest metric of the group. 
+
+**Final Selection**: Trevor Lawrence
+
+Now let's finalize my choice. 
+
+**Chosen player**: Trevor Lawrence 
+
+TERMINATE
+
+--------------------------------------------------------------------------------
+
+Next speaker: User_proxy
+
+
+>>>>>>>> USING AUTO REPLY...
+User_proxy (to chat_manager):
+
+
+
+--------------------------------------------------------------------------------
+
+Next speaker: User_proxy
+
+
+>>>>>>>> USING AUTO REPLY...
+User_proxy (to chat_manager):
+
+
+
+--------------------------------------------------------------------------------
+
+Next speaker: User_proxy
+
+Please give feedback to chat_manager. Press enter to skip and use auto-reply, or type 'exit' to stop the conversation: 
