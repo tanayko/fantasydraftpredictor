@@ -105,7 +105,7 @@ quarterback_agent = BaseAgent(
     IMPORTANT: You should only make a decision based on the player rating you receive from the prompt, no prior knowledge. 
     Select the highest rated quarterback from the available ones. You should not use any outside knowledge of these players.
 
-    Provide the first and last name of the quarterback to draft.
+    Provide the first and last name and rating of the quarterback to draft.
     """,
     name="quarterback_agent",
     config_list=config_list,
@@ -123,7 +123,7 @@ wide_receiver_agent = BaseAgent(
     IMPORTANT: You should only make a decision based on the player rating you receive from the prompt, no prior knowledge. 
     Select the highest rated wide receiver from the available ones. You should not use any outside knowledge of these players.
 
-    Provide the first and last name of the wide receiver to draft.
+    Provide the first and last name and rating of the wide receiver to draft.
     """,
     name="wide_receiver_agent",
     config_list=config_list,
@@ -141,7 +141,7 @@ running_back_agent = BaseAgent(
     IMPORTANT: You should only make a decision based on the player rating you receive from the prompt, no prior knowledge. 
     Select the highest rated running back from the available ones. You should not use any outside knowledge of these players.
 
-    Provide the first and last name of the running back to draft.
+    Provide the first and last name and rating of the running back to draft.
     """,
     name="running_back_agent",
     config_list=config_list,
