@@ -1,7 +1,4 @@
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 def analyze_defense_vs_position(defense_files_dict):
     """
@@ -242,32 +239,55 @@ def categorize_defenses(defense_analysis, num_categories=5):
     return categorized_defenses
 
 
-def add_defense_matchup_to_players(player_df, defense_analysis):
+def add_defense_matchup_to_players(player_data, defense_analysis, nfl_schedule):
     """
-    Add defense matchup analysis to player rankings.
+    Add overall schedule difficulty rating to player rankings.
 
     Parameters:
     -----------
-    player_df : pandas.DataFrame
-        Player rankings dataframe
+    player_data : str or pandas.DataFrame
+        Player rankings dataframe or JSON string
     defense_analysis : dict
         Dictionary with defense analysis dataframes from analyze_defense_vs_position
+    nfl_schedule : dict
+        Dictionary with team schedules from create_nfl_schedule()
 
     Returns:
     --------
-    pandas.DataFrame
-        Enhanced player dataframe with defense matchup information
+    str or pandas.DataFrame
+        Enhanced player data with overall schedule difficulty rating
     """
+    import pandas as pd
+    import json
+
+    # Convert input to DataFrame if it's a JSON string
+    if isinstance(player_data, str):
+        player_df = pd.read_json(player_data, orient="records")
+    else:
+        player_df = player_data.copy()
+
     if player_df.empty or not defense_analysis:
+        if isinstance(player_data, str):
+            return player_data
         return player_df
 
     # Create a copy of the player dataframe
     enhanced_df = player_df.copy()
 
-    # Add matchup columns
-    enhanced_df['Week1_Matchup'] = None
-    enhanced_df['Week1_Defense_Rank'] = None
-    enhanced_df['Week1_Category'] = None
+    # Create a lookup dictionary for each position
+    defense_lookup = {}
+    for position, df in defense_analysis.items():
+        if df.empty:
+            continue
+
+        defense_lookup[position] = {}
+        for _, row in df.iterrows():
+            team = row['Team']
+            # Store data for each team
+            defense_lookup[position][team] = {
+                'Defense_Rank': row['Defense_Rank'],
+                'Defense_Score': row['Defense_Score']
+            }
 
     # Team name mapping in case formats differ
     team_map = {
@@ -305,62 +325,93 @@ def add_defense_matchup_to_players(player_df, defense_analysis):
         'WAS': ['WAS', 'Washington', 'Commanders']
     }
 
-    # Create a lookup dictionary for each position
-    defense_lookup = {}
-    for position, df in defense_analysis.items():
-        if df.empty:
-            continue
-
-        defense_lookup[position] = {}
-        for _, row in df.iterrows():
-            team = row['Team']
-            # Store data for each team
-            defense_lookup[position][team] = {
-                'Defense_Rank': row['Defense_Rank'],
-                'Defense_Score': row['Defense_Score'],
-                'Avg': row['Avg']
-            }
-
-            # Add category if it exists
-            if 'Category' in df.columns:
-                defense_lookup[position][team]['Category'] = row['Category']
-
     # Map to get from team code to team name variations
     team_to_variations = {}
     for code, variations in team_map.items():
         for variation in variations:
             team_to_variations[variation] = variations
 
-    # TODO: In a real implementation, you would need a schedule to determine week 1 matchups
-    # For now, we'll leave this placeholder for you to populate with actual matchup data
-
-    # Example of how matchup data could be used:
-    """
+    # For each player, calculate overall schedule difficulty
     for idx, player in enhanced_df.iterrows():
+        team = player['Team']
         position = player['Pos']
-        if position not in defense_lookup:
+
+        # Skip if position not in defense analysis or team not in schedule
+        if position not in defense_lookup or team not in nfl_schedule:
             continue
 
-        # Get matchup (this would come from your schedule data)
-        week1_opponent = schedule_data.get(player['Team'], {}).get('Week1', None)
+        # Track total and count for averaging
+        total_difficulty = 0
+        matchup_count = 0
 
-        if week1_opponent:
-            # Try to find defense data for opponent
+        # Check each week in schedule
+        for week, opponent in nfl_schedule[team].items():
+            # Skip bye weeks
+            if opponent == 'BYE':
+                continue
+
+            # Find defense data for this opponent and position
             def_data = None
 
             # Try different variations of team name
-            for team_var in team_to_variations.get(week1_opponent, [week1_opponent]):
+            for team_var in team_to_variations.get(opponent, [opponent]):
                 if team_var in defense_lookup[position]:
                     def_data = defense_lookup[position][team_var]
                     break
 
             if def_data:
-                enhanced_df.at[idx, 'Week1_Matchup'] = week1_opponent
-                enhanced_df.at[idx, 'Week1_Defense_Rank'] = def_data['Defense_Rank']
-                if 'Category' in def_data:
-                    enhanced_df.at[idx, 'Week1_Category'] = def_data['Category']
-    """
+                # Add to difficulty score
+                defense_rank = def_data['Defense_Rank']
 
+                # For position players, lower defense rank means tougher matchup
+                # For DEF position, higher defense rank means tougher matchup
+                if position == 'DEF':
+                    # For DEF, scale from 0-100 (higher is better matchup)
+                    matchup_score = (defense_rank / 32) * 100
+                else:
+                    # For offensive positions, scale from 0-100 (higher is better matchup)
+                    # Lower defense rank (better defense) = harder matchup = lower score
+                    matchup_score = ((33 - defense_rank) / 32) * 100
+
+                total_difficulty += matchup_score
+                matchup_count += 1
+
+        # Calculate average difficulty if we have matchups
+        if matchup_count > 0:
+            avg_difficulty = total_difficulty / matchup_count
+            enhanced_df.at[idx, 'Schedule_Difficulty_Score'] = round(avg_difficulty, 1)
+
+            # Add text rating
+            if position == 'DEF':
+                # For DEF, higher score is better
+                if avg_difficulty >= 80:
+                    rating = 'Very Favorable'
+                elif avg_difficulty >= 60:
+                    rating = 'Favorable'
+                elif avg_difficulty >= 40:
+                    rating = 'Average'
+                elif avg_difficulty >= 20:
+                    rating = 'Difficult'
+                else:
+                    rating = 'Very Difficult'
+            else:
+                # For offensive positions, higher score is better
+                if avg_difficulty >= 80:
+                    rating = 'Very Favorable'
+                elif avg_difficulty >= 60:
+                    rating = 'Favorable'
+                elif avg_difficulty >= 40:
+                    rating = 'Average'
+                elif avg_difficulty >= 20:
+                    rating = 'Difficult'
+                else:
+                    rating = 'Very Difficult'
+
+            enhanced_df.at[idx, 'Schedule_Rating'] = rating
+
+    # Return in the same format as input
+    if isinstance(player_data, str):
+        return enhanced_df.to_json(orient="records", date_format="iso")
     return enhanced_df
 
 def get_position_matchup_advantage(defense_analysis, team, position):

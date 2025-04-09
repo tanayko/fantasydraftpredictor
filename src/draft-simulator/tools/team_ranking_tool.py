@@ -1,8 +1,7 @@
 import pandas as pd
 import numpy as np
-import re
-import os
-from datetime import datetime
+import json
+from io import StringIO
 
 
 def analyze_team_offenses(offense_files_dict):
@@ -16,8 +15,8 @@ def analyze_team_offenses(offense_files_dict):
 
     Returns:
     --------
-    pandas.DataFrame
-        Comprehensive team offense dataset with trends and rankings
+    str
+        JSON string containing comprehensive team offense dataset with trends and rankings
     """
     # Initialize a dictionary to store dataframes for each year
     yearly_dfs = {}
@@ -41,7 +40,7 @@ def analyze_team_offenses(offense_files_dict):
 
     # Combine all years into a single dataframe
     if not yearly_dfs:
-        return pd.DataFrame()  # Return empty dataframe if no data was loaded
+        return json.dumps([])  # Return empty JSON array if no data was loaded
 
     all_years_df = pd.concat(yearly_dfs.values(), ignore_index=True)
 
@@ -218,27 +217,39 @@ def analyze_team_offenses(offense_files_dict):
                 cv = np.std(pts_values) / np.mean(pts_values) if np.mean(pts_values) > 0 else np.nan
                 final_offense_df.loc[final_offense_df['Team_Abbr'] == team, 'Offense_Stability'] = 100 - (cv * 100)
 
-    return final_offense_df
+    # Convert DataFrame to JSON
+    return final_offense_df.to_json(orient="records", date_format="iso")
 
 
-def add_offense_context_to_rankings(player_df, offense_df):
+def add_offense_context_to_rankings(player_data, offense_data):
     """
     Add team offensive metrics to player rankings.
 
     Parameters:
     -----------
-    player_df : pandas.DataFrame
-        Player rankings dataframe
-    offense_df : pandas.DataFrame
-        Team offense metrics dataframe from analyze_team_offenses
+    player_data : str or pandas.DataFrame
+        Player rankings dataframe or JSON string
+    offense_data : str or pandas.DataFrame
+        Team offense metrics dataframe from analyze_team_offenses or JSON string
 
     Returns:
     --------
-    pandas.DataFrame
-        Enhanced player dataframe with offensive context
+    str
+        JSON string containing enhanced player data with offensive context
     """
+    # Convert input to DataFrames if they are JSON strings
+    if isinstance(player_data, str):
+        player_df = pd.read_json(player_data, orient="records")
+    else:
+        player_df = player_data
+
+    if isinstance(offense_data, str):
+        offense_df = pd.read_json(offense_data, orient="records")
+    else:
+        offense_df = offense_data
+
     if 'Team' not in player_df.columns or offense_df.empty:
-        return player_df
+        return player_df.to_json(orient="records", date_format="iso")
 
     # Make a copy to avoid modifying original
     enhanced_df = player_df.copy()
@@ -339,27 +350,34 @@ def add_offense_context_to_rankings(player_df, offense_df):
                     normalized = (scores - min_score) / (max_score - min_score) * 100
                     enhanced_df.loc[mask, 'Position_Opportunity_Score'] = normalized
 
-    return enhanced_df
+    # Convert DataFrame to JSON
+    return enhanced_df.to_json(orient="records", date_format="iso")
 
 
-def identify_favorable_offensive_situations(offense_df, position='WR'):
+def identify_favorable_offensive_situations(offense_data, position='WR'):
     """
     Find teams with favorable offensive environments for specific positions.
 
     Parameters:
     -----------
-    offense_df : pandas.DataFrame
-        Team offense metrics dataframe from analyze_team_offenses
+    offense_data : str or pandas.DataFrame
+        Team offense metrics dataframe from analyze_team_offenses or JSON string
     position : str
         Position to analyze ('QB', 'RB', 'WR', 'TE', 'K')
 
     Returns:
     --------
-    pandas.DataFrame
-        Ranked list of teams by position favorability
+    str
+        JSON string containing ranked list of teams by position favorability
     """
+    # Convert input to DataFrame if it's a JSON string
+    if isinstance(offense_data, str):
+        offense_df = pd.read_json(offense_data, orient="records")
+    else:
+        offense_df = offense_data
+
     if offense_df.empty:
-        return pd.DataFrame()
+        return json.dumps([])
 
     # Get team abbreviation column name from offense_df
     team_col = 'Team_Abbr' if 'Team_Abbr' in offense_df.columns else 'TEAM'
@@ -521,7 +539,70 @@ def identify_favorable_offensive_situations(offense_df, position='WR'):
     # Add rank column
     result_df.insert(0, 'Favorability_Rank', range(1, len(result_df) + 1))
 
-    return result_df
+    # Convert DataFrame to JSON
+    return result_df.to_json(orient="records", date_format="iso")
+
+
+# Helper function to convert JSON to human-readable format for display
+def json_to_readable(json_str, limit=10):
+    """
+    Convert JSON string to a readable format for display.
+
+    Parameters:
+    -----------
+    json_str : str
+        JSON string to convert
+    limit : int
+        Maximum number of records to include
+
+    Returns:
+    --------
+    str
+        Human-readable string representation of the JSON data
+    """
+    try:
+        data = json.loads(json_str)
+
+        # If data is a list of records
+        if isinstance(data, list):
+            if limit and len(data) > limit:
+                data = data[:limit]
+                suffix = f"\n... and {len(json.loads(json_str)) - limit} more records"
+            else:
+                suffix = ""
+
+            formatted = json.dumps(data, indent=2)
+            return formatted + suffix
+
+        # If data is a dictionary
+        elif isinstance(data, dict):
+            return json.dumps(data, indent=2)
+
+        return json.dumps(data, indent=2)
+    except:
+        return "Invalid JSON format or error parsing JSON"
+
+
+def save_json_data(json_data, output_file):
+    """
+    Save the JSON data to a file.
+
+    Parameters:
+    -----------
+    json_data : str
+        The data in JSON format
+    output_file : str
+        Path where the JSON file will be saved
+    """
+    # If output_file doesn't end with .json, ensure it has the right extension
+    if not output_file.endswith('.json'):
+        output_file = output_file.replace('.csv', '.json') if output_file.endswith('.csv') else output_file + '.json'
+
+    # Write the JSON data to the file
+    with open(output_file, 'w') as f:
+        f.write(json_data)
+
+    print(f"Data saved to {output_file}")
 
 
 # These functions integrate with your existing code, so you can use them like this:
@@ -537,11 +618,15 @@ if __name__ == "__main__":
     }
 
     # Analyze team offenses
-    offense_df = analyze_team_offenses(offense_files)
+    offense_json = analyze_team_offenses(offense_files)
 
     # Save team offense analysis
-    offense_df.to_csv("data/offensive_rtg_data/Team_Offense_Analysis.csv", index=False)
-    print("Team offense analysis saved to Team_Offense_Analysis.csv")
+    save_json_data(offense_json, "data/offensive_rtg_data/Team_Offense_Analysis.json")
+    print("Team offense analysis saved to Team_Offense_Analysis.json")
+
+    # Parse JSON back to list for demonstration
+    offense_data = json.loads(offense_json)
+    print(f"\nAnalyzed {len(offense_data)} team offenses")
 
     # Files for player rankings
     espn_file = "data/official_2024_fantasy_rankings/ESPN_Standard.csv"
@@ -558,24 +643,30 @@ if __name__ == "__main__":
         'DST': "data/player_ranking_position_data/nfl_fantasy_defense.csv"
     }
 
-    # Load and combine player data
+    # Load and combine player data from the player_ranking_tool
     from player_ranking_tool import load_and_combine_fantasy_data
 
-    player_df = load_and_combine_fantasy_data(espn_file, sleeper_file, yahoo_file, stats_files)
+    player_json = load_and_combine_fantasy_data(espn_file, sleeper_file, yahoo_file, stats_files)
 
     # Add offensive context to player rankings
-    enhanced_player_df = add_offense_context_to_rankings(player_df, offense_df)
+    enhanced_player_json = add_offense_context_to_rankings(player_json, offense_json)
 
     # Save enhanced player rankings
-    enhanced_player_df.to_csv("data/offensive_rtg_data/Fantasy_Rankings_with_Offense_Context.csv", index=False)
-    print("Enhanced player rankings saved to Fantasy_Rankings_with_Offense_Context.csv")
+    save_json_data(enhanced_player_json, "data/offensive_rtg_data/Fantasy_Rankings_with_Offense_Context.json")
+    print("Enhanced player rankings saved to Fantasy_Rankings_with_Offense_Context.json")
 
     # Identify favorable situations for each position
     for position in ['QB', 'RB', 'WR', 'TE', 'K']:
-        favorable_df = identify_favorable_offensive_situations(offense_df, position)
-        favorable_df.to_csv(f"data/offensive_rtg_data/Favorable_Teams_for_{position}.csv", index=False)
-        print(f"Favorable teams for {position} saved to Favorable_Teams_for_{position}.csv")
+        favorable_json = identify_favorable_offensive_situations(offense_json, position)
+        save_json_data(favorable_json, f"data/offensive_rtg_data/Favorable_Teams_for_{position}.json")
+        print(f"Favorable teams for {position} saved to Favorable_Teams_for_{position}.json")
 
         # Print top 5 favorable teams for each position
         print(f"\nTop 5 teams for {position}:")
-        print(favorable_df.head(5))
+        favorable_data = json.loads(favorable_json)
+        for team in favorable_data[:5]:
+            # Use the appropriate team column (could be 'Team_Abbr' or 'TEAM')
+            team_abbr = team.get('Team_Abbr', team.get('TEAM', 'Unknown'))
+            favorability = team['Position_Favorability']
+            rank = team['Favorability_Rank']
+            print(f"{rank}. {team_abbr} - Favorability Score: {favorability:.2f}")

@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import re
+import json
 
 
 def load_and_combine_fantasy_data(espn_file, sleeper_file, yahoo_file, stats_files):
@@ -20,8 +21,8 @@ def load_and_combine_fantasy_data(espn_file, sleeper_file, yahoo_file, stats_fil
 
     Returns:
     --------
-    pandas.DataFrame
-        Combined dataframe with all players, their average ADP, and 2023 stats
+    str
+        JSON string containing combined data with all players, their average ADP, and 2023 stats
     """
     # Load the ADP CSV files
     espn_df = pd.read_csv(espn_file)
@@ -312,21 +313,32 @@ def load_and_combine_fantasy_data(espn_file, sleeper_file, yahoo_file, stats_fil
         cols.insert(overall_rank_2023_idx + 1, cols.pop(rank_change_idx))
         final_df_with_stats = final_df_with_stats[cols]
 
-    return final_df_with_stats
+    # Convert DataFrame to JSON
+    # Use orient="records" to get a list of objects
+    json_data = final_df_with_stats.to_json(orient="records", date_format="iso")
+
+    return json_data
 
 
-def save_combined_data(df, output_file):
+def save_combined_data(json_data, output_file):
     """
-    Save the combined dataframe to a CSV file.
+    Save the combined JSON data to a file.
 
     Parameters:
     -----------
-    df : pandas.DataFrame
-        The combined dataframe to save
+    json_data : str
+        The combined data in JSON format
     output_file : str
-        Path where the CSV file will be saved
+        Path where the JSON file will be saved
     """
-    df.to_csv(output_file, index=False)
+    # If output_file doesn't end with .json, ensure it has the right extension
+    if not output_file.endswith('.json'):
+        output_file = output_file.replace('.csv', '.json') if output_file.endswith('.csv') else output_file + '.json'
+
+    # Write the JSON data to the file
+    with open(output_file, 'w') as f:
+        f.write(json_data)
+
     print(f"Combined data saved to {output_file}")
 
 
@@ -336,8 +348,8 @@ def find_players_by_name(df, name_part, case_sensitive=False):
 
     Parameters:
     -----------
-    df : pandas.DataFrame
-        The dataframe containing player data
+    df : pandas.DataFrame or str
+        The dataframe containing player data or a JSON string
     name_part : str
         Part of name to search for
     case_sensitive : bool
@@ -345,13 +357,20 @@ def find_players_by_name(df, name_part, case_sensitive=False):
 
     Returns:
     --------
-    pandas.DataFrame
-        Filtered dataframe with matching players
+    str
+        JSON string with matching players
     """
+    # Convert JSON to DataFrame if needed
+    if isinstance(df, str):
+        df = pd.read_json(df, orient="records")
+
     if case_sensitive:
-        return df[df['Name'].str.contains(name_part)]
+        results = df[df['Name'].str.contains(name_part)]
     else:
-        return df[df['Name'].str.contains(name_part, case=False)]
+        results = df[df['Name'].str.contains(name_part, case=False)]
+
+    # Convert results to JSON
+    return results.to_json(orient="records", date_format="iso")
 
 
 def find_players_by_position(df, position):
@@ -360,17 +379,24 @@ def find_players_by_position(df, position):
 
     Parameters:
     -----------
-    df : pandas.DataFrame
-        The dataframe containing player data
+    df : pandas.DataFrame or str
+        The dataframe containing player data or a JSON string
     position : str
         Position to filter by (e.g., 'QB', 'RB', 'WR', 'TE')
 
     Returns:
     --------
-    pandas.DataFrame
-        Filtered dataframe with players of the specified position
+    str
+        JSON string with players of the specified position
     """
-    return df[df['Pos'] == position]
+    # Convert JSON to DataFrame if needed
+    if isinstance(df, str):
+        df = pd.read_json(df, orient="records")
+
+    results = df[df['Pos'] == position]
+
+    # Convert results to JSON
+    return results.to_json(orient="records", date_format="iso")
 
 
 def find_players_by_team(df, team):
@@ -379,17 +405,24 @@ def find_players_by_team(df, team):
 
     Parameters:
     -----------
-    df : pandas.DataFrame
-        The dataframe containing player data
+    df : pandas.DataFrame or str
+        The dataframe containing player data or a JSON string
     team : str
         Team abbreviation to filter by (e.g., 'SF', 'DAL', 'NYG')
 
     Returns:
     --------
-    pandas.DataFrame
-        Filtered dataframe with players from the specified team
+    str
+        JSON string with players from the specified team
     """
-    return df[df['Team'] == team]
+    # Convert JSON to DataFrame if needed
+    if isinstance(df, str):
+        df = pd.read_json(df, orient="records")
+
+    results = df[df['Team'] == team]
+
+    # Convert results to JSON
+    return results.to_json(orient="records", date_format="iso")
 
 
 def find_players_by_rank_range(df, min_rank, max_rank, column='Avg_Rank'):
@@ -398,8 +431,8 @@ def find_players_by_rank_range(df, min_rank, max_rank, column='Avg_Rank'):
 
     Parameters:
     -----------
-    df : pandas.DataFrame
-        The dataframe containing player data
+    df : pandas.DataFrame or str
+        The dataframe containing player data or a JSON string
     min_rank : int
         Minimum rank (inclusive)
     max_rank : int
@@ -409,10 +442,17 @@ def find_players_by_rank_range(df, min_rank, max_rank, column='Avg_Rank'):
 
     Returns:
     --------
-    pandas.DataFrame
-        Filtered dataframe with players in the specified rank range
+    str
+        JSON string with players in the specified rank range
     """
-    return df[(df[column] >= min_rank) & (df[column] <= max_rank)]
+    # Convert JSON to DataFrame if needed
+    if isinstance(df, str):
+        df = pd.read_json(df, orient="records")
+
+    results = df[(df[column] >= min_rank) & (df[column] <= max_rank)]
+
+    # Convert results to JSON
+    return results.to_json(orient="records", date_format="iso")
 
 
 def find_2023_top_performers(df, position=None, min_games=8, top_n=10):
@@ -421,8 +461,8 @@ def find_2023_top_performers(df, position=None, min_games=8, top_n=10):
 
     Parameters:
     -----------
-    df : pandas.DataFrame
-        The dataframe containing player data
+    df : pandas.DataFrame or str
+        The dataframe containing player data or a JSON string
     position : str, optional
         Position to filter by (e.g., 'QB', 'RB', 'WR', 'TE')
     min_games : int
@@ -432,9 +472,13 @@ def find_2023_top_performers(df, position=None, min_games=8, top_n=10):
 
     Returns:
     --------
-    pandas.DataFrame
-        Filtered dataframe with top performers
+    str
+        JSON string with top performers
     """
+    # Convert JSON to DataFrame if needed
+    if isinstance(df, str):
+        df = pd.read_json(df, orient="records")
+
     # Filter players with 2023 stats and minimum games
     df_with_stats = df[df['2023_Fantasy_Points'].notna()]
 
@@ -449,82 +493,10 @@ def find_2023_top_performers(df, position=None, min_games=8, top_n=10):
     df_sorted = df_with_stats.sort_values('2023_Avg_Points', ascending=False)
 
     # Return top N
-    return df_sorted.head(top_n)
+    results = df_sorted.head(top_n)
 
-
-def find_biggest_risers(df, min_rank_2023=None, max_rank_2024=None, min_change=10):
-    """
-    Find players who have risen the most in rankings from 2023 to 2024.
-
-    Parameters:
-    -----------
-    df : pandas.DataFrame
-        The dataframe containing player data
-    min_rank_2023 : int, optional
-        Minimum 2023 rank to consider (to filter out unknowns who rose from very low ranks)
-    max_rank_2024 : int, optional
-        Maximum 2024 rank to consider (to focus on fantasy-relevant players)
-    min_change : int
-        Minimum rank improvement to be considered a significant riser
-
-    Returns:
-    --------
-    pandas.DataFrame
-        Filtered dataframe with players who have risen in rank
-    """
-    # Filter players with both 2023 and 2024 ranks
-    df_with_ranks = df[df['2023_Overall_Rank'].notna()].copy()
-
-    # Apply filters
-    if min_rank_2023 is not None:
-        df_with_ranks = df_with_ranks[df_with_ranks['2023_Overall_Rank'] <= min_rank_2023]
-
-    if max_rank_2024 is not None:
-        df_with_ranks = df_with_ranks[df_with_ranks['Overall_Rank'] <= max_rank_2024]
-
-    # Filter by minimum change (positive numbers indicate improvement in rank)
-    df_with_ranks = df_with_ranks[df_with_ranks['Rank_Change'] >= min_change]
-
-    # Sort by rank change (largest improvement first)
-    return df_with_ranks.sort_values('Rank_Change', ascending=False)
-
-
-def find_biggest_fallers(df, min_rank_2024=None, max_rank_2023=None, min_change=10):
-    """
-    Find players who have fallen the most in rankings from 2023 to 2024.
-
-    Parameters:
-    -----------
-    df : pandas.DataFrame
-        The dataframe containing player data
-    min_rank_2024 : int, optional
-        Minimum 2024 rank to consider (to filter out players who fell out of relevance)
-    max_rank_2023 : int, optional
-        Maximum 2023 rank to consider (to focus on previously fantasy-relevant players)
-    min_change : int
-        Minimum rank decrease to be considered a significant faller
-
-    Returns:
-    --------
-    pandas.DataFrame
-        Filtered dataframe with players who have fallen in rank
-    """
-    # Filter players with both 2023 and 2024 ranks
-    df_with_ranks = df[df['2023_Overall_Rank'].notna()].copy()
-
-    # Apply filters
-    if min_rank_2024 is not None:
-        df_with_ranks = df_with_ranks[df_with_ranks['Overall_Rank'] >= min_rank_2024]
-
-    if max_rank_2023 is not None:
-        df_with_ranks = df_with_ranks[df_with_ranks['2023_Overall_Rank'] <= max_rank_2023]
-
-    # Filter by minimum change (negative numbers indicate decrease in rank)
-    df_with_ranks = df_with_ranks[df_with_ranks['Rank_Change'] <= -min_change]
-
-    # Sort by rank change (largest decrease first)
-    return df_with_ranks.sort_values('Rank_Change')
-
+    # Convert results to JSON
+    return results.to_json(orient="records", date_format="iso")
 
 def get_positional_tiers(df, position, tier_size=12):
     """
@@ -532,8 +504,8 @@ def get_positional_tiers(df, position, tier_size=12):
 
     Parameters:
     -----------
-    df : pandas.DataFrame
-        The dataframe containing player data
+    df : pandas.DataFrame or str
+        The dataframe containing player data or a JSON string
     position : str
         Position to filter by (e.g., 'QB', 'RB', 'WR', 'TE')
     tier_size : int
@@ -541,19 +513,76 @@ def get_positional_tiers(df, position, tier_size=12):
 
     Returns:
     --------
-    dict of pandas.DataFrame
-        Dictionary of dataframes, one for each tier
+    dict
+        Dictionary with tier names as keys and JSON strings as values
     """
-    pos_df = find_players_by_position(df, position)
+    # Convert JSON to DataFrame if needed
+    if isinstance(df, str):
+        df = pd.read_json(df, orient="records")
+
+    # Get players at the specified position
+    pos_df = df[df['Pos'] == position]
     pos_df = pos_df.sort_values('Avg_Rank')
 
     tiers = {}
     for i in range(0, len(pos_df), tier_size):
         tier_num = i // tier_size + 1
         end_idx = min(i + tier_size, len(pos_df))
-        tiers[f'Tier {tier_num}'] = pos_df.iloc[i:end_idx]
+        tier_data = pos_df.iloc[i:end_idx]
+        tiers[f'Tier {tier_num}'] = tier_data.to_json(orient="records", date_format="iso")
 
-    return tiers
+    # Return a JSON string of the entire tier structure
+    return json.dumps(tiers)
+
+
+# Helper function to convert JSON to human-readable format for display
+def json_to_readable(json_str, limit=10):
+    """
+    Convert JSON string to a readable format for display.
+
+    Parameters:
+    -----------
+    json_str : str
+        JSON string to convert
+    limit : int
+        Maximum number of records to include
+
+    Returns:
+    --------
+    str
+        Human-readable string representation of the JSON data
+    """
+    try:
+        data = json.loads(json_str)
+
+        # If data is a list of records
+        if isinstance(data, list):
+            if limit and len(data) > limit:
+                data = data[:limit]
+                suffix = f"\n... and {len(json.loads(json_str)) - limit} more records"
+            else:
+                suffix = ""
+
+            formatted = json.dumps(data, indent=2)
+            return formatted + suffix
+
+        # If data is a dictionary (e.g., for tiers)
+        elif isinstance(data, dict):
+            result = ""
+            for key, value in data.items():
+                tier_data = json.loads(value)
+                if limit and len(tier_data) > limit:
+                    tier_data = tier_data[:limit]
+                    tier_suffix = f"\n... and {len(json.loads(value)) - limit} more players in this tier"
+                else:
+                    tier_suffix = ""
+
+                result += f"\n{key}:\n{json.dumps(tier_data, indent=2)}{tier_suffix}\n"
+            return result
+
+        return json.dumps(data, indent=2)
+    except:
+        return "Invalid JSON format or error parsing JSON"
 
 
 # Example usage
@@ -573,53 +602,42 @@ if __name__ == "__main__":
         'DST': "data/player_ranking_position_data/nfl_fantasy_defense.csv"
     }
 
-    output_file = "Fantasy_Rankings_with_2023_Stats.csv"
+    output_file = "data/official_2024_fantasy_rankings/Fantasy_Rankings_with_2023_Stats.json"
 
     # Load and combine data
-    combined_df = load_and_combine_fantasy_data(espn_file, sleeper_file, yahoo_file, stats_files)
+    combined_json = load_and_combine_fantasy_data(espn_file, sleeper_file, yahoo_file, stats_files)
 
     # Save combined data
-    save_combined_data(combined_df, output_file)
+    save_combined_data(combined_json, output_file)
+
+    # Parse JSON back to dictionary for demonstration
+    combined_data = json.loads(combined_json)
 
     # Display first 10 players in the combined rankings
     print("\nTop 10 Players Overall with 2023 Rankings:")
-    print(
-        combined_df[['Overall_Rank', 'Name', 'Team', 'Pos', 'Avg_Rank', '2023_Overall_Rank', '2023_Pos_Rank',
-                     'Rank_Change']].head(10))
+    top_10_players = combined_data[:10]
+    for player in top_10_players:
+        rank_change = player.get('Rank_Change', 'N/A')
+        print(
+            f"{player['Overall_Rank']}. {player['Name']} ({player['Team']}, {player['Pos']}) - Avg Rank: {player['Avg_Rank']}, 2023 Rank: {player.get('2023_Overall_Rank', 'N/A')}, Change: {rank_change}")
 
     # Example of finding top performers from 2023
     print("\nTop 10 Fantasy Performers from 2023 (all positions):")
-    top_performers = find_2023_top_performers(combined_df, top_n=10)
-    print(top_performers[
-              ['Name', 'Team', 'Pos', 'Avg_Rank', '2023_Overall_Rank', '2023_Fantasy_Points', '2023_Avg_Points']])
+    top_performers_json = find_2023_top_performers(combined_json, top_n=10)
+    top_performers = json.loads(top_performers_json)
+    for player in top_performers:
+        print(
+            f"{player['Name']} ({player['Team']}, {player['Pos']}) - 2023 Points: {player.get('2023_Fantasy_Points', 'N/A')}, Avg: {player.get('2023_Avg_Points', 'N/A')}")
 
     # Position-specific 2023 top performers
     print("\nTop 5 QB Performers from 2023:")
-    top_qbs = find_2023_top_performers(combined_df, position='QB', top_n=5)
-    print(
-        top_qbs[['Name', 'Team', 'Avg_Rank', '2023_Pos_Rank', '2023_Fantasy_Points', '2023_Pass_Yds', '2023_Pass_TD',
-                 '2023_Rush_Yds']])
+    top_qbs_json = find_2023_top_performers(combined_json, position='QB', top_n=5)
+    top_qbs = json.loads(top_qbs_json)
+    for player in top_qbs:
+        print(
+            f"{player['Name']} ({player['Team']}) - 2023 Points: {player.get('2023_Fantasy_Points', 'N/A')}, Pass Yds: {player.get('2023_Pass_Yds', 'N/A')}, Pass TD: {player.get('2023_Pass_TD', 'N/A')}")
 
-    print("\nTop 5 RB Performers from 2023:")
-    top_rbs = find_2023_top_performers(combined_df, position='RB', top_n=5)
-    print(top_rbs[['Name', 'Team', 'Avg_Rank', '2023_Pos_Rank', '2023_Fantasy_Points', '2023_Rush_Yds', '2023_Rush_TD',
-                   '2023_Rec_Yds']])
-
-    print("\nTop 5 WR Performers from 2023:")
-    top_wrs = find_2023_top_performers(combined_df, position='WR', top_n=5)
-    print(top_wrs[['Name', 'Team', 'Avg_Rank', '2023_Pos_Rank', '2023_Fantasy_Points', '2023_Rec', '2023_Rec_Yds',
-                   '2023_Rec_TD']])
-
-    print("\nTop 5 TE Performers from 2023:")
-    top_tes = find_2023_top_performers(combined_df, position='TE', top_n=5)
-    print(top_tes[['Name', 'Team', 'Avg_Rank', '2023_Pos_Rank', '2023_Fantasy_Points', '2023_Rec', '2023_Rec_Yds',
-                   '2023_Rec_TD']])
-
-    # Find biggest risers and fallers
-    print("\nBiggest Risers from 2023 to 2024:")
-    risers = find_biggest_risers(combined_df, min_rank_2023=100, max_rank_2024=50)
-    print(risers[['Name', 'Team', 'Pos', 'Overall_Rank', '2023_Overall_Rank', 'Rank_Change']].head(10))
-
-    print("\nBiggest Fallers from 2023 to 2024:")
-    fallers = find_biggest_fallers(combined_df, max_rank_2023=50)
-    print(fallers[['Name', 'Team', 'Pos', 'Overall_Rank', '2023_Overall_Rank', 'Rank_Change']].head(10))
+    # Get positional tiers example
+    print("\nQB Tiers Example:")
+    qb_tiers_json = get_positional_tiers(combined_json, position='QB', tier_size=5)
+    print(json_to_readable(qb_tiers_json, limit=3))
