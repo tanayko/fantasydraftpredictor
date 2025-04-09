@@ -132,9 +132,7 @@ EXTRACTOR_PROMPT = (
 You are a data extractor for the SPECIFIED position {position}. Your job is to fetch comprehensive metrics for each provided player.
 
 You have access to these tools:
-1. get_player_info(name_of_player: str) - Fetch detailed stats for a specific player
-2. get_position_rankings(position: str, limit: int) - Get rankings for players in your position. The position parameter will be one of (QB, RB, WR, TE, K, DST).
-2. display_position_rankings(position: str, limit: int) - Display player rankings for a specific position. The position parameter will be one of (QB, RB, WR, TE, K, DST).
+1. get_position_rankings(position: str, limit: int) - Get rankings for players in your position. The position parameter will be one of (QB, RB, WR, TE, K, DST).
 
 Use the tools appropriately to gather information and return all results.
 """
@@ -147,10 +145,14 @@ If you speak for other positions, you will be terminated.
 You are in a conversation with an extractor agent for YOUR POSITION and a head drafter.
 You must ask the extractor agent to fetch the stats for each player after which you will receive stats for each player.
 First, ask for the top 10 rankings for your position.
+Then, decide which players to take based on their ranking and their "Schedule_Rating" field. Schedule rating is not a huge
+factor for much better players but if players are similar, we should take ones with a better schedule. 
+Additionally, you have access to how good the offense of the player is. If an offense is much, much better than other players,
+let's take that player. But, if they are similar, then this doesn't matter.
 Then, you can request detailed information about specific players you're interested in.
-You should ONLY ask for players relevent to YOUR position.
-You MUST pick the ONE best player and ONLY give the head drafter agent ONLY the player's full name and metric in this format:
-<Full Name> (Overall Rank: <Rank>)\n**TERMINATE**
+You should ONLY ask for players relevant to YOUR position.
+You MUST pick the ONE best player THAT IS IN THE AVAILABLE PLAYER LIST and ONLY give the head drafter agent ONLY the player's full name and metric in this format:
+<Full Name>\n**TERMINATE**
 """
 )
 
