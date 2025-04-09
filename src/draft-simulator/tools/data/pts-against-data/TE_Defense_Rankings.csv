@@ -1,0 +1,33 @@
+Team,Defense_Rank,Defense_Score,Avg,TE_Rec_Allowed,TE_Targets_Allowed,TE_Yds_Allowed,TE_TD_Allowed,Category
+Detroit Lions,1,32,8.84,68,105,665,3,Shutdown
+Philadelphia Eagles,2,31,9.14,68,103,591,5,Shutdown
+New York Giants,3,30,9.26,66,84,675,4,Shutdown
+Tennessee Titans,4,29,9.27,70,98,636,4,Shutdown
+Arizona Cardinals,5,28,9.77,80,110,719,2,Shutdown
+San Francisco 49ers,6,27,10.28,76,106,688,5,Shutdown
+Dallas Cowboys,7,26,10.34,65,85,709,7,Shutdown
+Los Angeles Chargers,8,25,10.73,91,126,775,2,Strong
+New York Jets,9,24,10.81,82,116,738,5,Strong
+Washington Commanders,10,23,10.93,68,93,678,8,Strong
+Houston Texans,11,22,11.29,73,113,709,8,Strong
+New Orleans Saints,12,21,11.31,82,112,962,2,Strong
+Minnesota Vikings,13,20,11.41,88,119,880,3,Strong
+Seattle Seahawks,14,19,11.56,85,122,876,4,Strong
+New England Patriots,15,18,11.78,87,120,854,5,Average
+Denver Broncos,16,17,11.91,95,138,799,5,Average
+Buffalo Bills,17,16,12.1,92,129,817,5,Average
+Chicago Bears,18,15,12.25,83,118,1011,4,Average
+Atlanta Falcons,19,14,12.45,77,109,828,6,Average
+Green Bay Packers,20,13,12.59,93,120,970,4,Average
+Baltimore Ravens,21,12,12.91,93,127,963,5,Weak
+Miami Dolphins,22,11,13.1,98,141,950,5,Weak
+Jacksonville Jaguars,23,10,13.53,87,122,933,8,Weak
+Cleveland Browns,24,9,13.65,83,122,833,6,Weak
+Tampa Bay Buccaneers,25,8,14.28,102,134,1144,5,Weak
+Pittsburgh Steelers,26,7,14.35,106,146,959,7,Weak
+Carolina Panthers,27,6,14.85,83,110,920,11,Exploitable
+Kansas City Chiefs,28,5,14.9,106,136,1191,5,Exploitable
+Indianapolis Colts,29,4,15.04,101,125,987,9,Exploitable
+Las Vegas Raiders,30,3,15.51,102,137,1097,9,Exploitable
+Los Angeles Rams,31,2,15.59,106,142,1101,7,Exploitable
+Cincinnati Bengals,32,1,16.63,111,145,1114,10,Exploitable

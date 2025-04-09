@@ -1,0 +1,33 @@
+Team,Defense_Rank,Defense_Score,Avg,Pass_Yds_Allowed,Pass_TD_Allowed,Int,QB_Rush_Yds_Allowed,Category
+Chicago Bears,1,32,13.19,3959,17,11,218,Shutdown
+Miami Dolphins,2,31,13.81,3829,22,10,176,Shutdown
+Green Bay Packers,3,30,14.07,3959,23,16,268,Shutdown
+Minnesota Vikings,4,29,14.46,4446,24,24,160,Shutdown
+Philadelphia Eagles,5,28,14.47,3266,22,13,353,Shutdown
+Pittsburgh Steelers,6,27,14.76,4151,23,17,229,Shutdown
+Washington Commanders,7,26,15.46,3471,24,7,340,Shutdown
+Buffalo Bills,8,25,15.66,4100,28,16,263,Strong
+Denver Broncos,9,24,15.74,4078,22,15,295,Strong
+Los Angeles Chargers,10,23,15.86,3759,24,15,392,Strong
+New Orleans Saints,11,22,15.95,4295,19,14,434,Strong
+San Francisco 49ers,12,21,16.08,3476,25,11,276,Strong
+Seattle Seahawks,13,20,16.22,3923,25,13,251,Strong
+New York Jets,14,19,16.24,3588,18,7,325,Strong
+New England Patriots,15,18,16.3,3749,27,7,231,Average
+Arizona Cardinals,16,17,16.44,3930,20,9,303,Average
+Tennessee Titans,17,16,16.71,3213,26,11,435,Average
+Houston Texans,18,15,16.91,3749,31,19,400,Average
+Kansas City Chiefs,19,14,16.95,3970,24,13,434,Average
+New York Giants,20,13,17.12,3869,23,5,403,Average
+Indianapolis Colts,21,12,17.24,4120,27,16,322,Weak
+Detroit Lions,22,11,17.5,4404,18,16,454,Weak
+Los Angeles Rams,23,10,17.53,4101,29,13,359,Weak
+Cleveland Browns,24,9,17.54,3860,26,3,437,Weak
+Las Vegas Raiders,25,8,17.76,3989,29,10,283,Weak
+Baltimore Ravens,26,7,17.9,4466,26,12,233,Weak
+Cincinnati Bengals,27,6,18.9,4016,30,15,526,Exploitable
+Tampa Bay Buccaneers,28,5,19.84,4447,27,7,354,Exploitable
+Atlanta Falcons,29,4,19.96,3947,34,12,495,Exploitable
+Jacksonville Jaguars,30,3,20.07,4581,29,6,419,Exploitable
+Carolina Panthers,31,2,20.46,4012,35,9,394,Exploitable
+Dallas Cowboys,32,1,20.89,4045,28,13,553,Exploitable

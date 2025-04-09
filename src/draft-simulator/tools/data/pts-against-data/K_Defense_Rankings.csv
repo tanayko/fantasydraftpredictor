@@ -1,0 +1,33 @@
+Team,Defense_Rank,Defense_Score,Avg,PAT_Allowed,FG_20_29_Allowed,FG_30_39_Allowed,FG_40_49_Allowed,FG_50plus_Allowed,Category
+Philadelphia Eagles,1,32,6.06,22,7,10,5,3,Shutdown
+Minnesota Vikings,2,31,6.12,31,7,6,8,2,Shutdown
+Buffalo Bills,3,30,6.24,40,7,6,4,3,Shutdown
+Green Bay Packers,4,29,6.47,33,5,8,6,4,Shutdown
+Kansas City Chiefs,5,28,6.59,30,5,12,2,5,Shutdown
+Pittsburgh Steelers,6,27,6.76,31,7,10,6,3,Shutdown
+Los Angeles Chargers,7,26,6.88,29,5,10,11,2,Shutdown
+Cincinnati Bengals,8,25,7.18,46,1,8,6,5,Strong
+Denver Broncos,9,24,7.24,26,8,10,6,5,Strong
+Seattle Seahawks,10,23,7.41,33,11,11,4,3,Strong
+Washington Commanders,11,22,7.47,35,5,10,9,4,Strong
+Cleveland Browns,12,21,7.59,51,5,5,6,6,Strong
+Detroit Lions,13,20,7.65,32,5,9,7,7,Strong
+New York Giants,14,19,8.06,44,12,10,4,3,Strong
+Houston Texans,15,18,8.12,36,1,9,4,12,Average
+Tennessee Titans,15,18,8.12,50,11,4,6,5,Average
+New England Patriots,17,16,8.18,41,10,8,8,4,Average
+Los Angeles Rams,18,15,8.24,36,10,7,6,7,Average
+Baltimore Ravens,19,14,8.41,32,5,8,4,12,Average
+Dallas Cowboys,20,13,8.47,49,5,8,12,4,Average
+New Orleans Saints,21,12,8.71,35,8,7,11,7,Weak
+San Francisco 49ers,21,12,8.71,42,8,8,6,8,Weak
+Tampa Bay Buccaneers,23,10,8.76,38,8,9,10,6,Weak
+Jacksonville Jaguars,24,9,8.88,41,5,15,10,4,Weak
+Indianapolis Colts,25,8,9.0,43,4,10,6,10,Weak
+Arizona Cardinals,26,7,9.06,35,10,7,6,10,Weak
+Atlanta Falcons,27,6,9.12,40,6,7,7,11,Exploitable
+Miami Dolphins,28,5,9.29,30,11,7,8,10,Exploitable
+Chicago Bears,29,4,9.53,32,10,13,7,8,Exploitable
+New York Jets,30,3,9.65,32,11,5,13,9,Exploitable
+Las Vegas Raiders,31,2,9.76,40,7,12,13,6,Exploitable
+Carolina Panthers,32,1,10.35,54,8,11,10,7,Exploitable

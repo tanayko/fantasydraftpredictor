@@ -1,0 +1,33 @@
+Team,Defense_Rank,Defense_Score,Avg,Sacks,Interceptions,Fumble_Recoveries,Pts_Allow,Category
+Cleveland Browns,32,32,11.94,66,23,11,250,Shutdown
+Tennessee Titans,31,31,11.0,52,21,13,307,Shutdown
+New York Giants,30,30,9.71,48,13,10,273,Shutdown
+Las Vegas Raiders,29,29,9.06,50,16,13,303,Shutdown
+New England Patriots,28,28,8.53,52,11,12,283,Shutdown
+Seattle Seahawks,27,27,8.47,54,16,8,349,Shutdown
+Chicago Bears,26,26,7.65,68,7,9,304,Shutdown
+Dallas Cowboys,25,25,7.47,38,14,14,344,Strong
+Miami Dolphins,23,23,7.35,43,10,11,345,Strong
+New Orleans Saints,23,23,7.35,37,12,7,336,Strong
+Indianapolis Colts,22,22,7.29,32,19,10,371,Strong
+New York Jets,20,20,6.47,40,11,8,338,Strong
+Houston Texans,20,20,6.47,54,12,7,352,Strong
+Jacksonville Jaguars,19,19,6.29,32,15,9,314,Strong
+Carolina Panthers,18,18,6.18,36,15,7,341,Average
+Pittsburgh Steelers,15,15,6.12,49,6,11,374,Average
+San Francisco 49ers,15,15,6.12,36,16,11,383,Average
+Atlanta Falcons,15,15,6.12,32,19,5,363,Average
+Cincinnati Bengals,14,14,6.06,48,9,13,458,Average
+Minnesota Vikings,13,13,5.94,49,12,9,414,Average
+Arizona Cardinals,12,12,5.41,30,11,9,396,Weak
+Kansas City Chiefs,11,11,4.71,41,11,3,379,Weak
+Tampa Bay Buccaneers,9,9,4.65,40,16,7,494,Weak
+Washington Commanders,9,9,4.65,50,9,7,479,Weak
+Los Angeles Rams,8,8,4.47,31,9,5,347,Weak
+Philadelphia Eagles,7,7,4.35,45,6,9,455,Weak
+Los Angeles Chargers,6,6,4.24,44,3,6,396,Exploitable
+Green Bay Packers,5,5,4.06,22,11,8,454,Exploitable
+Denver Broncos,4,4,4.0,24,12,7,391,Exploitable
+Detroit Lions,3,3,2.71,33,12,3,558,Exploitable
+Buffalo Bills,2,2,1.41,14,6,2,505,Exploitable
+Baltimore Ravens,1,1,1.35,24,4,7,506,Exploitable
