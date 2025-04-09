@@ -609,19 +609,19 @@ def save_json_data(json_data, output_file):
 if __name__ == "__main__":
     # Example paths for team offense stats files
     offense_files = {
-        2018: "data/offensive_rtg_data/nfl_team_offense_stats_2018.csv",
-        2019: "data/offensive_rtg_data/nfl_team_offense_stats_2019.csv",
-        2020: "data/offensive_rtg_data/nfl_team_offense_stats_2020.csv",
-        2021: "data/offensive_rtg_data/nfl_team_offense_stats_2021.csv",
-        2022: "data/offensive_rtg_data/nfl_team_offense_stats_2022.csv",
-        2023: "data/offensive_rtg_data/nfl_team_offense_stats_2023.csv"
+        2018: "tools/data/offensive_rtg_data/nfl_team_offense_stats_2018.csv",
+        2019: "tools/data/offensive_rtg_data/nfl_team_offense_stats_2019.csv",
+        2020: "tools/data/offensive_rtg_data/nfl_team_offense_stats_2020.csv",
+        2021: "tools/data/offensive_rtg_data/nfl_team_offense_stats_2021.csv",
+        2022: "tools/data/offensive_rtg_data/nfl_team_offense_stats_2022.csv",
+        2023: "tools/data/offensive_rtg_data/nfl_team_offense_stats_2023.csv"
     }
 
     # Analyze team offenses
     offense_json = analyze_team_offenses(offense_files)
 
     # Save team offense analysis
-    save_json_data(offense_json, "data/offensive_rtg_data/Team_Offense_Analysis.json")
+    save_json_data(offense_json, "tools/data/offensive_rtg_data/Team_Offense_Analysis.json")
     print("Team offense analysis saved to Team_Offense_Analysis.json")
 
     # Parse JSON back to list for demonstration
@@ -629,18 +629,18 @@ if __name__ == "__main__":
     print(f"\nAnalyzed {len(offense_data)} team offenses")
 
     # Files for player rankings
-    espn_file = "data/official_2024_fantasy_rankings/ESPN_Standard.csv"
-    sleeper_file = "data/official_2024_fantasy_rankings/Sleeper_Standard.csv"
-    yahoo_file = "data/official_2024_fantasy_rankings/Yahoo_Standard.csv"
+    espn_file = "tools/data/official_2024_fantasy_rankings/ESPN_Standard.csv"
+    sleeper_file = "tools/data/official_2024_fantasy_rankings/Sleeper_Standard.csv"
+    yahoo_file = "tools/data/official_2024_fantasy_rankings/Yahoo_Standard.csv"
 
     # Define position stats files
     stats_files = {
-        'QB': "data/player_ranking_position_data/nfl_fantasy_QB_stats_2023.csv",
-        'RB': "data/player_ranking_position_data/nfl_fantasy_RB_stats_2023.csv",
-        'WR': "data/player_ranking_position_data/nfl_fantasy_WR_stats_2023.csv",
-        'TE': "data/player_ranking_position_data/nfl_fantasy_TE_stats_2023.csv",
-        'K': "data/player_ranking_position_data/nfl_fantasy_kickers.csv",
-        'DST': "data/player_ranking_position_data/nfl_fantasy_defense.csv"
+        'QB': "tools/data/player_ranking_position_data/nfl_fantasy_QB_stats_2023.csv",
+        'RB': "tools/data/player_ranking_position_data/nfl_fantasy_RB_stats_2023.csv",
+        'WR': "tools/data/player_ranking_position_data/nfl_fantasy_WR_stats_2023.csv",
+        'TE': "tools/data/player_ranking_position_data/nfl_fantasy_TE_stats_2023.csv",
+        'K': "tools/data/player_ranking_position_data/nfl_fantasy_kickers.csv",
+        'DST': "tools/data/player_ranking_position_data/nfl_fantasy_defense.csv"
     }
 
     # Load and combine player data from the player_ranking_tool
@@ -652,7 +652,7 @@ if __name__ == "__main__":
     enhanced_player_json = add_offense_context_to_rankings(player_json, offense_json)
 
     # Save enhanced player rankings
-    save_json_data(enhanced_player_json, "data/offensive_rtg_data/Fantasy_Rankings_with_Offense_Context.json")
+    save_json_data(enhanced_player_json, "tools/data/offensive_rtg_data/Fantasy_Rankings_with_Offense_Context.json")
     print("Enhanced player rankings saved to Fantasy_Rankings_with_Offense_Context.json")
 
     # Identify favorable situations for each position

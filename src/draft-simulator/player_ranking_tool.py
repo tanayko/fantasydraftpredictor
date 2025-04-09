@@ -233,6 +233,11 @@ def load_and_combine_fantasy_data(espn_file, sleeper_file, yahoo_file, stats_fil
     # Add 2023 position rank column
     final_df_with_stats['2023_Pos_Rank'] = None
 
+    # Initialize 2023 stats columns that we'll be using later
+    final_df_with_stats['2023_Fantasy_Points'] = None
+    final_df_with_stats['2023_Games_Played'] = None
+    final_df_with_stats['2023_Avg_Points'] = None
+
     # Process for each position and merge stats
     for pos, stats_df in stats_dfs.items():
         if stats_df is not None:
@@ -267,13 +272,18 @@ def load_and_combine_fantasy_data(espn_file, sleeper_file, yahoo_file, stats_fil
                                     final_df_with_stats.at[idx, col] = stats_row[col]
 
     # Calculate an overall 2023 rank for players with fantasy points
-    players_with_stats = final_df_with_stats[final_df_with_stats['2023_Fantasy_Points'].notna()].copy()
-    if not players_with_stats.empty:
-        players_with_stats = players_with_stats.sort_values('2023_Fantasy_Points', ascending=False)
-        rank_mapping = {name: rank + 1 for rank, name in enumerate(players_with_stats['std_name'])}
+    # Check if the column exists and has any non-null values
+    if '2023_Fantasy_Points' in final_df_with_stats.columns and final_df_with_stats[
+        '2023_Fantasy_Points'].notna().any():
+        players_with_stats = final_df_with_stats[final_df_with_stats['2023_Fantasy_Points'].notna()].copy()
+        if not players_with_stats.empty:
+            players_with_stats = players_with_stats.sort_values('2023_Fantasy_Points', ascending=False)
+            rank_mapping = {name: rank + 1 for rank, name in enumerate(players_with_stats['std_name'])}
 
-        # Apply the overall 2023 rank
-        final_df_with_stats['2023_Overall_Rank'] = final_df_with_stats['std_name'].map(rank_mapping)
+            # Apply the overall 2023 rank
+            final_df_with_stats['2023_Overall_Rank'] = final_df_with_stats['std_name'].map(rank_mapping)
+    else:
+        print("Warning: No 2023 fantasy points data found for any players.")
 
     # Drop the standardized name column
     final_df_with_stats = final_df_with_stats.drop(columns=['std_name'])
@@ -479,24 +489,35 @@ def find_2023_top_performers(df, position=None, min_games=8, top_n=10):
     if isinstance(df, str):
         df = pd.read_json(df, orient="records")
 
+    # Check if 2023 stats columns exist
+    if '2023_Fantasy_Points' not in df.columns:
+        print("Warning: No 2023 fantasy points data found in dataset.")
+        return json.dumps([])
+
     # Filter players with 2023 stats and minimum games
     df_with_stats = df[df['2023_Fantasy_Points'].notna()]
 
-    if min_games > 0:
+    if min_games > 0 and '2023_Games_Played' in df.columns:
         df_with_stats = df_with_stats[df_with_stats['2023_Games_Played'] >= min_games]
 
     # Apply position filter if specified
     if position:
         df_with_stats = df_with_stats[df_with_stats['Pos'] == position]
 
-    # Sort by average points
-    df_sorted = df_with_stats.sort_values('2023_Avg_Points', ascending=False)
+    # Sort by average points if column exists
+    if '2023_Avg_Points' in df.columns and not df_with_stats.empty:
+        df_sorted = df_with_stats.sort_values('2023_Avg_Points', ascending=False)
+    elif '2023_Fantasy_Points' in df.columns and not df_with_stats.empty:
+        df_sorted = df_with_stats.sort_values('2023_Fantasy_Points', ascending=False)
+    else:
+        df_sorted = df_with_stats
 
     # Return top N
     results = df_sorted.head(top_n)
 
     # Convert results to JSON
     return results.to_json(orient="records", date_format="iso")
+
 
 def get_positional_tiers(df, position, tier_size=12):
     """
@@ -588,21 +609,21 @@ def json_to_readable(json_str, limit=10):
 # Example usage
 if __name__ == "__main__":
     # File paths
-    espn_file = "data/official_2024_fantasy_rankings/ESPN_Standard.csv"
-    sleeper_file = "data/official_2024_fantasy_rankings/Sleeper_Standard.csv"
-    yahoo_file = "data/official_2024_fantasy_rankings/Yahoo_Standard.csv"
+    espn_file = "tools/data/official_2024_fantasy_rankings/ESPN_Standard.csv"
+    sleeper_file = "tools/data/official_2024_fantasy_rankings/Sleeper_Standard.csv"
+    yahoo_file = "tools/data/official_2024_fantasy_rankings/Yahoo_Standard.csv"
 
     # Define position stats files
     stats_files = {
-        'QB': "data/player_ranking_position_data/nfl_fantasy_QB_stats_2023.csv",
-        'RB': "data/player_ranking_position_data/nfl_fantasy_RB_stats_2023.csv",
-        'WR': "data/player_ranking_position_data/nfl_fantasy_WR_stats_2023.csv",
-        'TE': "data/player_ranking_position_data/nfl_fantasy_TE_stats_2023.csv",
-        'K': "data/player_ranking_position_data/nfl_fantasy_kickers.csv",
-        'DST': "data/player_ranking_position_data/nfl_fantasy_defense.csv"
+        'QB': "tools/data/player_ranking_position_data/nfl_fantasy_QB_stats_2023.csv",
+        'RB': "tools/data/player_ranking_position_data/nfl_fantasy_RB_stats_2023.csv",
+        'WR': "tools/data/player_ranking_position_data/nfl_fantasy_WR_stats_2023.csv",
+        'TE': "tools/data/player_ranking_position_data/nfl_fantasy_TE_stats_2023.csv",
+        'K': "tools/data/player_ranking_position_data/nfl_fantasy_kickers.csv",
+        'DST': "tools/data/player_ranking_position_data/nfl_fantasy_defense.csv"
     }
 
-    output_file = "data/official_2024_fantasy_rankings/Fantasy_Rankings_with_2023_Stats.json"
+    output_file = "tools/data/official_2024_fantasy_rankings/Fantasy_Rankings_with_2023_Stats.json"
 
     # Load and combine data
     combined_json = load_and_combine_fantasy_data(espn_file, sleeper_file, yahoo_file, stats_files)
@@ -625,19 +646,10 @@ if __name__ == "__main__":
     print("\nTop 10 Fantasy Performers from 2023 (all positions):")
     top_performers_json = find_2023_top_performers(combined_json, top_n=10)
     top_performers = json.loads(top_performers_json)
-    for player in top_performers:
-        print(
-            f"{player['Name']} ({player['Team']}, {player['Pos']}) - 2023 Points: {player.get('2023_Fantasy_Points', 'N/A')}, Avg: {player.get('2023_Avg_Points', 'N/A')}")
 
-    # Position-specific 2023 top performers
-    print("\nTop 5 QB Performers from 2023:")
-    top_qbs_json = find_2023_top_performers(combined_json, position='QB', top_n=5)
-    top_qbs = json.loads(top_qbs_json)
-    for player in top_qbs:
-        print(
-            f"{player['Name']} ({player['Team']}) - 2023 Points: {player.get('2023_Fantasy_Points', 'N/A')}, Pass Yds: {player.get('2023_Pass_Yds', 'N/A')}, Pass TD: {player.get('2023_Pass_TD', 'N/A')}")
-
-    # Get positional tiers example
-    print("\nQB Tiers Example:")
-    qb_tiers_json = get_positional_tiers(combined_json, position='QB', tier_size=5)
-    print(json_to_readable(qb_tiers_json, limit=3))
+    if top_performers:
+        for player in top_performers:
+            print(
+                f"{player['Name']} ({player['Team']}, {player['Pos']}) - 2023 Points: {player.get('2023_Fantasy_Points', 'N/A')}, Avg: {player.get('2023_Avg_Points', 'N/A')}")
+    else:
+        print("No 2023 fantasy performers found.")

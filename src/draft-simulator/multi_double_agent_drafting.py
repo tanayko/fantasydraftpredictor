@@ -1,4 +1,3 @@
-import os
 from autogen import (
     GroupChat,
     GroupChatManager,
@@ -8,7 +7,14 @@ from autogen import (
 )
 from typing import Callable, List
 
-OPENAI_API_KEY = os.getenv("API_KEY")
+from combined_fantasy_tools import (
+    find_player_stats,
+    get_players_by_position,
+    display_position_rankings
+)
+
+# OPENAI_API_KEY = os.getenv("API_KEY")
+OPENAI_API_KEY = "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"
 
 config_list = [
     {
@@ -123,8 +129,14 @@ user_proxy = UserProxyAgent(
 # Prompts
 EXTRACTOR_PROMPT = (
     lambda position: f"""
-You are a data extractor for the SPECIFIED position {position}. Your job is to fetch metrics for each provided player using the `get_player_metric` tool.
-Use the tool for each player and return all results.
+You are a data extractor for the SPECIFIED position {position}. Your job is to fetch comprehensive metrics for each provided player.
+
+You have access to these tools:
+1. get_player_info(name_of_player: str) - Fetch detailed stats for a specific player
+2. get_position_rankings(position: str, limit: int) - Get rankings for players in your position. The position parameter will be one of (QB, RB, WR, TE, K, DST).
+2. display_position_rankings(position: str, limit: int) - Display player rankings for a specific position. The position parameter will be one of (QB, RB, WR, TE, K, DST).
+
+Use the tools appropriately to gather information and return all results.
 """
 )
 
@@ -133,10 +145,12 @@ ANALYZER_PROMPT = (
 You are a fantasy position expert for the SPECIFIED positon {position} - do NOT speak for other positions AT ALL.
 If you speak for other positions, you will be terminated.
 You are in a conversation with an extractor agent for YOUR POSITION and a head drafter.
-You must ask the extractor agent to fetch the metrics for each player after which you will receive metrics for each player.
+You must ask the extractor agent to fetch the stats for each player after which you will receive stats for each player.
+First, ask for the top 10 rankings for your position.
+Then, you can request detailed information about specific players you're interested in.
 You should ONLY ask for players relevent to YOUR position.
 You MUST pick the ONE best player and ONLY give the head drafter agent ONLY the player's full name and metric in this format:
-<Full Name> (Metric: <Metric Score>)\n**TERMINATE**
+<Full Name> (Overall Rank: <Rank>)\n**TERMINATE**
 """
 )
 
@@ -158,7 +172,9 @@ def make_extractor_analyzer_agents(position: str):
         system_prompt=EXTRACTOR_PROMPT(position),
         config_list=config_list,
         description=f"Extracts {position} player data",
-        tools=[get_player_metric],
+        tools=[find_player_stats,
+               get_players_by_position,
+               display_position_rankings],
     ).create_agent()
 
     analyzer = AssistantAgent(
