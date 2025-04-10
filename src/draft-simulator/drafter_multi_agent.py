@@ -27,7 +27,7 @@ class BaseAgent:
         self.config_list = [
             {
                 "model": "gpt-4o-mini",  # Use gpt-4o-mini for more affordability
-                "api_key": "",
+                "api_key": "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",
                 "base_url": "https://api.openai.com/v1",
             }
         ]

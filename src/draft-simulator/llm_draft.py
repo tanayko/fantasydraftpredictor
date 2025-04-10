@@ -1,6 +1,6 @@
 import csv
 import time
-from collections import defaultdict
+import random
 from team import Team
 from drafter_multi_agent import AutoGenDrafter
 from typing import Optional, List
@@ -12,9 +12,10 @@ from player import Player
 class DraftSimulator:
     def __init__(self):
         self.teams = []
+        self.draft_order = []  # Store draft order separately
         self.players = []
         self.current_round = 1
-        self.max_rounds = 7
+        self.max_rounds = 9
         self.llm_drafter = None
         self.drafted_players = []  # Track names of drafted players
 
@@ -113,6 +114,39 @@ class DraftSimulator:
         self.llm_drafter = AutoGenDrafter(team_name)
         return team
 
+    def set_random_draft_order(self):
+        """Randomize the draft order of teams"""
+        # Create a copy of the teams list
+        teams_copy = self.teams.copy()
+        # Shuffle the teams randomly
+        random.shuffle(teams_copy)
+        # Store the randomized order
+        self.draft_order = teams_copy
+
+        # Print the draft order
+        print("\nDRAFT ORDER")
+        print("-" * 20)
+        for i, team in enumerate(self.draft_order, 1):
+            print(f"{i}. {team.name}")
+        print()
+
+    def get_round_draft_order(self, round_num):
+        """
+        Get the draft order for a specific round (implements snake draft)
+
+        Args:
+            round_num: The round number (1-based)
+
+        Returns:
+            List of teams in the order they draft for this round
+        """
+        # Even rounds go in reverse order
+        if round_num % 2 == 0:
+            return list(reversed(self.draft_order))
+        # Odd rounds go in normal order
+        else:
+            return self.draft_order
+
     def display_draft_results(self):
         """Display draft results for all teams"""
         print("\n" + "=" * 70)
@@ -144,18 +178,31 @@ class DraftSimulator:
             print("No players available. Please add players first.")
             return
 
+        # Set random draft order if not already set
+        if not self.draft_order:
+            self.set_random_draft_order()
+
         print("\n" + "=" * 70)
         print(
-            f"NFL DRAFT SIMULATOR - {len(self.teams)} Teams, {self.max_rounds} Rounds"
+            f"NFL DRAFT SIMULATOR - {len(self.teams)} Teams, {self.max_rounds} Rounds (Snake Draft)"
         )
         print("=" * 70)
+
+        pick_counter = 0  # Track overall pick number
 
         for round_num in range(1, self.max_rounds + 1):
             print(f"\n\nROUND {round_num}")
             print("-" * 30)
 
-            for pick_num, team in enumerate(self.teams, 1):
-                overall_pick = (round_num - 1) * len(self.teams) + pick_num
+            # Get the draft order for this round (snake draft)
+            round_draft_order = self.get_round_draft_order(round_num)
+
+            # Display round draft order
+            order_direction = "←" if round_num % 2 == 0 else "→"
+            print(f"Draft Direction: {order_direction} ({['Normal', 'Reversed'][round_num % 2 == 0]} order)")
+
+            for pick_num, team in enumerate(round_draft_order, 1):
+                pick_counter += 1  # Increment the overall pick counter
 
                 # Check if this is the LLM-powered team
                 is_llm_team = (
@@ -165,7 +212,7 @@ class DraftSimulator:
                 if is_llm_team:
                     # LLM team's turn
                     print(
-                        f"\nRound {round_num}, Pick {pick_num} (Overall: {overall_pick})"
+                        f"\nRound {round_num}, Pick {pick_num} (Overall: {pick_counter})"
                     )
                     print(f"AI Team on the clock: {team.name}")
 
@@ -214,7 +261,7 @@ class DraftSimulator:
                     # Human team's turn - use your existing UI
                     while True:
                         print(
-                            f"\nRound {round_num}, Pick {pick_num} (Overall: {overall_pick})"
+                            f"\nRound {round_num}, Pick {pick_num} (Overall: {pick_counter})"
                         )
                         print(f"Team on the clock: {team.name}")
 
@@ -226,8 +273,9 @@ class DraftSimulator:
                         print("4. Draft a player")
                         print("5. View all team rosters")
                         print("6. View drafted players")
+                        print("7. View draft order")
 
-                        command = input("\nEnter command (1-6): ")
+                        command = input("\nEnter command (1-7): ")
 
                         if command == "1":
                             self.display_available_players()
@@ -285,6 +333,16 @@ class DraftSimulator:
                                     print(f"  {idx}. {name}")
                             else:
                                 print("  No players drafted yet.")
+                        elif command == "7":
+                            # Display draft order with arrow showing direction
+                            print("\nOriginal Draft Order:")
+                            for i, t in enumerate(self.draft_order, 1):
+                                print(f"  {i}. {t.name}")
+
+                            print(
+                                f"\nCurrent Round ({round_num}) Order ({['Normal', 'Reversed'][round_num % 2 == 0]}):")
+                            for i, t in enumerate(round_draft_order, 1):
+                                print(f"  {i}. {t.name}")
                         else:
                             print("Invalid command. Please try again.")
 
@@ -322,6 +380,9 @@ def main():
 
     # Set rounds
     draft.max_rounds = int(input("Enter number of rounds: "))
+
+    # Randomize draft order
+    draft.set_random_draft_order()
 
     # Run the draft
     draft.run_draft()
