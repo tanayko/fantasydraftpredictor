@@ -149,7 +149,7 @@ EXTRACTOR_PROMPT = (
 You are a data extractor for the SPECIFIED position {position}. Your job is to fetch comprehensive metrics for each provided player.
 
 You have access to these tools:
-1. get_position_rankings(position: str, limit: int) - Get rankings for players in your position. The position parameter will be one of (QB, RB, WR, TE, K, DST).
+1. get_position_rankings(position: str, limit: int, excluded_players: List[str]) - Get rankings for players in your position. The position parameter will be one of (QB, RB, WR, TE, K, DST). You can exclude all drafted players by adding them to the excluded_players parameter, so that you don't even consider them.
 
 Use the tools appropriately to gather information and return all results.
 """
@@ -362,16 +362,6 @@ def run_draft_and_get_player():
 
     # Get all messages as a single string
     all_messages_text = "\n".join(user_proxy.all_messages)
-
-    # Print for debugging
-    print("\nAll messages captured:")
-    print(all_messages_text)
-
-    # Find and print the head drafter's final message for debugging
-    head_drafter_messages = all_messages_text.split('chat_manager:')
-    if len(head_drafter_messages) >= 2:
-        print("\nHead drafter's final message:")
-        print(head_drafter_messages[-1])
 
     # Extract the player name
     player_name = extract_player_name_from_output(all_messages_text)

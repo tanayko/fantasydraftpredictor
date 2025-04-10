@@ -1,13 +1,14 @@
+import csv
 import time
 from collections import defaultdict
 from team import Team
-from drafter_agent import AutoGenDrafter
-from typing import Optional
+from drafter_multi_agent import AutoGenDrafter
+from typing import Optional, List
 from player import Player
 
 
 # DraftSimulator
-# This class will now include the LLM drafter functionality
+# This class will now include the LLM drafter functionality with drafted player tracking
 class DraftSimulator:
     def __init__(self):
         self.teams = []
@@ -15,44 +16,37 @@ class DraftSimulator:
         self.current_round = 1
         self.max_rounds = 7
         self.llm_drafter = None
+        self.drafted_players = []  # Track names of drafted players
 
     # [Keep all your existing methods]
-    def load_sample_players(self):
-        """Load a sample list of players for testing"""
-        sample_players = [
-            Player("Trevor Lawrence", "QB", "Clemson", 9.5),
-            Player("Justin Fields", "QB", "Ohio State", 9.2),
-            Player("Zach Wilson", "QB", "BYU", 8.9),
-            Player("Trey Lance", "QB", "North Dakota State", 8.7),
-            Player("Mac Jones", "QB", "Alabama", 8.5),
-            Player("Ja'Marr Chase", "WR", "LSU", 9.4),
-            Player("DeVonta Smith", "WR", "Alabama", 9.3),
-            Player("Jaylen Waddle", "WR", "Alabama", 9.1),
-            Player("Kyle Pitts", "TE", "Florida", 9.6),
-            Player("Pat Freiermuth", "TE", "Penn State", 8.9),
-            Player("Penei Sewell", "OT", "Oregon", 9.5),
-            Player("Rashawn Slater", "OT", "Northwestern", 9.2),
-            Player("Christian Darrisaw", "OT", "Virginia Tech", 8.8),
-            Player("Najee Harris", "RB", "Alabama", 8.9),
-            Player("Travis Etienne", "RB", "Clemson", 8.7),
-            Player("Javonte Williams", "RB", "North Carolina", 8.5),
-            Player("Micah Parsons", "LB", "Penn State", 9.3),
-            Player("Jeremiah Owusu-Koramoah", "LB", "Notre Dame", 9.0),
-            Player("Patrick Surtain II", "CB", "Alabama", 9.4),
-            Player("Jaycee Horn", "CB", "South Carolina", 9.2),
-            Player("Caleb Farley", "CB", "Virginia Tech", 9.0),
-            Player("Jaelan Phillips", "EDGE", "Miami", 9.1),
-            Player("Kwity Paye", "EDGE", "Michigan", 9.0),
-            Player("Christian Barmore", "DT", "Alabama", 8.9),
-            Player("Gregory Rousseau", "EDGE", "Miami", 8.8),
-            Player("Trevon Moehrig", "S", "TCU", 8.8),
-            Player("Zaven Collins", "LB", "Tulsa", 8.7),
-            Player("Alijah Vera-Tucker", "OG", "USC", 8.9),
-            Player("Jamin Davis", "LB", "Kentucky", 8.6),
-            Player("Rashod Bateman", "WR", "Minnesota", 8.7),
-            Player("Kadarius Toney", "WR", "Florida", 8.6),
-        ]
-        self.players = sample_players
+    def load_players_from_csv(self, csv_filename):
+        """Load players directly from a CSV file"""
+        self.players = []
+
+        try:
+            with open(csv_filename, 'r', encoding='utf-8') as file:
+                reader = csv.DictReader(file)
+
+                for row in reader:
+                    # Extract the required fields
+                    name = row.get('Name', '')
+                    team = row.get('Team', '')
+                    position = row.get('Pos', '')
+
+                    # Skip row if any required field is missing
+                    if not name or not team or not position:
+                        continue
+
+                    # Create a Player object
+                    player = Player(name, position, team)
+                    self.players.append(player)
+
+            print(f"Loaded {len(self.players)} players from {csv_filename}")
+        except Exception as e:
+            print(f"Error loading players from CSV: {e}")
+            raise
+
+        return self.players
 
     def register_team(self, team_name: str):
         """Register a new team for the draft"""
@@ -80,20 +74,9 @@ class DraftSimulator:
         )
         print(f"{'-' * 60}")
 
-        # Group by position
-        by_position = defaultdict(list)
-        for player in available:
-            by_position[player.position].append(player)
-
-        # Display players by position
-        for position in sorted(by_position.keys()):
-            print(f"\n{position}:")
-            for idx, player in enumerate(
-                sorted(by_position[position], key=lambda p: p.rating, reverse=True), 1
-            ):
-                print(
-                    f"  {idx}. {player.name} ({player.college}) - Rating: {player.rating}"
-                )
+        # Simply display players in the order they appear in the CSV
+        for idx, player in enumerate(available, 1):
+            print(f"  {idx}. {player.name} ({player.position}, {player.team})")
 
         print(f"{'-' * 60}\n")
 
@@ -123,8 +106,6 @@ class DraftSimulator:
             except ValueError:
                 print("Please enter a number.")
 
-    # Add this new method:
-
     def add_llm_team(self, team_name="AI_General_Manager"):
         """Add an LLM-powered team to the draft"""
         team = Team(team_name)
@@ -142,7 +123,17 @@ class DraftSimulator:
             team.display_roster()
             print("\n")
 
-    # Modify your run_draft method to handle the LLM team
+    def get_drafted_player_names(self) -> List[str]:
+        """Get a list of all drafted player names"""
+        return self.drafted_players
+
+    def mark_player_as_drafted(self, player: Player):
+        """Mark a player as drafted and add to the drafted list"""
+        if player and not player.drafted:
+            player.drafted = True
+            self.drafted_players.append(player.name)
+
+    # Modify your run_draft method to handle drafted player tracking
     def run_draft(self):
         """Run the draft simulation with support for an LLM-powered team"""
         if not self.teams:
@@ -168,7 +159,7 @@ class DraftSimulator:
 
                 # Check if this is the LLM-powered team
                 is_llm_team = (
-                    self.llm_drafter and team.name == self.llm_drafter.team_name
+                        self.llm_drafter and team.name == self.llm_drafter.team_name
                 )
 
                 if is_llm_team:
@@ -179,16 +170,18 @@ class DraftSimulator:
                     print(f"AI Team on the clock: {team.name}")
 
                     # Get available players for the LLM
-                    available_players = self.llm_drafter.get_available_players(
-                        self.players
-                    )
+                    available_players = [p for p in self.players if not p.drafted]
+
+                    # Update the LLM drafter with the list of drafted players
+                    self.llm_drafter.set_drafted_players(self.drafted_players)
+
+                    # Pass available players to the LLM
+                    available_players = self.llm_drafter.get_available_players(available_players)
 
                     # Let the LLM make a decision
                     print("\nAI is analyzing available players and team needs...")
                     time.sleep(2)  # Simulate thinking time
 
-                    ## can have the make draft selection give
-                    ## the SMEs players for each position
                     player_name = self.llm_drafter.make_draft_selection(
                         available_players, team, pick_num, round_num
                     )
@@ -196,9 +189,18 @@ class DraftSimulator:
                     if player_name:
                         player = self.find_player_by_name(player_name)
                         if player:
+                            # Add player to team
                             team.add_player(player)
+
+                            # Mark as drafted
+                            player.drafted = True
+                            player.drafted_by = team.name
+
+                            # Add to drafted list
+                            self.drafted_players.append(player.name)
+
                             print(
-                                f"\n{team.name} selects {player.name}, {player.position} from {player.college}"
+                                f"\n{team.name} selects {player.name}, {player.position} from {player.team}"
                             )
                             time.sleep(2)
                         else:
@@ -223,14 +225,15 @@ class DraftSimulator:
                         print("3. View current team roster")
                         print("4. Draft a player")
                         print("5. View all team rosters")
+                        print("6. View drafted players")
 
-                        command = input("\nEnter command (1-5): ")
+                        command = input("\nEnter command (1-6): ")
 
                         if command == "1":
                             self.display_available_players()
                         elif command == "2":
                             pos = input(
-                                "Enter position (QB, RB, WR, TE, OT, OG, C, DT, EDGE, LB, CB, S): "
+                                "Enter position (QB, RB, WR, TE, K, DST): "
                             ).upper()
                             self.display_available_players(pos)
                         elif command == "3":
@@ -248,9 +251,18 @@ class DraftSimulator:
                                 player = self.find_player_by_name(player_name)
 
                                 if player:
+                                    # Add player to team
                                     team.add_player(player)
+
+                                    # Mark as drafted
+                                    player.drafted = True
+                                    player.drafted_by = team.name
+
+                                    # Add to drafted list
+                                    self.drafted_players.append(player.name)
+
                                     print(
-                                        f"\n{team.name} selects {player.name}, {player.position} from {player.college}"
+                                        f"\n{team.name} selects {player.name}, {player.position} from {player.team}"
                                     )
                                     time.sleep(2)
                                     break  # Successfully drafted a player
@@ -265,6 +277,14 @@ class DraftSimulator:
                             # Display all team rosters
                             for t in self.teams:
                                 t.display_roster()
+                        elif command == "6":
+                            # Display drafted players
+                            print("\nDrafted players so far:")
+                            if self.drafted_players:
+                                for idx, name in enumerate(self.drafted_players, 1):
+                                    print(f"  {idx}. {name}")
+                            else:
+                                print("  No players drafted yet.")
                         else:
                             print("Invalid command. Please try again.")
 
@@ -283,7 +303,7 @@ def main():
     draft = DraftSimulator()
 
     # Load sample players
-    draft.load_sample_players()
+    draft.load_players_from_csv("tools/data/official_2024_fantasy_rankings/ESPN_Standard.csv")
 
     # Register teams
     print("NFL DRAFT SIMULATOR WITH AI GM")
@@ -294,7 +314,7 @@ def main():
 
     # Register human teams
     for i in range(num_human_teams):
-        team_name = input(f"Enter name for Team {i+1}: ")
+        team_name = input(f"Enter name for Team {i + 1}: ")
         draft.register_team(team_name)
 
     # Add the AI team

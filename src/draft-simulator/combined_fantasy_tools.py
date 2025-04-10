@@ -196,6 +196,96 @@ def display_position_rankings(position: str, limit: int = 10,
 
     return players
 
+
+def display_position_rankings_with_filtering(position: str, limit: int = 10,
+                                             excluded_players: List[str] = None,
+                                             sort_by: str = "Overall_Rank",
+                                             return_json: bool = True) -> Union[List[Dict[str, Any]], str, None]:
+    """
+    Display player rankings for a specific position, excluding certain players (e.g., already drafted).
+
+    Args:
+        position (str): Position to filter by (QB, RB, WR, TE, K, DST)
+        limit (int, optional): Limit the number of results. Defaults to 10.
+        excluded_players (List[str], optional): List of player names to exclude. Defaults to None.
+        sort_by (str, optional): Field to sort by. Defaults to "Overall_Rank".
+        return_json (bool): If True, returns data as JSON string. Defaults to True.
+
+    Returns:
+        Union[List[Dict[str, Any]], str, None]: List of player dictionaries, JSON string if return_json=True, or None if error
+    """
+    # Get players by position
+    players = get_players_by_position(position, None, sort_by, return_json=False)
+
+    if not players:
+        error_msg = f"No players found for position: {position.upper()}"
+        print(error_msg)
+
+        if return_json:
+            return json.dumps({"error": error_msg})
+        return None
+
+    # Apply exclusion filter if provided
+    if excluded_players and isinstance(excluded_players, list):
+        # Convert excluded names to lowercase for case-insensitive matching
+        excluded_lower = [name.lower() for name in excluded_players]
+
+        # Filter out excluded players
+        filtered_players = [
+            player for player in players
+            if player.get("Name", "").lower() not in excluded_lower
+        ]
+
+        # If all players were filtered out, return an empty result
+        if not filtered_players:
+            message = f"All {position.upper()} players were excluded by filter"
+            print(message)
+
+            if return_json:
+                return json.dumps({
+                    "position": position.upper(),
+                    "sort_by": sort_by,
+                    "count": 0,
+                    "excluded_count": len(players),
+                    "players": []
+                })
+            return []
+
+        players = filtered_players
+
+    # Apply limit after filtering
+    if limit and isinstance(limit, int) and limit > 0:
+        players = players[:limit]
+
+    if not return_json:
+        print(f"\nTop {len(players)} {position.upper()} Rankings (sorted by {sort_by}):")
+        print("-" * 60)
+
+        # Print header
+        print(f"{'Rank':<5} {'Name':<25} {'Team':<5} {'Schedule':<10}")
+        print("-" * 60)
+
+        # Print each player
+        for i, player in enumerate(players, 1):
+            name = player.get("Name", "Unknown")
+            team = player.get("Team", "N/A")
+            schedule_rating = player.get("Schedule_Rating", "N/A")
+
+            print(f"{i:<5} {name:<25} {team:<5} {schedule_rating:<10}")
+
+    # Format data for better JSON response
+    if return_json:
+        return json.dumps({
+            "position": position.upper(),
+            "sort_by": sort_by,
+            "count": len(players),
+            "filtered": True if excluded_players else False,
+            "excluded_count": len(excluded_players) if excluded_players else 0,
+            "players": players
+        })
+
+    return players
+
 # Example usage
 if __name__ == "__main__":
     # Example: find a specific player and return as JSON
