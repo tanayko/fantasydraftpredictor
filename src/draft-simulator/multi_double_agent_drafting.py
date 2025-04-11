@@ -209,6 +209,7 @@ def make_extractor_analyzer_agents(position: str):
 qb_extractor, qb_analyzer = make_extractor_analyzer_agents("quarter_back")
 wr_extractor, wr_analyzer = make_extractor_analyzer_agents("wide_receiver")
 rb_extractor, rb_analyzer = make_extractor_analyzer_agents("running_back")
+te_extractor, te_analyzer = make_extractor_analyzer_agents("tight_end")
 
 head_drafter_agent = AssistantAgent(
     name="head_drafter_agent",
@@ -217,9 +218,9 @@ You are in a conversation with analyzer agents for quarter back, wide receiver, 
 If there is already a player on your team for a certain position, you MUST ignore that position - do NOT ask the anaylzer for that position.
 Each analyzer gives their best pick.
 You MUST NOT draft a player until you have received the top pick from each ANALYZER AGENT.
-You MUST only give each anaylzer agent the list of players in the position they are responsible for.
+You MUST only give each analyzer agent the list of available players in the position they are responsible for.
+You MUST give each analyzer agent ALL of the players that have been drafted.
 Do NOT hallucinate yourself, you are in a conversation with specialized position agents - you MUST consult with them first
-
 
 The analyzers MUST rely on extractor agents to fetch metrics, and you must allow that process to complete.
 Once you have all three final recommendations, discuss their names and metrics and choose ONE player to draft. 
