@@ -25,5 +25,5 @@ class Team:
             if players:
                 print(f"\n{position}:")
                 for idx, player in enumerate(players, 1):
-                    print(f"  {idx}. {player.name} ({player.college}) - Rating: {player.rating}")
+                    print(f"  {idx}. {player.name} ({player.team})")
         print(f"{'-' * 50}\n")
