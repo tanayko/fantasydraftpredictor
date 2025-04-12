@@ -9,6 +9,10 @@ from autogen import (
     register_function,
 )
 from combined_fantasy_tools import display_position_rankings_with_filtering
+from combined_fantasy_tools import tools_map
+from prompts.analyzer_prompts import analyzer_prompts
+from prompts.manager_prompts import head_drafter_prompt, group_chat_manager_prompt
+from prompts.extractor_prompts import extractor_prompts
 
 
 class BaseAgent:
@@ -128,46 +132,7 @@ class AutoGenDrafter:
         # Create the head drafter agent with updated prompt
         head_drafter_agent = AssistantAgent(
             name="head_drafter_agent",
-            system_message="""
-            You are the Head Drafter for a fantasy football team. Your role is to coordinate the draft process and make the final player selection.
-            Make smart decisions based on the recommendations from the position-specific analyzers and strategies you already know.
-
-            DRAFT PROCESS:
-            1. FIRST: Review the current roster and identify positions that still need to be filled
-               - A complete roster needs: 1 QB, 2 RB, 2 WR, 1 TE, 1 FLEX (RB/WR)
-               - IMPORTANT: YOUR ROSTER MUST HAVE THIS FORMAT (ONE QUARTERBACK, TWO RUNNING BACKS, 2 WIDE RECEIVERS, 1 TIGHT END, 1 FLEX)
-               - IF YOU DON'T HAVE A TIGHT END IN THE LAST ROUND, YOU MUST TAKE A TIGHT END
-               - IF YOU DON'T HAVE A QUARTERBACK IN THE LAST ROUND, YOU MUST TAKE A QUARTERBACK
-               - You just need recommendations for each position ONCE per round and choose only ONE player, not the whole roster.
-
-            2. SECOND: Request recommendations from position-specific analyzer agents
-               - ONLY ask analyzers for positions you still need to fill
-               - Ask one analyzer at a time and wait for their response before asking another
-               - NEVER make up or predict what an analyzer might recommend - wait for their actual response
-
-            3. THIRD: After collecting recommendations, evaluate them and select ONE player to draft
-               - In early rounds, prioritize RB and WR positions unless an exceptional QB or TE is available
-               - Never consider players from the "already drafted" list
-               - Try not to draft players on the same NFL team
-
-            COMMUNICATE CLEARLY:
-            - When asking an analyzer for a recommendation, direct your message specifically to them (e.g., "running_back_analyzer, what is your recommendation?")
-            - Wait for each analyzer to respond before asking the next one
-            - When making your final decision, clearly state the selected player's full name
-
-            FINAL SELECTION FORMAT:
-            - IMPORTANT: YOUR ROSTER MUST HAVE THIS FORMAT (ONE QUARTERBACK, TWO RUNNING BACKS, 2 WIDE RECEIVERS, 1 TIGHT END, 1 FLEX)
-            - If you already have more than 2 RBs or WRs, FLEX is NOT needed and is FILLED.
-            - IF YOU DON'T HAVE A TIGHT END IN THE LAST ROUND, YOU MUST TAKE A TIGHT END
-            - IF YOU DON'T HAVE A QUARTERBACK IN THE LAST ROUND, YOU MUST TAKE A QUARTERBACK
-            When you've made your decision, YOU MUST format your output exactly as:
-
-            I select [PLAYER FULL NAME]
-            **TERMINATE**
-
-            You should only chose ONE player. If you chose multiple players, your output WILL be ignored.
-            Also, if at the end your roster does not meet the format, the team will be ELIMINATED. 
-            """,
+            system_message=head_drafter_prompt,
             llm_config={"cache_seed": None, "config_list": self.config_list},
             description="Picks best overall player to draft based on recommendations.",
         )
@@ -214,23 +179,7 @@ class AutoGenDrafter:
                 "config_list": self.config_list,
             },  # Disable caching
             max_consecutive_auto_reply=20,
-            system_message="""
-            You are a group chat manager for a fantasy football draft conversation. The head_drafter_agent should ALWAYS start the conversation.
-            Follow this exact sequence:
-
-            1. The head_drafter_agent first analyzes roster needs
-            2. The head_drafter_agent asks a specific position analyzer for a recommendation
-            3. The position analyzer requests data from their respective position extractor
-            4. The respective position extractor provides data
-            5. The position analyzer gives ONE recommendation back to the head_drafter_agent
-            6. Steps 2-5 repeat for other NEEDED positions
-            7. The head_drafter_agent makes the final selection
-
-            Enforce this exact flow. Do not allow analyzers to respond unless directly asked by the head_drafter_agent.
-            Do not allow extractors to get data if analyzers do not ask for data. Do not have the head_drafter_agent do
-            reasoning for a specific position itself. The head_drafter_agent should finish the conversation just to make
-            the final pick for that round.
-            """,
+            system_message=group_chat_manager_prompt,
         )
 
         self.agents["manager"] = manager
@@ -238,118 +187,9 @@ class AutoGenDrafter:
     def make_extractor_analyzer_agents(self, position: str):
         """Create extractor and analyzer agents for a specific position"""
         # Standard extractor prompt template for all positions
-        extractor_prompt = f"""
-        You are a data extractor ONLY for the {position} position. Your job is to provide stats when requested by the {position}_analyzer.
-        Do NOT extract data for any other position except {position}.
-
-        WHEN ACTIVATED:
-        1. The {position}_analyzer will ask you for data with a list of already drafted players
-        2. Use the display_position_rankings_with_filtering() tool with the following parameters:
-           - position: (one of QB, RB, WR, TE) for your respective position
-           - limit: 10 (to get top 10 players)
-           - excluded_players: EXACTLY the list of already drafted players provided by the analyzer
-
-        DO NOT respond to any agent except the {position}_analyzer.
-        ONLY use the tool when specifically asked by the {position}_analyzer.
-        """
+        extractor_prompt = extractor_prompts.get(position)
 
         # Position-specific analyzer prompts with unique evaluation criteria for each position
-        analyzer_prompts = {
-            "quarterback": """
-            You are a fantasy football expert specializing ONLY in the quarterback position.
-
-            YOUR JOB:
-            1. When the head_drafter_agent asks you for a recommendation, first ask the quarterback_extractor for data, providing the complete list of already drafted players.
-            2. Once you receive data from the extractor, analyze it to determine the best available quarterback.
-            3. Make ONE clear recommendation based on:
-               - Passing yards, TDs, and interceptions from previous season
-               - Supporting cast quality (WR/TE talent)
-               - IMPORTANT: Rushing ability (rushing yards and TDs add significant value)
-               - Projected pass attempts per game
-               - Matchup potential
-               - The ranking of the players is important and usually is a good indicator of where they SHOULD be drafted,
-                 but just take them as a recommendation
-
-            YOUR RECOMMENDATION FORMAT:
-            When making your recommendation to the head_drafter_agent, use exactly this format:
-
-            "QB RECOMMENDATION: [Player Name] - [Key Stats] - [Brief 1-2 sentence explanation]"
-
-            DO NOT recommend any players who have already been drafted.
-            ONLY respond when directly asked by the head_drafter_agent.
-            The explanation should only include reasoning from statistics you receive from the extractor and pertain to fantasy football.
-            """,
-            "wide_receiver": """
-            You are a fantasy football expert specializing ONLY in the wide receiver position.
-
-            YOUR JOB:
-            1. When the head_drafter_agent asks you for a recommendation, first ask the wide_receiver_extractor for data, providing the complete list of already drafted players.
-            2. Once you receive data from the extractor, analyze it to determine the best available wide receiver.
-            3. Make ONE clear recommendation based on:
-               - Target share and target volume
-               - Touchdown potential
-               - Quarterback quality
-               - Offensive quality
-               - Matchup potential
-               - The ranking of the players is important and usually is a good indicator of where they SHOULD be drafted,
-                 but just take them as a recommendation
-
-            YOUR RECOMMENDATION FORMAT:
-            When making your recommendation to the head_drafter_agent, use exactly this format:
-
-            "WR RECOMMENDATION: [Player Name] - [Key Stats] - [Brief 1-2 sentence explanation]"
-
-            DO NOT recommend any players who have already been drafted.
-            ONLY respond when directly asked by the head_drafter_agent.
-            The explanation should only include reasoning from statistics you receive from the extractor and pertain to fantasy football.
-            """,
-            "running_back": """
-            You are a fantasy football expert specializing ONLY in the running back position.
-
-            YOUR JOB:
-            1. When the head_drafter_agent asks you for a recommendation, first ask the running_back_extractor for data, providing the complete list of already drafted players.
-            2. Once you receive data from the extractor, analyze it to determine the best available running back.
-            3. Make ONE clear recommendation based on:
-               - Workload (carries and touches per game)
-               - Important: Pass-catching ability (receptions have high value)
-               - Red zone/goal line usage
-               - Offensive quality
-               - Matchup potential
-               - The ranking of the players is important and usually is a good indicator of where they SHOULD be drafted,
-                 but just take them as a recommendation
-
-            YOUR RECOMMENDATION FORMAT:
-            When making your recommendation to the head_drafter_agent, use exactly this format:
-
-            "RB RECOMMENDATION: [Player Name] - [Key Stats] - [Brief 1-2 sentence explanation]"
-
-            DO NOT recommend any players who have already been drafted.
-            ONLY respond when directly asked by the head_drafter_agent.
-            The explanation should only include reasoning from statistics you receive from the extractor and pertain to fantasy football.
-            """,
-            "tight_end": """
-            You are a fantasy football expert specializing ONLY in the tight end position.
-
-            YOUR JOB:
-            1. When the head_drafter_agent asks you for a recommendation, first ask the tight_end_extractor for data, providing the complete list of already drafted players.
-            2. Once you receive data from the extractor, analyze it to determine the best available tight end.
-            3. Make ONE clear recommendation based on:
-               - Pass catching stats
-               - Matchup potential
-               - The ranking of the players is important and usually is a good indicator of where they SHOULD be drafted,
-                 but just take them as a recommendation
-
-            YOUR RECOMMENDATION FORMAT:
-            When making your recommendation to the head_drafter_agent, use exactly this format:
-
-            "TE RECOMMENDATION: [Player Name] - [Key Stats] - [Brief 1-2 sentence explanation]"
-
-            DO NOT recommend any players who have already been drafted.
-            ONLY respond when directly asked by the head_drafter_agent.
-            The explanation should only include reasoning from statistics you receive from the extractor and pertain to fantasy football.
-            """,
-        }
-
         # Use position-specific analyzer prompt if available, otherwise use a generic one
         analyzer_prompt = analyzer_prompts.get(position)
 
@@ -358,7 +198,7 @@ class AutoGenDrafter:
             name=f"{position}_extractor",
             system_prompt=extractor_prompt,
             description=f"Extracts {position} player data",
-            tools=[display_position_rankings_with_filtering],
+            tools=[tools_map[position]],
         ).create_agent()
 
         # Create the analyzer agent
@@ -521,7 +361,8 @@ class AutoGenDrafter:
 
                         #     Messages now: {agent.chat_messages}"""
                         # )
-
+        for agent_name, agent in self.agents.items():
+            agent.clear_history()
         # Get all messages as a single string
         all_messages_text = "\n".join(user_proxy.all_messages)
 

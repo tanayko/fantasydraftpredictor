@@ -6,58 +6,41 @@ import re
 file_path = "tools/data/FantasyPros_Fantasy_Football_Points_PPR.csv"
 data = pd.read_csv(file_path)
 
+# NOTE: article - https://medium.com/fantasy-outliers/how-many-points-are-enough-e3ef4a7d2411
+# Filter top 12 DST and K by largest "AVG"
+dst_k_positions = ["DST", "K"]
+dst_k_top_players = {}
+
+for position in dst_k_positions:
+    dst_k_top_players[position] = data[data["Pos"] == position].nlargest(12, "AVG")
+
+# Calculate mean and median "AVG" for DST and K
+dst_k_stats = {}
+for position, players in dst_k_top_players.items():
+    dst_k_stats[position] = {
+        "mean": players["AVG"].mean(),
+        "median": players["AVG"].median(),
+    }
+
+# Print the mean and median for DST and K
+print("Mean and Median AVG for DST and K:")
+for position, stats in dst_k_stats.items():
+    print(f"{position} - Mean: {stats['mean']:.2f}, Median: {stats['median']:.2f}")
+
 # Filter top 11 players for each position
 positions = ["QB", "WR", "RB", "TE"]
-top_players = {}
-
-for position in positions:
-    top_players[position] = data[data["Pos"] == position].nlargest(11, "TTL")
-
-# Display the top players for each position
-for position, players in top_players.items():
-    print(f"Top 11 {position}s:")
-    print(players[["Player", "TTL"]])
-    print()
-
-    # Calculate and display the average points for each position
-    for position, players in top_players.items():
-        average_points = players["TTL"].mean()
-        print(f"Average points for top 11 {position}s: {average_points:.2f}")
-        # Calculate the benchmark score
-
-# Calculate the benchmark score using mean
-benchmark_score = (
-    top_players["QB"]["TTL"].mean()
-    + 2.5 * top_players["WR"]["TTL"].mean()
-    + 2.5 * top_players["RB"]["TTL"].mean()
-    + top_players["TE"]["TTL"].mean()
-)
-
-# Calculate the benchmark score using median
-benchmark_score_median = (
-    top_players["QB"]["TTL"].median()
-    + 2.5 * top_players["WR"]["TTL"].median()
-    + 2.5 * top_players["RB"]["TTL"].median()
-    + top_players["TE"]["TTL"].median()
-)
-
-# Print both benchmark scores
-print(f"Benchmark score using mean (QB + 2.5WR + 2.5RB + TE): {benchmark_score:.2f}")
-print(
-    f"Benchmark score using median (QB + 2.5WR + 2.5RB + TE): {benchmark_score_median:.2f}"
-)
-
 
 # Load the ESPN Standard rankings CSV file
 espn_file_path = "tools/data/official_2024_fantasy_rankings/ESPN_Standard.csv"
 espn_data = pd.read_csv(espn_file_path)
 
-# Filter top 11 players for each position based on the smallest "ESPN" ranking
+# Filter top players for each position based on the smallest "ESPN" ranking
 espn_top_players = {}
 
-for position in positions:
+position_limits = {"QB": 12, "WR": 30, "RB": 30, "TE": 12}
+for position, limit in position_limits.items():
     espn_top_players[position] = espn_data[espn_data["Pos"] == position].nsmallest(
-        11, "ESPN"
+        limit, "ESPN"
     )
 
 

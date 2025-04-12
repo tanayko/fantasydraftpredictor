@@ -742,9 +742,11 @@ def main():
     print("=" * 40)
 
     # Ask for number of auto teams (minimum 11)
-    num_auto_teams = max(
-        11, int(input("Enter number of auto-generated teams (minimum 11): "))
-    )
+    # num_auto_teams = max(
+    #     11, int(input("Enter number of auto-generated teams (minimum 11): "))
+    # )
+
+    num_auto_teams = 11
 
     # Create auto teams
     for i in range(num_auto_teams):
@@ -755,7 +757,8 @@ def main():
     draft.add_llm_team("AI_General_Manager")
 
     # Set rounds (we need to have enough rounds to fulfill roster requirements)
-    num_rounds = max(7, int(input("Enter number of rounds (minimum 7): ")))
+    # num_rounds = max(7, int(input("Enter number of rounds (minimum 7): ")))
+    num_rounds = 7
     draft.max_rounds = num_rounds
 
     # Randomize draft order

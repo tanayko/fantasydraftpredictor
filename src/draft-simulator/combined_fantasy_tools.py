@@ -1,8 +1,16 @@
 import json
 from typing import Dict, List, Optional, Union, Any
 from player_ranking_tool import load_and_combine_fantasy_data
-from team_ranking_tool import analyze_team_offenses, add_offense_context_to_rankings, json_to_readable
-from defense_ranking_tool import analyze_defense_vs_position, categorize_defenses, add_defense_matchup_to_players
+from team_ranking_tool import (
+    analyze_team_offenses,
+    add_offense_context_to_rankings,
+    json_to_readable,
+)
+from defense_ranking_tool import (
+    analyze_defense_vs_position,
+    categorize_defenses,
+    add_defense_matchup_to_players,
+)
 from nfl_schedule import create_nfl_schedule
 
 # File paths for player rankings
@@ -12,34 +20,36 @@ yahoo_file = "tools/data/official_2024_fantasy_rankings/Yahoo_Standard.csv"
 
 # Define position stats files
 stats_files = {
-    'QB': "tools/data/player_ranking_position_data/nfl_fantasy_QB_stats_2023.csv",
-    'RB': "tools/data/player_ranking_position_data/nfl_fantasy_RB_stats_2023.csv",
-    'WR': "tools/data/player_ranking_position_data/nfl_fantasy_WR_stats_2023.csv",
-    'TE': "tools/data/player_ranking_position_data/nfl_fantasy_TE_stats_2023.csv",
-    'K': "tools/data/player_ranking_position_data/nfl_fantasy_kickers.csv",
-    'DST': "tools/data/player_ranking_position_data/nfl_fantasy_defense.csv"
+    "QB": "tools/data/player_ranking_position_data/nfl_fantasy_QB_stats_2023.csv",
+    "RB": "tools/data/player_ranking_position_data/nfl_fantasy_RB_stats_2023.csv",
+    "WR": "tools/data/player_ranking_position_data/nfl_fantasy_WR_stats_2023.csv",
+    "TE": "tools/data/player_ranking_position_data/nfl_fantasy_TE_stats_2023.csv",
+    "K": "tools/data/player_ranking_position_data/nfl_fantasy_kickers.csv",
+    "DST": "tools/data/player_ranking_position_data/nfl_fantasy_defense.csv",
 }
 
 # Files for team offense stats
 offense_files_dict = {
     2021: "tools/data/offensive_rtg_data/nfl_team_offense_stats_2021.csv",
     2022: "tools/data/offensive_rtg_data/nfl_team_offense_stats_2022.csv",
-    2023: "tools/data/offensive_rtg_data/nfl_team_offense_stats_2023.csv"
+    2023: "tools/data/offensive_rtg_data/nfl_team_offense_stats_2023.csv",
 }
 
 # Files for defense vs position data
 defense_files = {
-    'QB': "tools/data/pts-against-data/qb/nfl_fantasy_qb_data_2024.csv",
-    'RB': "tools/data/pts-against-data/rb/nfl_fantasy_rb_data_2024.csv",
-    'WR': "tools/data/pts-against-data/wr/nfl_fantasy_wr_data_2024.csv",
-    'TE': "tools/data/pts-against-data/te/nfl_fantasy_te_data_2024.csv",
-    'K': "tools/data/pts-against-data/k/nfl_fantasy_k_data_2024.csv",
-    'DEF': "tools/data/pts-against-data/def/nfl_fantasy_def_data_2024.csv"
+    "QB": "tools/data/pts-against-data/qb/nfl_fantasy_qb_data_2024.csv",
+    "RB": "tools/data/pts-against-data/rb/nfl_fantasy_rb_data_2024.csv",
+    "WR": "tools/data/pts-against-data/wr/nfl_fantasy_wr_data_2024.csv",
+    "TE": "tools/data/pts-against-data/te/nfl_fantasy_te_data_2024.csv",
+    "K": "tools/data/pts-against-data/k/nfl_fantasy_k_data_2024.csv",
+    "DEF": "tools/data/pts-against-data/def/nfl_fantasy_def_data_2024.csv",
 }
 
 # From player_ranking_tool.py
 print("Step 1: Loading and combining player rankings...")
-player_json = load_and_combine_fantasy_data(espn_file, sleeper_file, yahoo_file, stats_files)
+player_json = load_and_combine_fantasy_data(
+    espn_file, sleeper_file, yahoo_file, stats_files
+)
 
 # From team_ranking_tool.py
 print("Step 2: Analyzing team offensive data...")
@@ -60,7 +70,9 @@ nfl_schedule = create_nfl_schedule()
 
 # Add schedule difficulty to enhanced player data
 print("Step 6: Adding schedule difficulty to player rankings...")
-final_player_json = add_defense_matchup_to_players(enhanced_player_json, categorized_defenses, nfl_schedule)
+final_player_json = add_defense_matchup_to_players(
+    enhanced_player_json, categorized_defenses, nfl_schedule
+)
 
 # Save the final result
 with open("final_rankings_with_schedule.json", "w") as f:
@@ -68,7 +80,9 @@ with open("final_rankings_with_schedule.json", "w") as f:
 print("Final rankings saved to final_rankings_with_schedule.json")
 
 
-def find_player_stats(name: str, return_json: bool = True) -> Union[Dict[str, Any], str, None]:
+def find_player_stats(
+    name: str, return_json: bool = True
+) -> Union[Dict[str, Any], str, None]:
     """
     Find and display a player's stats including schedule difficulty
 
@@ -95,9 +109,11 @@ def find_player_stats(name: str, return_json: bool = True) -> Union[Dict[str, An
             print(f"Overall Rank: {player['Overall_Rank']}")
 
             # Show schedule difficulty data if available
-            if 'Schedule_Difficulty_Score' in player:
-                print(f"Schedule Difficulty Score: {player['Schedule_Difficulty_Score']}")
-            if 'Schedule_Rating' in player:
+            if "Schedule_Difficulty_Score" in player:
+                print(
+                    f"Schedule Difficulty Score: {player['Schedule_Difficulty_Score']}"
+                )
+            if "Schedule_Rating" in player:
                 print(f"Schedule Rating: {player['Schedule_Rating']}")
 
         # Return the full player data (as dict or JSON string)
@@ -108,9 +124,12 @@ def find_player_stats(name: str, return_json: bool = True) -> Union[Dict[str, An
         return json.dumps(result) if return_json else None
 
 
-def get_players_by_position(position: str, limit: Optional[int] = None,
-                           sort_by: str = "Overall_Rank",
-                           return_json: bool = True) -> Union[List[Dict[str, Any]], str]:
+def get_players_by_position(
+    position: str,
+    limit: Optional[int] = None,
+    sort_by: str = "Overall_Rank",
+    return_json: bool = True,
+) -> Union[List[Dict[str, Any]], str]:
     """
     Return a list of players filtered by position.
 
@@ -131,7 +150,11 @@ def get_players_by_position(position: str, limit: Optional[int] = None,
 
     # Sort players by the specified field
     try:
-        position_players.sort(key=lambda x: float(x.get(sort_by, 999)) if x.get(sort_by) is not None else 999)
+        position_players.sort(
+            key=lambda x: (
+                float(x.get(sort_by, 999)) if x.get(sort_by) is not None else 999
+            )
+        )
     except (ValueError, TypeError):
         # Fall back to string comparison if numerical sort fails
         position_players.sort(key=lambda x: str(x.get(sort_by, "")))
@@ -144,9 +167,120 @@ def get_players_by_position(position: str, limit: Optional[int] = None,
     return json.dumps(position_players) if return_json else position_players
 
 
-def display_position_rankings(position: str, limit: int = 10,
-                             sort_by: str = "Overall_Rank",
-                             return_json: bool = True) -> Union[List[Dict[str, Any]], str, None]:
+def display_qb_rankings_with_filtering(
+    limit: int = 10,
+    excluded_players: List[str] = None,
+    sort_by: str = "Overall_Rank",
+    return_json: bool = True,
+) -> Union[List[Dict[str, Any]], str, None]:
+    """
+    Display player rankings for the quarterback position ONLY, excluding certain players (e.g., already drafted).
+
+    Args:
+        limit (int, optional): Limit the number of results. Defaults to 10.
+        excluded_players (List[str], optional): List of player names to exclude. Defaults to None.
+        sort_by (str, optional): Field to sort by. Defaults to "Overall_Rank".
+        return_json (bool): If True, returns data as JSON string. Defaults to True.
+
+    Returns:
+        Union[List[Dict[str, Any]], str, None]: List of player (quarterbacks) dictionaries, JSON string if return_json=True, or None if error
+    """
+    return display_position_rankings_with_filtering(
+        position="QB",
+        limit=limit,
+        excluded_players=excluded_players,
+        sort_by=sort_by,
+        return_json=return_json,
+    )
+
+
+def display_rb_rankings_with_filtering(
+    limit: int = 10,
+    excluded_players: List[str] = None,
+    sort_by: str = "Overall_Rank",
+    return_json: bool = True,
+) -> Union[List[Dict[str, Any]], str, None]:
+    """
+    Display player rankings for the running back position ONLY, excluding certain players (e.g., already drafted).
+
+    Args:
+        limit (int, optional): Limit the number of results. Defaults to 10.
+        excluded_players (List[str], optional): List of player names to exclude. Defaults to None.
+        sort_by (str, optional): Field to sort by. Defaults to "Overall_Rank".
+        return_json (bool): If True, returns data as JSON string. Defaults to True.
+
+    Returns:
+        Union[List[Dict[str, Any]], str, None]: List of player (running backs) dictionaries, JSON string if return_json=True, or None if error
+    """
+    return display_position_rankings_with_filtering(
+        position="RB",
+        limit=limit,
+        excluded_players=excluded_players,
+        sort_by=sort_by,
+        return_json=return_json,
+    )
+
+
+def display_wr_rankings_with_filtering(
+    limit: int = 10,
+    excluded_players: List[str] = None,
+    sort_by: str = "Overall_Rank",
+    return_json: bool = True,
+) -> Union[List[Dict[str, Any]], str, None]:
+    """
+    Display player rankings for the wide receiver position ONLY, excluding certain players (e.g., already drafted).
+
+    Args:
+        limit (int, optional): Limit the number of results. Defaults to 10.
+        excluded_players (List[str], optional): List of player names to exclude. Defaults to None.
+        sort_by (str, optional): Field to sort by. Defaults to "Overall_Rank".
+        return_json (bool): If True, returns data as JSON string. Defaults to True.
+
+    Returns:
+        Union[List[Dict[str, Any]], str, None]: List of player (wide receivers) dictionaries, JSON string if return_json=True, or None if error
+    """
+    return display_position_rankings_with_filtering(
+        position="WR",
+        limit=limit,
+        excluded_players=excluded_players,
+        sort_by=sort_by,
+        return_json=return_json,
+    )
+
+
+def display_te_rankings_with_filtering(
+    limit: int = 10,
+    excluded_players: List[str] = None,
+    sort_by: str = "Overall_Rank",
+    return_json: bool = True,
+) -> Union[List[Dict[str, Any]], str, None]:
+    """
+    Display player rankings for the tight end position ONLY, excluding certain players (e.g., already drafted).
+
+    Args:
+        limit (int, optional): Limit the number of results. Defaults to 10.
+        excluded_players (List[str], optional): List of player names to exclude. Defaults to None.
+        sort_by (str, optional): Field to sort by. Defaults to "Overall_Rank".
+        return_json (bool): If True, returns data as JSON string. Defaults to True.
+
+    Returns:
+        Union[List[Dict[str, Any]], str, None]: List of player (tight ends) dictionaries, JSON string if return_json=True, or None if error
+    """
+    return display_position_rankings_with_filtering(
+        position="TE",
+        limit=limit,
+        excluded_players=excluded_players,
+        sort_by=sort_by,
+        return_json=return_json,
+    )
+
+
+def display_position_rankings(
+    position: str,
+    limit: int = 10,
+    sort_by: str = "Overall_Rank",
+    return_json: bool = True,
+) -> Union[List[Dict[str, Any]], str, None]:
     """
     Display player rankings for a specific position.
 
@@ -170,7 +304,9 @@ def display_position_rankings(position: str, limit: int = 10,
         return None
 
     if not return_json:
-        print(f"\nTop {len(players)} {position.upper()} Rankings (sorted by {sort_by}):")
+        print(
+            f"\nTop {len(players)} {position.upper()} Rankings (sorted by {sort_by}):"
+        )
         print("-" * 60)
 
         # Print header
@@ -187,25 +323,30 @@ def display_position_rankings(position: str, limit: int = 10,
 
     # Format data for better JSON response
     if return_json:
-        return json.dumps({
-            "position": position.upper(),
-            "sort_by": sort_by,
-            "count": len(players),
-            "players": players
-        })
+        return json.dumps(
+            {
+                "position": position.upper(),
+                "sort_by": sort_by,
+                "count": len(players),
+                "players": players,
+            }
+        )
 
     return players
 
 
-def display_position_rankings_with_filtering(position: str, limit: int = 10,
-                                             excluded_players: List[str] = None,
-                                             sort_by: str = "Overall_Rank",
-                                             return_json: bool = True) -> Union[List[Dict[str, Any]], str, None]:
+def display_position_rankings_with_filtering(
+    position: str,
+    limit: int = 10,
+    excluded_players: List[str] = None,
+    sort_by: str = "Overall_Rank",
+    return_json: bool = True,
+) -> Union[List[Dict[str, Any]], str, None]:
     """
     Display player rankings for a specific position, excluding certain players (e.g., already drafted).
 
     Args:
-        position (str): Position to filter by (QB, RB, WR, TE, K, DST)
+        position (str): Position to filter by (QB, RB, WR, TE)
         limit (int, optional): Limit the number of results. Defaults to 10.
         excluded_players (List[str], optional): List of player names to exclude. Defaults to None.
         sort_by (str, optional): Field to sort by. Defaults to "Overall_Rank".
@@ -232,7 +373,8 @@ def display_position_rankings_with_filtering(position: str, limit: int = 10,
 
         # Filter out excluded players
         filtered_players = [
-            player for player in players
+            player
+            for player in players
             if player.get("Name", "").lower() not in excluded_lower
         ]
 
@@ -242,13 +384,15 @@ def display_position_rankings_with_filtering(position: str, limit: int = 10,
             print(message)
 
             if return_json:
-                return json.dumps({
-                    "position": position.upper(),
-                    "sort_by": sort_by,
-                    "count": 0,
-                    "excluded_count": len(players),
-                    "players": []
-                })
+                return json.dumps(
+                    {
+                        "position": position.upper(),
+                        "sort_by": sort_by,
+                        "count": 0,
+                        "excluded_count": len(players),
+                        "players": [],
+                    }
+                )
             return []
 
         players = filtered_players
@@ -258,7 +402,9 @@ def display_position_rankings_with_filtering(position: str, limit: int = 10,
         players = players[:limit]
 
     if not return_json:
-        print(f"\nTop {len(players)} {position.upper()} Rankings (sorted by {sort_by}):")
+        print(
+            f"\nTop {len(players)} {position.upper()} Rankings (sorted by {sort_by}):"
+        )
         print("-" * 60)
 
         # Print header
@@ -275,16 +421,27 @@ def display_position_rankings_with_filtering(position: str, limit: int = 10,
 
     # Format data for better JSON response
     if return_json:
-        return json.dumps({
-            "position": position.upper(),
-            "sort_by": sort_by,
-            "count": len(players),
-            "filtered": True if excluded_players else False,
-            "excluded_count": len(excluded_players) if excluded_players else 0,
-            "players": players
-        })
+        return json.dumps(
+            {
+                "position": position.upper(),
+                "sort_by": sort_by,
+                "count": len(players),
+                "filtered": True if excluded_players else False,
+                "excluded_count": len(excluded_players) if excluded_players else 0,
+                "players": players,
+            }
+        )
 
     return players
+
+
+tools_map = {
+    "quarterback": display_qb_rankings_with_filtering,
+    "running_back": display_rb_rankings_with_filtering,
+    "wide_receiver": display_wr_rankings_with_filtering,
+    "tight_end": display_te_rankings_with_filtering,
+}
+
 
 # Example usage
 if __name__ == "__main__":
