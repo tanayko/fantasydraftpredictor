@@ -1,86 +1,86 @@
 [
   {
     "rank": 1,
-    "team_name": "Auto Team 10",
-    "total_points": 1761.8999999999999,
-    "top_player": "Joe Burrow",
-    "top_player_points": 381.8
-  },
-  {
-    "rank": 2,
-    "team_name": "Auto Team 1",
-    "total_points": 1730.7,
+    "team_name": "Auto Team 6",
+    "total_points": 1776.9,
     "top_player": "Lamar Jackson",
     "top_player_points": 434.4
   },
   {
+    "rank": 2,
+    "team_name": "Auto Team 5",
+    "total_points": 1769.3999999999999,
+    "top_player": "Joe Burrow",
+    "top_player_points": 381.8
+  },
+  {
     "rank": 3,
-    "team_name": "Auto Team 3",
-    "total_points": 1675.0000000000002,
+    "team_name": "Auto Team 1",
+    "total_points": 1712.7000000000003,
     "top_player": "Saquon Barkley",
     "top_player_points": 355.3
   },
   {
     "rank": 4,
-    "team_name": "Auto Team 7",
-    "total_points": 1586.0,
-    "top_player": "Derrick Henry",
-    "top_player_points": 336.4
+    "team_name": "AI_General_Manager",
+    "total_points": 1661.6000000000001,
+    "top_player": "Jahmyr Gibbs",
+    "top_player_points": 362.9
   },
   {
     "rank": 5,
-    "team_name": "Auto Team 11",
-    "total_points": 1531.6999999999998,
-    "top_player": "Patrick Mahomes",
-    "top_player_points": 294.0
+    "team_name": "Auto Team 8",
+    "total_points": 1533.8000000000002,
+    "top_player": "Davante Adams",
+    "top_player_points": 241.3
   },
   {
     "rank": 6,
-    "team_name": "Auto Team 5",
-    "total_points": 1530.7999999999997,
-    "top_player": "Bijan Robinson",
-    "top_player_points": 341.7
-  },
-  {
-    "rank": 7,
-    "team_name": "Auto Team 4",
-    "total_points": 1471.0,
-    "top_player": "Malik Nabers",
-    "top_player_points": 273.6
-  },
-  {
-    "rank": 8,
-    "team_name": "AI_General_Manager",
-    "total_points": 1435.4999999999998,
+    "team_name": "Auto Team 3",
+    "total_points": 1477.2,
     "top_player": "Josh Allen",
     "top_player_points": 385.0
   },
   {
+    "rank": 7,
+    "team_name": "Auto Team 11",
+    "total_points": 1471.6,
+    "top_player": "Brock Purdy",
+    "top_player_points": 278.9
+  },
+  {
+    "rank": 8,
+    "team_name": "Auto Team 7",
+    "total_points": 1454.1,
+    "top_player": "Bijan Robinson",
+    "top_player_points": 341.7
+  },
+  {
     "rank": 9,
-    "team_name": "Auto Team 2",
-    "total_points": 1392.4,
-    "top_player": "Ja'Marr Chase",
-    "top_player_points": 403.0
+    "team_name": "Auto Team 9",
+    "total_points": 1331.3,
+    "top_player": "Justin Jefferson",
+    "top_player_points": 317.5
   },
   {
     "rank": 10,
-    "team_name": "Auto Team 8",
-    "total_points": 1286.9,
-    "top_player": "Jayden Daniels",
-    "top_player_points": 364.8
+    "team_name": "Auto Team 4",
+    "total_points": 1305.9,
+    "top_player": "Patrick Mahomes",
+    "top_player_points": 294.0
   },
   {
     "rank": 11,
-    "team_name": "Auto Team 6",
-    "total_points": 1268.3,
-    "top_player": "Jalen Hurts",
-    "top_player_points": 320.1
+    "team_name": "Auto Team 10",
+    "total_points": 1292.3,
+    "top_player": "Kyler Murray",
+    "top_player_points": 308.2
   },
   {
     "rank": 12,
-    "team_name": "Auto Team 9",
-    "total_points": 1264.7,
-    "top_player": "Aaron Jones",
-    "top_player_points": 241.6
+    "team_name": "Auto Team 2",
+    "total_points": 1199.0,
+    "top_player": "Jayden Daniels",
+    "top_player_points": 364.8
   }
 ]

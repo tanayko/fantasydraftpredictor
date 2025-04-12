@@ -3,7 +3,7 @@ import csv
 espn_players = [
     "Christian McCaffrey",
     "Bijan Robinson",
-    "Ceedee Lamb",
+    "CeeDee Lamb",
     "Tyreek Hill",
     "Josh Allen",
     "Sam LaPorta",
@@ -11,13 +11,13 @@ espn_players = [
 ]
 
 ai_players = [
-    "Josh Allen",
-    "Breece Hall",
-    "Travis Etienne Jr.",
-    "Dallas Goedert",
+    "Jalen Hurts",
+    "Jahmyr Gibbs",
+    "Derrick Henry",
+    "Dalton Schultz",
     "Cooper Kupp",
     "Jaylen Waddle",
-    "Amari Cooper",
+    "DeVonta Smith",
 ]
 
 
