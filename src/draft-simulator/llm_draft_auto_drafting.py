@@ -7,6 +7,30 @@ from team import Team
 from drafter_multi_agent import AutoGenDrafter
 from typing import Optional, List
 from player import Player
+import sys
+from datetime import datetime
+import pytz
+
+
+class Tee:
+    def __init__(self, filename, mode="w"):
+        self.terminal = sys.stdout
+        self.log = open(filename, mode)
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+
+    def flush(self):
+        self.terminal.flush()
+        self.log.flush()
+
+
+# Get the current time in EST and format it as HHMMSS
+# Get the current date and time in EST and format it as YYYYMMDD_HHMMSS
+est = pytz.timezone("US/Eastern")
+current_datetime = datetime.now(est).strftime("%Y%m%d_%H%M%S")
+sys.stdout = sys.stderr = Tee(f"logs/groupchat {current_datetime}.log")
 
 
 # DraftSimulator
@@ -27,14 +51,14 @@ class DraftSimulator:
         self.players = []
 
         try:
-            with open(csv_filename, 'r', encoding='utf-8') as file:
+            with open(csv_filename, "r", encoding="utf-8") as file:
                 reader = csv.DictReader(file)
 
                 for row in reader:
                     # Extract the required fields
-                    name = row.get('Name', '')
-                    team = row.get('Team', '')
-                    position = row.get('Pos', '')
+                    name = row.get("Name", "")
+                    team = row.get("Team", "")
+                    position = row.get("Pos", "")
 
                     # Skip row if any required field is missing
                     if not name or not team or not position:
@@ -118,7 +142,9 @@ class DraftSimulator:
 
     def find_best_player_by_position(self, position: str):
         """Find the best available player by position (first in the list)"""
-        available = [p for p in self.players if not p.drafted and p.position == position]
+        available = [
+            p for p in self.players if not p.drafted and p.position == position
+        ]
 
         if available:
             return available[0]  # Return the first available player (highest ranked)
@@ -189,12 +215,16 @@ class DraftSimulator:
         Safely get the count of positions in a team's roster
         """
         # Initialize counts for all positions
-        position_counts = {'QB': 0, 'RB': 0, 'WR': 0, 'TE': 0, 'K': 0, 'DST': 0}
+        position_counts = {"QB": 0, "RB": 0, "WR": 0, "TE": 0, "K": 0, "DST": 0}
 
         # Find the drafted players for this team
         team_players = []
         for player in self.players:
-            if hasattr(player, 'drafted') and player.drafted and hasattr(player, 'drafted_by'):
+            if (
+                hasattr(player, "drafted")
+                and player.drafted
+                and hasattr(player, "drafted_by")
+            ):
                 if player.drafted_by == team.name:
                     team_players.append(player)
 
@@ -220,10 +250,10 @@ class DraftSimulator:
 
         # Define target roster composition
         target_composition = {
-            'QB': 1,
-            'RB': 2,
-            'WR': 2,
-            'TE': 1,
+            "QB": 1,
+            "RB": 2,
+            "WR": 2,
+            "TE": 1,
         }
 
         # Calculate how many picks are left for this team
@@ -236,7 +266,9 @@ class DraftSimulator:
             position_at_limit[pos] = roster_count.get(pos, 0) >= target
 
         # Filter out positions that have already reached their roster limits
-        valid_players = [p for p in available_players if not position_at_limit.get(p.position, False)]
+        valid_players = [
+            p for p in available_players if not position_at_limit.get(p.position, False)
+        ]
 
         # If there are valid players that don't exceed position limits, pick the best one
         if valid_players:
@@ -249,7 +281,7 @@ class DraftSimulator:
 
         return None
 
-    def run_draft(self):
+    def run_draft(self, quiet_mode=False):
         """Run the draft simulation with support for automated teams and an LLM-powered team"""
         if not self.teams:
             print("No teams registered. Please register teams first.")
@@ -280,14 +312,16 @@ class DraftSimulator:
 
             # Display round draft order
             order_direction = "←" if round_num % 2 == 0 else "→"
-            print(f"Draft Direction: {order_direction} ({['Normal', 'Reversed'][round_num % 2 == 0]} order)")
+            print(
+                f"Draft Direction: {order_direction} ({['Normal', 'Reversed'][round_num % 2 == 0]} order)"
+            )
 
             for pick_num, team in enumerate(round_draft_order, 1):
                 pick_counter += 1  # Increment the overall pick counter
 
                 # Check if this is the LLM-powered team
                 is_llm_team = (
-                        self.llm_drafter and team.name == self.llm_drafter.team_name
+                    self.llm_drafter and team.name == self.llm_drafter.team_name
                 )
 
                 # Check if this is an automated team
@@ -307,11 +341,12 @@ class DraftSimulator:
                     self.llm_drafter.set_drafted_players(self.drafted_players)
 
                     # Pass available players to the LLM
-                    available_players = self.llm_drafter.get_available_players(available_players)
+                    available_players = self.llm_drafter.get_available_players(
+                        available_players
+                    )
 
                     # Let the LLM make a decision
                     print("\nAI is analyzing available players and team needs...")
-                    time.sleep(2)  # Simulate thinking time
 
                     player_name = self.llm_drafter.make_draft_selection(
                         available_players, team, pick_num, round_num
@@ -343,14 +378,15 @@ class DraftSimulator:
 
                 elif is_auto_team:
                     # Automated team's turn
-                    print(
-                        f"\nRound {round_num}, Pick {pick_num} (Overall: {pick_counter})"
-                    )
-                    print(f"Auto Team on the clock: {team.name}")
+                    if not quiet_mode:
+                        print(
+                            f"\nRound {round_num}, Pick {pick_num} (Overall: {pick_counter})"
+                        )
+                        print(f"Auto Team on the clock: {team.name}")
 
-                    # Simulate thinking time
-                    print("\nAuto team is making a selection...")
-                    time.sleep(1)
+                        # Simulate thinking time
+                        print("\nAuto team is making a selection...")
+                        time.sleep(1)
 
                     # Make the automated selection
                     player = self.make_auto_team_selection(team, pick_num, round_num)
@@ -366,12 +402,16 @@ class DraftSimulator:
                         # Add to drafted list (just the name)
                         self.drafted_players.append(player.name)
 
-                        print(
-                            f"\n{team.name} selects {player.name}, {player.position} from {player.team}"
-                        )
-                        time.sleep(1)
+                        if not quiet_mode:
+                            print(
+                                f"\n{team.name} selects {player.name}, {player.position} from {player.team}"
+                            )
+                            time.sleep(1)
                     else:
-                        print(f"Error: Auto team {team.name} could not make a selection.")
+                        if not quiet_mode:
+                            print(
+                                f"Error: Auto team {team.name} could not make a selection."
+                            )
                 else:
                     # Human team's turn - use your existing UI
                     while True:
@@ -455,7 +495,8 @@ class DraftSimulator:
                                 print(f"  {i}. {t.name}")
 
                             print(
-                                f"\nCurrent Round ({round_num}) Order ({['Normal', 'Reversed'][round_num % 2 == 0]}):")
+                                f"\nCurrent Round ({round_num}) Order ({['Normal', 'Reversed'][round_num % 2 == 0]}):"
+                            )
                             for i, t in enumerate(round_draft_order, 1):
                                 print(f"  {i}. {t.name}")
                         else:
@@ -469,12 +510,13 @@ class DraftSimulator:
         # Draft complete, show results
         self.display_draft_results()
 
-
     def normalize_player_name(self, name: str) -> str:
         """Normalize player name by removing suffixes like Jr., Sr., III, etc."""
-        return re.sub(r'\s+(Jr\.|Sr\.|III|IV|II)\.?$', '', name).strip()
+        return re.sub(r"\s+(Jr\.|Sr\.|III|IV|II)\.?$", "", name).strip()
 
-    def analyze_fantasy_performance(self, fantasy_points_csv: str, output_file: str = None):
+    def analyze_fantasy_performance(
+        self, fantasy_points_csv: str, output_file: str = None
+    ):
         """
         Analyze the fantasy performance of all teams based on a CSV file with fantasy points.
         Returns basic ranking data and optionally saves to a JSON file.
@@ -496,16 +538,16 @@ class DraftSimulator:
         fantasy_points_data = {}
 
         try:
-            with open(fantasy_points_csv, 'r', encoding='utf-8') as file:
+            with open(fantasy_points_csv, "r", encoding="utf-8") as file:
                 reader = csv.DictReader(file)
 
                 for row in reader:
                     # Extract player info
-                    player_name = row.get('Player', '')
-                    position = row.get('Pos', '')
+                    player_name = row.get("Player", "")
+                    position = row.get("Pos", "")
 
                     # Extract total points - in the CSV it appears to be under the 'TTL' column
-                    total_points = row.get('TTL', '0')
+                    total_points = row.get("TTL", "0")
 
                     # Skip row if any required field is missing
                     if not player_name or not position or not total_points:
@@ -523,9 +565,9 @@ class DraftSimulator:
 
                     # Store player data
                     fantasy_points_data[key] = {
-                        'name': player_name,
-                        'position': position,
-                        'points': points
+                        "name": player_name,
+                        "position": position,
+                        "points": points,
                     }
 
             print(f"Loaded fantasy points for {len(fantasy_points_data)} players")
@@ -545,17 +587,23 @@ class DraftSimulator:
             team_players_not_found = []
 
             # Access team.roster with proper structure - it's a dict with position keys and lists of players
-            if hasattr(team, 'roster'):
+            if hasattr(team, "roster"):
                 # Iterate through each position group in the roster
                 for position, position_players in team.roster.items():
                     # Iterate through each player in this position group
                     for player in position_players:
-                        if hasattr(player, 'name'):
+                        if hasattr(player, "name"):
                             player_name = player.name
-                            player_position = player.position if hasattr(player, 'position') else position
+                            player_position = (
+                                player.position
+                                if hasattr(player, "position")
+                                else position
+                            )
 
                             # Normalize player name
-                            normalized_name = self.normalize_player_name(player_name).lower()
+                            normalized_name = self.normalize_player_name(
+                                player_name
+                            ).lower()
 
                             # Try exact position match first
                             key = (normalized_name, player_position)
@@ -570,63 +618,75 @@ class DraftSimulator:
 
                             points = 0
                             if player_data:
-                                points = player_data['points']
+                                points = player_data["points"]
                                 total_points += points
                             else:
                                 team_players_not_found.append(player_name)
 
                             # Store individual player points for reference
-                            player_points.append({
-                                'name': player_name,
-                                'position': player_position,
-                                'points': points
-                            })
+                            player_points.append(
+                                {
+                                    "name": player_name,
+                                    "position": player_position,
+                                    "points": points,
+                                }
+                            )
 
             if team_players_not_found:
-                players_not_found.append({
-                    'team': team.name,
-                    'players': team_players_not_found
-                })
+                players_not_found.append(
+                    {"team": team.name, "players": team_players_not_found}
+                )
 
             # Add team result
-            team_results.append({
-                'team_name': team.name,
-                'total_points': total_points,
-                'players': sorted(player_points, key=lambda x: x['points'], reverse=True)  # Sort players by points
-            })
+            team_results.append(
+                {
+                    "team_name": team.name,
+                    "total_points": total_points,
+                    "players": sorted(
+                        player_points, key=lambda x: x["points"], reverse=True
+                    ),  # Sort players by points
+                }
+            )
 
         # Sort teams by total points
-        ranked_teams = sorted(team_results, key=lambda x: x['total_points'], reverse=True)
+        ranked_teams = sorted(
+            team_results, key=lambda x: x["total_points"], reverse=True
+        )
 
         # Add rank to each team
         for i, team in enumerate(ranked_teams, 1):
-            team['rank'] = i
+            team["rank"] = i
 
         # Create simplified results for output
         simplified_results = []
         for team in ranked_teams:
             # Find the top player
-            top_player = {'name': 'None', 'points': 0}
-            if team['players']:
-                top_player = max(team['players'], key=lambda x: x.get('points', 0))
+            top_player = {"name": "None", "points": 0}
+            if team["players"]:
+                top_player = max(team["players"], key=lambda x: x.get("points", 0))
 
-            simplified_results.append({
-                'rank': team['rank'],
-                'team_name': team['team_name'],
-                'total_points': team['total_points'],
-                'top_player': top_player['name'],
-                'top_player_points': top_player['points']
-            })
+            simplified_results.append(
+                {
+                    "rank": team["rank"],
+                    "team_name": team["team_name"],
+                    "total_points": team["total_points"],
+                    "top_player": top_player["name"],
+                    "top_player_points": top_player["points"],
+                }
+            )
 
         # Display results
         print("\nTEAM RANKINGS BY FANTASY POINTS:")
         print("-" * 70)
-        print(f"{'Rank':<5} {'Team':<25} {'Points':<10} {'Top Player':<25} {'Player Pts':<10}")
+        print(
+            f"{'Rank':<5} {'Team':<25} {'Points':<10} {'Top Player':<25} {'Player Pts':<10}"
+        )
         print("-" * 70)
 
         for team in simplified_results:
             print(
-                f"{team['rank']:<5} {team['team_name'][:25]:<25} {team['total_points']:.1f} {team['top_player'][:25]:<25} {team['top_player_points']:.1f}")
+                f"{team['rank']:<5} {team['team_name'][:25]:<25} {team['total_points']:.1f} {team['top_player'][:25]:<25} {team['top_player_points']:.1f}"
+            )
 
         # Report on players not found
         if players_not_found:
@@ -638,23 +698,27 @@ class DraftSimulator:
         if output_file:
             try:
                 # Check if output file ends with .py
-                if output_file.endswith('.py'):
+                if output_file.endswith(".py"):
                     # Create a Python file with the data
-                    with open(output_file, 'w') as f:
+                    with open(output_file, "w") as f:
                         f.write("# Fantasy Football Team Rankings\n\n")
                         f.write("rankings = [\n")
                         for team in simplified_results:
                             f.write(f"    {{\n")
                             f.write(f"        'rank': {team['rank']},\n")
                             f.write(f"        'team_name': '{team['team_name']}',\n")
-                            f.write(f"        'total_points': {team['total_points']},\n")
+                            f.write(
+                                f"        'total_points': {team['total_points']},\n"
+                            )
                             f.write(f"        'top_player': '{team['top_player']}',\n")
-                            f.write(f"        'top_player_points': {team['top_player_points']}\n")
+                            f.write(
+                                f"        'top_player_points': {team['top_player_points']}\n"
+                            )
                             f.write(f"    }},\n")
                         f.write("]\n")
                 else:
                     # Create a JSON file
-                    with open(output_file, 'w') as f:
+                    with open(output_file, "w") as f:
                         json.dump(simplified_results, f, indent=2)
                     print(f"\nResults saved to {output_file}")
             except Exception as e:
@@ -662,20 +726,25 @@ class DraftSimulator:
 
         return simplified_results
 
+
 # Example usage
 def main():
     # Initialize the enhanced draft simulator
     draft = DraftSimulator()
 
     # Load sample players
-    draft.load_players_from_csv("tools/data/official_2024_fantasy_rankings/ESPN_Standard.csv")
+    draft.load_players_from_csv(
+        "tools/data/official_2024_fantasy_rankings/ESPN_Standard.csv"
+    )
 
     # Register teams
     print("FANTASY DRAFT SIMULATOR WITH AUTO TEAMS AND AI GM")
     print("=" * 40)
 
     # Ask for number of auto teams (minimum 11)
-    num_auto_teams = max(11, int(input("Enter number of auto-generated teams (minimum 11): ")))
+    num_auto_teams = max(
+        11, int(input("Enter number of auto-generated teams (minimum 11): "))
+    )
 
     # Create auto teams
     for i in range(num_auto_teams):
@@ -693,10 +762,13 @@ def main():
     draft.set_random_draft_order()
 
     # Run the draft
-    draft.run_draft()
+    draft.run_draft(quiet_mode=True)
 
     # Then analyze performance using your fantasy points CSV
-    draft.analyze_fantasy_performance('tools/data/FantasyPros_Fantasy_Football_Points_PPR.csv', 'fantasy_rankings.json')
+    draft.analyze_fantasy_performance(
+        "tools/data/FantasyPros_Fantasy_Football_Points_PPR.csv",
+        "fantasy_rankings.json",
+    )
 
 
 if __name__ == "__main__":
