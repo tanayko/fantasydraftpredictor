@@ -15,7 +15,7 @@ from combined_fantasy_tools import (
 )
 
 # OPENAI_API_KEY = os.getenv("API_KEY")
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = ""
 
 config_list = [
     {
