@@ -1,3 +1,4 @@
+import os
 from autogen import (
     GroupChat,
     GroupChatManager,
@@ -11,11 +12,11 @@ import re
 from combined_fantasy_tools import (
     find_player_stats,
     get_players_by_position,
-    display_position_rankings
+    display_position_rankings,
 )
 
-# OPENAI_API_KEY = os.getenv("API_KEY")
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = os.getenv("API_KEY")
+
 
 config_list = [
     {
@@ -74,12 +75,12 @@ def get_player_metric(name: str, position: str) -> dict:
 
 class BaseAgent:
     def __init__(
-            self,
-            name: str,
-            system_prompt: str,
-            tools: List[Callable],
-            description: str,
-            config_list: List[dict] = config_list,
+        self,
+        name: str,
+        system_prompt: str,
+        tools: List[Callable],
+        description: str,
+        config_list: List[dict] = config_list,
     ):
         self.name = name
         self.system_prompt = system_prompt
@@ -138,9 +139,9 @@ user_proxy = CapturingUserProxyAgent(
     description="A human user capable of working with Autonomous AI Agents.",
     max_consecutive_auto_reply=5,
     is_termination_msg=lambda msg: msg is not None
-                                   and "content" in msg
-                                   and msg["content"] is not None
-                                   and "TERMINATE" in msg["content"],
+    and "content" in msg
+    and msg["content"] is not None
+    and "TERMINATE" in msg["content"],
 )
 
 # Prompts
@@ -191,9 +192,7 @@ def make_extractor_analyzer_agents(position: str):
         system_prompt=EXTRACTOR_PROMPT(position),
         config_list=config_list,
         description=f"Extracts {position} player data",
-        tools=[find_player_stats,
-               get_players_by_position,
-               display_position_rankings],
+        tools=[find_player_stats, get_players_by_position, display_position_rankings],
     ).create_agent()
 
     analyzer = AssistantAgent(
@@ -273,11 +272,11 @@ Wide Receivers (WR):
 """
 
 message = (
-        "Here are the available players that can be drafted: "
-        + available_players
-        + "Here is your current team: \n"
-        + "DeVonta Smith - WR (Alabama) \n\n"
-        + "What is your next pick for your team? \n"
+    "Here are the available players that can be drafted: "
+    + available_players
+    + "Here is your current team: \n"
+    + "DeVonta Smith - WR (Alabama) \n\n"
+    + "What is your next pick for your team? \n"
 )
 
 
@@ -293,7 +292,7 @@ def extract_player_name_from_output(output_text):
     """
     # Split by 'head_drafter_agent:' to focus only on the head drafter's messages
     # Then take the last message which should contain the final decision
-    head_drafter_messages = output_text.split('chat_manager:')
+    head_drafter_messages = output_text.split("chat_manager:")
 
     # If we have at least 2 messages from the head drafter
     if len(head_drafter_messages) >= 2:
@@ -303,14 +302,14 @@ def extract_player_name_from_output(output_text):
         # Check if the message contains "TERMINATE"
         if "TERMINATE" in final_message:
             # Pattern 1: Looks for bold text near end of message
-            match = re.search(r'\*\*(.*?)\*\*\s*(?:\.|,|\s)*TERMINATE', final_message)
+            match = re.search(r"\*\*(.*?)\*\*\s*(?:\.|,|\s)*TERMINATE", final_message)
             if match:
                 player_name = match.group(1)
                 return player_name.strip()
 
             # Pattern 2: Look for the player name that appears right before TERMINATE
             # Get the lines before TERMINATE
-            lines = final_message.strip().split('\n')
+            lines = final_message.strip().split("\n")
             terminate_index = -1
 
             for i, line in enumerate(lines):
@@ -321,7 +320,12 @@ def extract_player_name_from_output(output_text):
             if terminate_index > 0:
                 # Check the line immediately before TERMINATE
                 prev_line = lines[terminate_index - 1].strip()
-                if prev_line and len(prev_line) > 0 and not prev_line.startswith('-') and not prev_line.startswith('*'):
+                if (
+                    prev_line
+                    and len(prev_line) > 0
+                    and not prev_line.startswith("-")
+                    and not prev_line.startswith("*")
+                ):
                     # This is likely our player name
                     return prev_line.strip()
 
@@ -332,7 +336,9 @@ def extract_player_name_from_output(output_text):
     last_terminate_pos = output_text.rfind("TERMINATE")
     if last_terminate_pos > 0:
         # Extract the 500 characters before the last TERMINATE
-        context_before = output_text[max(0, last_terminate_pos - 500):last_terminate_pos]
+        context_before = output_text[
+            max(0, last_terminate_pos - 500) : last_terminate_pos
+        ]
 
         # Look for any player names in this context
         for player in player_metrics.keys():
@@ -343,7 +349,7 @@ def extract_player_name_from_output(output_text):
                     return player
 
     # If all else fails, check for any specific indicators in the text
-    match = re.search(r'I will go ahead and draft\s+\*\*(.*?)\*\*', output_text)
+    match = re.search(r"I will go ahead and draft\s+\*\*(.*?)\*\*", output_text)
     if match:
         return match.group(1).strip()
 
@@ -358,7 +364,7 @@ def run_draft_and_get_player():
     user_proxy.initiate_chat(
         manager,
         message=message,
-        max_turns=100  # Limit the conversation to avoid hanging
+        max_turns=100,  # Limit the conversation to avoid hanging
     )
 
     # Get all messages as a single string
@@ -372,12 +378,16 @@ def run_draft_and_get_player():
     # Get the last 500 characters before TERMINATE
     last_terminate_pos = all_messages_text.rfind("TERMINATE")
     if last_terminate_pos > 0:
-        context = all_messages_text[max(0, last_terminate_pos - 500):last_terminate_pos + 10]
+        context = all_messages_text[
+            max(0, last_terminate_pos - 500) : last_terminate_pos + 10
+        ]
         print(f"Context around final TERMINATE:\n{context}")
 
     # Highlight chosen player
     if player_name:
-        highlighted_context = all_messages_text.replace(player_name, f">>> {player_name} <<<")
+        highlighted_context = all_messages_text.replace(
+            player_name, f">>> {player_name} <<<"
+        )
         print(f"\nHighlighted player in final message:\n{highlighted_context[-500:]}")
 
     print(f"\nExtracted player choice: {player_name}")
@@ -394,9 +404,13 @@ if __name__ == "__main__":
             with open("selected_player.txt", "w") as f:
                 f.write(player_choice)
 
-            print(f"The selected player name '{player_choice}' has been stored in 'selected_player.txt'")
+            print(
+                f"The selected player name '{player_choice}' has been stored in 'selected_player.txt'"
+            )
         else:
-            print("No player was selected or the conversation didn't complete properly.")
+            print(
+                "No player was selected or the conversation didn't complete properly."
+            )
 
             # For debugging: write all captured messages to a file
             with open("conversation_log.txt", "w") as f:

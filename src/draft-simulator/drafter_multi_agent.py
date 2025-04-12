@@ -8,18 +8,16 @@ from autogen import (
     UserProxyAgent,
     register_function,
 )
-from combined_fantasy_tools import (
-    display_position_rankings_with_filtering
-)
+from combined_fantasy_tools import display_position_rankings_with_filtering
 
 
 class BaseAgent:
     def __init__(
-            self,
-            name: str,
-            system_prompt: str,
-            tools: List[Callable],
-            description: str,
+        self,
+        name: str,
+        system_prompt: str,
+        tools: List[Callable],
+        description: str,
     ):
         self.name = name
         self.system_prompt = system_prompt
@@ -27,7 +25,7 @@ class BaseAgent:
         self.config_list = [
             {
                 "model": "gpt-4o-mini",  # Use gpt-4o-mini for more affordability
-                "api_key": "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",
+                "api_key": os.getenv("API_KEY"),
                 "base_url": "https://api.openai.com/v1",
             }
         ]
@@ -68,7 +66,7 @@ class AutoGenDrafter:
 
     def __init__(self, team_name="AutoGen Multi-Agent GM"):
         self.team_name = team_name
-        self.api_key = "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"
+        self.api_key = os.getenv("API_KEY")
         if not self.api_key:
             raise ValueError("OPENAI_API_KEY environment variable must be set")
 
@@ -76,7 +74,7 @@ class AutoGenDrafter:
             {
                 "model": "gpt-4o-mini",  # Use gpt-4o-mini for more affordability
                 "api_key": self.api_key,
-                "base_url": "https://api.openai.com/v1"
+                "base_url": "https://api.openai.com/v1",
             }
         ]
         # Initialize agents dictionary to be created later
@@ -122,9 +120,9 @@ class AutoGenDrafter:
             description="A human user capable of working with Autonomous AI Agents.",
             max_consecutive_auto_reply=5,
             is_termination_msg=lambda msg: msg is not None
-                                           and "content" in msg
-                                           and msg["content"] is not None
-                                           and "TERMINATE" in msg["content"],
+            and "content" in msg
+            and msg["content"] is not None
+            and "TERMINATE" in msg["content"],
         )
 
         # Create the head drafter agent with updated prompt
@@ -132,6 +130,7 @@ class AutoGenDrafter:
             name="head_drafter_agent",
             system_message="""
             You are the Head Drafter for a fantasy football team. Your role is to coordinate the draft process and make the final player selection.
+            Make smart decisions based on the recommendations from the position-specific analyzers and strategies you already know.
 
             DRAFT PROCESS:
             1. FIRST: Review the current roster and identify positions that still need to be filled
@@ -139,6 +138,7 @@ class AutoGenDrafter:
                - IMPORTANT: YOUR ROSTER MUST HAVE THIS FORMAT (ONE QUARTERBACK, TWO RUNNING BACKS, 2 WIDE RECEIVERS, 1 TIGHT END, 1 FLEX)
                - IF YOU DON'T HAVE A TIGHT END IN THE LAST ROUND, YOU MUST TAKE A TIGHT END
                - IF YOU DON'T HAVE A QUARTERBACK IN THE LAST ROUND, YOU MUST TAKE A QUARTERBACK
+               - You just need recommendations for each position ONCE per round and choose only ONE player, not the whole roster.
 
             2. SECOND: Request recommendations from position-specific analyzer agents
                - ONLY ask analyzers for positions you still need to fill
@@ -157,12 +157,16 @@ class AutoGenDrafter:
 
             FINAL SELECTION FORMAT:
             - IMPORTANT: YOUR ROSTER MUST HAVE THIS FORMAT (ONE QUARTERBACK, TWO RUNNING BACKS, 2 WIDE RECEIVERS, 1 TIGHT END, 1 FLEX)
+            - If you already have more than 2 RBs or WRs, FLEX is NOT needed and is FILLED.
             - IF YOU DON'T HAVE A TIGHT END IN THE LAST ROUND, YOU MUST TAKE A TIGHT END
             - IF YOU DON'T HAVE A QUARTERBACK IN THE LAST ROUND, YOU MUST TAKE A QUARTERBACK
             When you've made your decision, YOU MUST format your output exactly as:
 
             I select [PLAYER FULL NAME]
             **TERMINATE**
+
+            You should only chose ONE player. If you chose multiple players, your output WILL be ignored.
+            Also, if at the end your roster does not meet the format, the team will be ELIMINATED. 
             """,
             llm_config={"cache_seed": None, "config_list": self.config_list},
             description="Picks best overall player to draft based on recommendations.",
@@ -181,17 +185,21 @@ class AutoGenDrafter:
             "te_extractor": te_extractor,
             "te_analyzer": te_analyzer,
             "head_drafter": head_drafter_agent,
-            "user_proxy": user_proxy
+            "user_proxy": user_proxy,
         }
 
         # Create the group chat
         groupchat = GroupChat(
             agents=[
                 user_proxy,
-                qb_extractor, qb_analyzer,
-                wr_extractor, wr_analyzer,
-                rb_extractor, rb_analyzer,
-                te_extractor, te_analyzer,
+                qb_extractor,
+                qb_analyzer,
+                wr_extractor,
+                wr_analyzer,
+                rb_extractor,
+                rb_analyzer,
+                te_extractor,
+                te_analyzer,
                 head_drafter_agent,
             ],
             messages=[],
@@ -201,7 +209,10 @@ class AutoGenDrafter:
         # Create the manager with stronger guidance
         manager = GroupChatManager(
             groupchat=groupchat,
-            llm_config={"cache_seed": None, "config_list": self.config_list},  # Disable caching
+            llm_config={
+                "cache_seed": None,
+                "config_list": self.config_list,
+            },  # Disable caching
             max_consecutive_auto_reply=20,
             system_message="""
             You are a group chat manager for a fantasy football draft conversation. The head_drafter_agent should ALWAYS start the conversation.
@@ -229,6 +240,7 @@ class AutoGenDrafter:
         # Standard extractor prompt template for all positions
         extractor_prompt = f"""
         You are a data extractor ONLY for the {position} position. Your job is to provide stats when requested by the {position}_analyzer.
+        Do NOT extract data for any other position except {position}.
 
         WHEN ACTIVATED:
         1. The {position}_analyzer will ask you for data with a list of already drafted players
@@ -267,7 +279,6 @@ class AutoGenDrafter:
             ONLY respond when directly asked by the head_drafter_agent.
             The explanation should only include reasoning from statistics you receive from the extractor and pertain to fantasy football.
             """,
-
             "wide_receiver": """
             You are a fantasy football expert specializing ONLY in the wide receiver position.
 
@@ -292,7 +303,6 @@ class AutoGenDrafter:
             ONLY respond when directly asked by the head_drafter_agent.
             The explanation should only include reasoning from statistics you receive from the extractor and pertain to fantasy football.
             """,
-
             "running_back": """
             You are a fantasy football expert specializing ONLY in the running back position.
 
@@ -317,7 +327,6 @@ class AutoGenDrafter:
             ONLY respond when directly asked by the head_drafter_agent.
             The explanation should only include reasoning from statistics you receive from the extractor and pertain to fantasy football.
             """,
-
             "tight_end": """
             You are a fantasy football expert specializing ONLY in the tight end position.
 
@@ -338,7 +347,7 @@ class AutoGenDrafter:
             DO NOT recommend any players who have already been drafted.
             ONLY respond when directly asked by the head_drafter_agent.
             The explanation should only include reasoning from statistics you receive from the extractor and pertain to fantasy football.
-            """
+            """,
         }
 
         # Use position-specific analyzer prompt if available, otherwise use a generic one
@@ -356,7 +365,10 @@ class AutoGenDrafter:
         analyzer = AssistantAgent(
             name=f"{position}_analyzer",
             system_message=analyzer_prompt,
-            llm_config={"cache_seed": None, "config_list": self.config_list},  # Disable caching
+            llm_config={
+                "cache_seed": None,
+                "config_list": self.config_list,
+            },  # Disable caching
             description=f"Analyzes and ranks {position} players only",
         )
 
@@ -367,12 +379,16 @@ class AutoGenDrafter:
     def get_available_players(self, players):
         """Format available players in a structure for the draft agents"""
         # Filter out already drafted players (both by drafted flag and by name in drafted_players list)
-        self.available_players = [p for p in players if not p.drafted and p.name not in self.drafted_players]
+        self.available_players = [
+            p for p in players if not p.drafted and p.name not in self.drafted_players
+        ]
         return self.available_players
 
     def extract_player_name_from_output(self, output_text):
         """Extract the player name from the chat output"""
         # Look for the specific selection format first
+
+        print(f"OUTPUT TEXT: {output_text}")
         selection_pattern = r"I select ([^\n]+?)(?:\s+\*\*TERMINATE\*\*|\s*$)"
         selection_match = re.search(selection_pattern, output_text, re.IGNORECASE)
         if selection_match:
@@ -388,11 +404,13 @@ class AutoGenDrafter:
         # Fallback: Look for lines immediately before TERMINATE
         last_terminate_pos = output_text.rfind("TERMINATE")
         if last_terminate_pos > 0:
-            context_before = output_text[max(0, last_terminate_pos - 500):last_terminate_pos]
-            lines = context_before.strip().split('\n')
+            context_before = output_text[
+                max(0, last_terminate_pos - 500) : last_terminate_pos
+            ]
+            lines = context_before.strip().split("\n")
             for i in range(len(lines) - 1, -1, -1):
                 line = lines[i].strip()
-                if not line or line.startswith('-') or line.startswith('*'):
+                if not line or line.startswith("-") or line.startswith("*"):
                     continue
                 for player in self.available_players:
                     if player.name in line:
@@ -400,10 +418,10 @@ class AutoGenDrafter:
 
         # Additional pattern searches if needed
         patterns = [
-            r'I (?:choose|select|draft|pick)\s+([^.\n]+)',
-            r'select\s+([^.\n]+)',
-            r'draft\s+([^.\n]+)',
-            r'recommendation:\s+([^-\n]+)',
+            r"I (?:choose|select|draft|pick)\s+([^.\n]+)",
+            r"select\s+([^.\n]+)",
+            r"draft\s+([^.\n]+)",
+            r"recommendation:\s+([^-\n]+)",
         ]
 
         for pattern in patterns:
@@ -420,14 +438,20 @@ class AutoGenDrafter:
 
         return None
 
-    def make_draft_selection(self, available_players, team, draft_position, current_round):
+    def make_draft_selection(
+        self, available_players, team, draft_position, current_round
+    ):
         """Use the multi-agent system to make a draft decision"""
         # Initialize agents if not already done
         if not self.agents:
             self.initialize_agents()
 
         # Store available players
-        self.available_players = [p for p in available_players if not p.drafted and p.name not in self.drafted_players]
+        self.available_players = [
+            p
+            for p in available_players
+            if not p.drafted and p.name not in self.drafted_players
+        ]
 
         # Format current roster
         current_roster = ""
@@ -435,7 +459,9 @@ class AutoGenDrafter:
             current_roster = "Your current roster:\n"
             for pos, players in team.roster.items():
                 for player in players:
-                    current_roster += f"- {player.name} - {player.position} ({player.team})\n"
+                    current_roster += (
+                        f"- {player.name} - {player.position} ({player.team})\n"
+                    )
         else:
             current_roster = "Your roster is currently empty."
 
@@ -464,8 +490,12 @@ class AutoGenDrafter:
 
         # Reset message history for all agents before starting a new draft selection
         for agent_name, agent in self.agents.items():
-            if hasattr(agent, "chat_messages"):
-                agent.chat_messages.clear()
+            agent.clear_history()
+            print(
+                f"""{agent_name} message history cleared.
+
+                Messages now: {agent.chat_messages}"""
+            )
 
         # Run the chat with a retry mechanism
         max_attempts = 3
@@ -474,7 +504,7 @@ class AutoGenDrafter:
                 user_proxy.initiate_chat(
                     manager,
                     message=message,
-                    max_turns=20  # Limit conversation length to avoid errors
+                    max_turns=20,  # Limit conversation length to avoid errors
                 )
                 break  # Exit the loop if successful
             except Exception as e:
@@ -485,8 +515,12 @@ class AutoGenDrafter:
                 else:
                     # Reset message history for all agents before retrying
                     for agent_name, agent in self.agents.items():
-                        if hasattr(agent, "chat_messages"):
-                            agent.chat_messages.clear()
+                        agent.clear_history()
+                        # print(
+                        #     f"""{agent_name} message history cleared.
+
+                        #     Messages now: {agent.chat_messages}"""
+                        # )
 
         # Get all messages as a single string
         all_messages_text = "\n".join(user_proxy.all_messages)
@@ -510,30 +544,42 @@ class AutoGenDrafter:
 
             # Fallback: pick highest rated player at position of need
             needed_positions = []
-            if not any(p for p in team.roster.get('QB', []) if p is not None):
-                needed_positions.append('QB')
-            if len(team.roster.get('RB', [])) < 2:
-                needed_positions.append('RB')
-            if len(team.roster.get('WR', [])) < 2:
-                needed_positions.append('WR')
-            if not any(p for p in team.roster.get('TE', []) if p is not None):
-                needed_positions.append('TE')
+            if not any(p for p in team.roster.get("QB", []) if p is not None):
+                needed_positions.append("QB")
+            if len(team.roster.get("RB", [])) < 2:
+                needed_positions.append("RB")
+            if len(team.roster.get("WR", [])) < 2:
+                needed_positions.append("WR")
+            if not any(p for p in team.roster.get("TE", []) if p is not None):
+                needed_positions.append("TE")
 
             # Prioritize RB/WR in early rounds
-            if current_round <= 3 and ('RB' in needed_positions or 'WR' in needed_positions):
-                priority_positions = [pos for pos in ['RB', 'WR'] if pos in needed_positions]
+            if current_round <= 3 and (
+                "RB" in needed_positions or "WR" in needed_positions
+            ):
+                priority_positions = [
+                    pos for pos in ["RB", "WR"] if pos in needed_positions
+                ]
                 # Filter available players by priority positions
-                position_players = [p for p in self.available_players if p.position in priority_positions]
+                position_players = [
+                    p
+                    for p in self.available_players
+                    if p.position in priority_positions
+                ]
             else:
                 # Use all needed positions
-                position_players = [p for p in self.available_players if p.position in needed_positions]
+                position_players = [
+                    p for p in self.available_players if p.position in needed_positions
+                ]
 
             # If no position players found or no needs identified, take best available player
             if not position_players:
                 position_players = self.available_players
 
             # Sort by overall rank and select the best player
-            for player in sorted(position_players, key=lambda p: getattr(p, 'rating', 999), reverse=True):
+            for player in sorted(
+                position_players, key=lambda p: getattr(p, "rating", 999), reverse=True
+            ):
                 player_name = player.name
                 print(f"Fallback selection: {player_name}")
                 break
