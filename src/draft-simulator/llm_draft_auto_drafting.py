@@ -190,14 +190,14 @@ class DraftSimulator:
         else:
             return self.draft_order
 
-    def display_draft_results(self):
+    def display_draft_results(self, log_file_path):
         """Display draft results for all teams"""
         print("\n" + "=" * 70)
         print("DRAFT RESULTS")
         print("=" * 70)
 
         for team in self.teams:
-            team.display_roster()
+            team.display_roster(log_file_path)
             print("\n")
 
     def get_drafted_player_names(self) -> List[str]:
@@ -281,8 +281,9 @@ class DraftSimulator:
 
         return None
 
-    def run_draft(self, quiet_mode=False):
+    def run_draft(self, log_file_path, quiet_mode=False):
         """Run the draft simulation with support for automated teams and an LLM-powered team"""
+
         if not self.teams:
             print("No teams registered. Please register teams first.")
             return
@@ -349,7 +350,7 @@ class DraftSimulator:
                     print("\nAI is analyzing available players and team needs...")
 
                     player_name = self.llm_drafter.make_draft_selection(
-                        available_players, team, pick_num, round_num
+                        available_players, team, pick_num, round_num, log_file_path
                     )
 
                     if player_name:
@@ -508,14 +509,14 @@ class DraftSimulator:
                 break
 
         # Draft complete, show results
-        self.display_draft_results()
+        self.display_draft_results(log_file_path)
 
     def normalize_player_name(self, name: str) -> str:
         """Normalize player name by removing suffixes like Jr., Sr., III, etc."""
         return re.sub(r"\s+(Jr\.|Sr\.|III|IV|II)\.?$", "", name).strip()
 
     def analyze_fantasy_performance(
-        self, fantasy_points_csv: str, output_file: str = None
+        self, fantasy_points_csv: str, log_file_path, output_file: str = None
     ):
         """
         Analyze the fantasy performance of all teams based on a CSV file with fantasy points.
@@ -675,18 +676,28 @@ class DraftSimulator:
                 }
             )
 
-        # Display results
-        print("\nTEAM RANKINGS BY FANTASY POINTS:")
-        print("-" * 70)
-        print(
-            f"{'Rank':<5} {'Team':<25} {'Points':<10} {'Top Player':<25} {'Player Pts':<10}"
-        )
-        print("-" * 70)
+        # Build the output string for team rankings
+        rankings_output = "\nTEAM RANKINGS BY FANTASY POINTS:\n"
+        rankings_output += "-" * 70 + "\n"
+        rankings_output += f"{'Rank':<5} {'Team':<25} {'Points':<10} {'Top Player':<25} {'Player Pts':<10}\n"
+        rankings_output += "-" * 70 + "\n"
 
         for team in simplified_results:
-            print(
-                f"{team['rank']:<5} {team['team_name'][:25]:<25} {team['total_points']:.1f} {team['top_player'][:25]:<25} {team['top_player_points']:.1f}"
+            rankings_output += (
+                f"{team['rank']:<5} {team['team_name'][:25]:<25} {team['total_points']:.1f} "
+                f"{team['top_player'][:25]:<25} {team['top_player_points']:.1f}\n"
             )
+
+        # Print the rankings output at the end
+        print(rankings_output)
+        # Append rankings_output to the log file
+        try:
+            with open(log_file_path, "a") as log_file:
+                log_file.write(rankings_output)
+            log_file.close()
+            print(f"\nRankings output appended to log file: {log_file_path}")
+        except Exception as e:
+            print(f"Error appending rankings to log file: {e}")
 
         # Report on players not found
         if players_not_found:
@@ -729,6 +740,11 @@ class DraftSimulator:
 
 # Example usage
 def main():
+    log_file_path = f"constrained_logs/{current_datetime}.log"
+    with open(log_file_path, "a") as log_file:
+        log_file.write(f"Log started for drafting at {current_datetime}\n\n")
+
+    log_file.close()
     # Initialize the enhanced draft simulator
     draft = DraftSimulator()
 
@@ -765,12 +781,13 @@ def main():
     draft.set_random_draft_order()
 
     # Run the draft
-    draft.run_draft(quiet_mode=True)
+    draft.run_draft(log_file_path, quiet_mode=True)
 
     # Then analyze performance using your fantasy points CSV
     draft.analyze_fantasy_performance(
-        "tools/data/FantasyPros_Fantasy_Football_Points_PPR.csv",
-        "fantasy_rankings.json",
+        fantasy_points_csv="tools/data/FantasyPros_Fantasy_Football_Points_PPR.csv",
+        log_file_path=log_file_path,
+        output_file=None,
     )
 
 
