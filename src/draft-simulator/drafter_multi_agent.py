@@ -5,10 +5,8 @@ from autogen import (
     GroupChat,
     GroupChatManager,
     AssistantAgent,
-    UserProxyAgent,
     register_function,
 )
-from combined_fantasy_tools import display_position_rankings_with_filtering
 from combined_fantasy_tools import tools_map
 from prompts.analyzer_prompts import analyzer_prompts
 from prompts.manager_prompts import head_drafter_prompt, group_chat_manager_prompt
@@ -103,38 +101,14 @@ class AutoGenDrafter:
         rb_extractor, rb_analyzer = self.make_extractor_analyzer_agents("running_back")
         te_extractor, te_analyzer = self.make_extractor_analyzer_agents("tight_end")
 
-        # Custom class to capture messages in conversation
-        class CapturingUserProxyAgent(UserProxyAgent):
-            def __init__(self, *args, **kwargs):
-                super().__init__(*args, **kwargs)
-                self.all_messages = []
-
-            def receive(self, message, sender, request_reply=None, silent=False):
-                # Store the message content
-                if message.get("content"):
-                    self.all_messages.append(f"{sender.name}: {message.get('content')}")
-                # Continue with normal processing
-                return super().receive(message, sender, request_reply, silent)
-
-        # Create the user proxy agent
-        user_proxy = CapturingUserProxyAgent(
-            name="User_proxy",
-            human_input_mode="NEVER",  # Never wait for human input
-            code_execution_config=False,
-            description="A human user capable of working with Autonomous AI Agents.",
-            max_consecutive_auto_reply=5,
-            is_termination_msg=lambda msg: msg is not None
-            and "content" in msg
-            and msg["content"] is not None
-            and "TERMINATE" in msg["content"],
-        )
-
         # Create the head drafter agent with updated prompt
         head_drafter_agent = AssistantAgent(
             name="head_drafter_agent",
             system_message=head_drafter_prompt,
             llm_config={"cache_seed": None, "config_list": self.config_list},
             description="Picks best overall player to draft based on recommendations.",
+            is_termination_msg=lambda msg: msg
+            and "TERMINATE" in msg.get("content", ""),
         )
 
         head_drafter_agent.client.cache = None
@@ -150,13 +124,29 @@ class AutoGenDrafter:
             "te_extractor": te_extractor,
             "te_analyzer": te_analyzer,
             "head_drafter": head_drafter_agent,
-            "user_proxy": user_proxy,
+        }
+
+        allowed_transitions = {
+            head_drafter_agent: [
+                qb_analyzer,
+                rb_analyzer,
+                wr_analyzer,
+                te_analyzer,
+                head_drafter_agent,
+            ],
+            qb_analyzer: [qb_extractor, head_drafter_agent],
+            wr_analyzer: [wr_extractor, head_drafter_agent],
+            rb_analyzer: [rb_extractor, head_drafter_agent],
+            te_analyzer: [te_extractor, head_drafter_agent],
+            qb_extractor: [qb_analyzer],
+            wr_extractor: [wr_analyzer],
+            rb_extractor: [rb_analyzer],
+            te_extractor: [te_analyzer],
         }
 
         # Create the group chat
         groupchat = GroupChat(
             agents=[
-                user_proxy,
                 qb_extractor,
                 qb_analyzer,
                 wr_extractor,
@@ -169,6 +159,8 @@ class AutoGenDrafter:
             ],
             messages=[],
             max_round=100,
+            allowed_or_disallowed_speaker_transitions=allowed_transitions,
+            speaker_transitions_type="allowed",
         )
 
         # Create the manager with stronger guidance
@@ -210,6 +202,8 @@ class AutoGenDrafter:
                 "config_list": self.config_list,
             },  # Disable caching
             description=f"Analyzes and ranks {position} players only",
+            is_termination_msg=lambda msg: msg
+            and "TERMINATE" in msg.get("content", ""),
         )
 
         analyzer.client.cache = None  # Disable cache to prevent stale responses
@@ -279,7 +273,7 @@ class AutoGenDrafter:
         return None
 
     def make_draft_selection(
-        self, available_players, team, draft_position, current_round
+        self, available_players, team, draft_position, current_round, log_file_path
     ):
         """Use the multi-agent system to make a draft decision"""
         # Initialize agents if not already done
@@ -319,12 +313,15 @@ class AutoGenDrafter:
             f"{current_roster}\n\n"
             f"{drafted_info}\n\n"
             f"You are making a selection for the {self.team_name}. "
-            f"Remember that a complete roster requires: 1 QB, 2 RB, 2 WR, 1 TE, and 1 FLEX (RB/WR)."
+            f"Remember that a complete roster requires: 1 QB, 2 RB, 2 WR, 1 TE, and 1 FLEX (RB/WR).\n"
+            f"First, ask yourself what your current roster is and based on that determine what positions still have empty slots in.\n"
         )
 
         # Get the user proxy and manager
-        user_proxy = self.agents["user_proxy"]
+        head_drafter_agent = self.agents["head_drafter"]
         manager = self.agents["manager"]
+
+        print(head_drafter_agent)
 
         print("Starting the multi-agent draft conversation...")
 
@@ -341,10 +338,11 @@ class AutoGenDrafter:
         max_attempts = 3
         for attempt in range(max_attempts):
             try:
-                user_proxy.initiate_chat(
+                head_drafter_agent.initiate_chat(
                     manager,
                     message=message,
                     max_turns=20,  # Limit conversation length to avoid errors
+                    summary_method="reflection_with_llm",
                 )
                 break  # Exit the loop if successful
             except Exception as e:
@@ -361,15 +359,16 @@ class AutoGenDrafter:
 
                         #     Messages now: {agent.chat_messages}"""
                         # )
-        for agent_name, agent in self.agents.items():
-            agent.clear_history()
         # Get all messages as a single string
-        all_messages_text = "\n".join(user_proxy.all_messages)
+        # Use the group chat's full message history
+        chat_history = self.agents["manager"].groupchat.messages
+        all_messages_text = "\n".join(
+            [msg.get("content", "") for msg in chat_history if msg.get("content")]
+        )
 
-        # For debugging
-        if os.getenv("DEBUG_DRAFT"):
-            print("\nAll messages captured:")
-            print(all_messages_text)
+        with open(log_file_path, "a") as log_file:
+            log_file.write(all_messages_text)
+            log_file.write("\n\n")
 
         # Extract the player name
         player_name = self.extract_player_name_from_output(all_messages_text)
