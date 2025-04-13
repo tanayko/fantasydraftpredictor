@@ -313,8 +313,9 @@ class AutoGenDrafter:
             f"{current_roster}\n\n"
             f"{drafted_info}\n\n"
             f"You are making a selection for the {self.team_name}. "
-            f"Remember that a complete roster requires: 1 QB, 2 RB, 2 WR, 1 TE, and 1 FLEX (RB/WR).\n"
-            f"First, ask yourself what your current roster is and based on that determine what positions still have empty slots in.\n"
+            f"Remember that a complete roster requires: 1 QB, 2 RB, 3 WR, and 1 TE\n"
+            f"First, ask yourself what your current roster is and based on that clearly write out what positions still have empty slots in.\n"
+            f"Based on the empty slots, make a decision on who you want to draft next.\n"
         )
 
         # Get the user proxy and manager
