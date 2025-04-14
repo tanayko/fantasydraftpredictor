@@ -38,7 +38,8 @@ FINAL SELECTION FORMAT:
 
 When you've made your decision for only ONE player, YOU MUST format your output exactly as:
 
-I select [PLAYER FULL NAME]
+I select:
+<player>[PLAYER FULL NAME]</player>
 **TERMINATE**
 
 If you don't follow this format and choose multiple players, the draft will NOT be completed correctly.
@@ -46,7 +47,7 @@ If you don't follow this format and choose multiple players, the draft will NOT 
 TLDR rules:
 - 1 QB, 2 RB, 3 WR, 1 TE as a complete roster
 - only talk to analyzers
-- output exactly as "I select [PLAYER FULL NAME] **TERIMINATE**" for final selection (only ONE player)
+- output exactly as "I select <player>[PLAYER FULL NAME]</player> **TERIMINATE**" for final selection (only ONE player)
 """
 
 group_chat_manager_prompt = """

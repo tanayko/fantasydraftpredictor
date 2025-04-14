@@ -10,6 +10,10 @@ from player import Player
 import sys
 from datetime import datetime
 import pytz
+import random
+import string
+
+rand_suffix = "".join(random.choices(string.ascii_lowercase + string.digits, k=4))
 
 
 class Tee:
@@ -30,7 +34,8 @@ class Tee:
 # Get the current date and time in EST and format it as YYYYMMDD_HHMMSS
 est = pytz.timezone("US/Eastern")
 current_datetime = datetime.now(est).strftime("%Y%m%d_%H%M%S")
-sys.stdout = sys.stderr = Tee(f"logs/groupchat {current_datetime}.log")
+datetime_rand = current_datetime + "_" + rand_suffix
+sys.stdout = sys.stderr = Tee(f"logs/groupchat {datetime_rand}.log")
 
 
 # DraftSimulator
@@ -740,7 +745,7 @@ class DraftSimulator:
 
 # Example usage
 def main():
-    log_file_path = f"constrained_logs/{current_datetime}.log"
+    log_file_path = f"constrained_logs/{datetime_rand}.log"
     with open(log_file_path, "a") as log_file:
         log_file.write(f"Log started for drafting at {current_datetime}\n\n")
 

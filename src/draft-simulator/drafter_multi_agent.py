@@ -223,7 +223,7 @@ class AutoGenDrafter:
         # Look for the specific selection format first
 
         print(f"OUTPUT TEXT: {output_text}")
-        selection_pattern = r"I select ([^\n]+?)(?:\s+\*\*TERMINATE\*\*|\s*$)"
+        selection_pattern = r"<player>\s*(.*?)\s*</player>"
         selection_match = re.search(selection_pattern, output_text, re.IGNORECASE)
         if selection_match:
             potential_name = selection_match.group(1).strip()
