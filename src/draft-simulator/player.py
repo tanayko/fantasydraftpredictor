@@ -5,6 +5,6 @@ class Player:
         self.team = team
         self.drafted = False
         self.drafted_by = None
-        
+
     def __str__(self):
         return f"{self.name} ({self.position}, {self.team})"

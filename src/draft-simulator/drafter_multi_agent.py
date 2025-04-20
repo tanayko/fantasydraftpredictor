@@ -11,6 +11,10 @@ from combined_fantasy_tools import tools_map
 from prompts.analyzer_prompts import analyzer_prompts
 from prompts.manager_prompts import head_drafter_prompt, group_chat_manager_prompt
 from prompts.extractor_prompts import extractor_prompts
+from dotenv import load_dotenv
+
+# Load environment variables from a .env file
+load_dotenv()
 
 
 class BaseAgent:
@@ -27,8 +31,8 @@ class BaseAgent:
         self.config_list = [
             {
                 "model": "gpt-4o-mini",  # Use gpt-4o-mini for more affordability
-                "api_key": os.getenv("API_KEY"),
-                "base_url": "https://api.openai.com/v1",
+                "api_key": os.getenv("OPENAI_API_KEY"),
+                "base_url": os.getenv("BASE_URL"),
             }
         ]
         self.description = description
@@ -68,7 +72,7 @@ class AutoGenDrafter:
 
     def __init__(self, team_name="AutoGen Multi-Agent GM"):
         self.team_name = team_name
-        self.api_key = os.getenv("API_KEY")
+        self.api_key = os.getenv("OPENAI_API_KEY")
         if not self.api_key:
             raise ValueError("OPENAI_API_KEY environment variable must be set")
 
@@ -76,7 +80,7 @@ class AutoGenDrafter:
             {
                 "model": "gpt-4o-mini",  # Use gpt-4o-mini for more affordability
                 "api_key": self.api_key,
-                "base_url": "https://api.openai.com/v1",
+                "base_url": os.getenv("BASE_URL"),
             }
         ]
         # Initialize agents dictionary to be created later

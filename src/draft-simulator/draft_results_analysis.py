@@ -32,7 +32,7 @@ for file in sorted(os.listdir(ranking_dir)):
 # Save summary
 summary_df = pd.DataFrame(results)
 summary_df.to_csv(output_csv, index=False)
-print(f"✅ Summary with AI rank saved to {output_csv}")
+print(f"Summary with AI rank saved to {output_csv}")
 
 # Compute stats
 numeric_cols = summary_df.drop(columns=["Filename"]).select_dtypes(include="number")
@@ -40,7 +40,7 @@ mean_stats = numeric_cols.mean()
 median_stats = numeric_cols.median()
 
 # Print header
-print("\n📊 Overall Averages Across All Drafts:\n")
+print("\nOverall Averages Across All Drafts:\n")
 print(f"{'Stat':<22} | {'Mean':>8} | {'Median':>8}")
 print("-" * 45)
 
