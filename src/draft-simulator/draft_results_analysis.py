@@ -24,8 +24,6 @@ for file in sorted(os.listdir(ranking_dir)):
                 "Filename": file,
                 "Max": max_score,
                 "Min": min_score,
-                "Mean": mean_score,
-                "Median": median_score,
                 "AI_General_Manager": ai_score,
                 "AI_Rank": ai_rank,
             }

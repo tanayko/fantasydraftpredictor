@@ -37,6 +37,28 @@ plt.tight_layout()
 plt.savefig("draft_results/ai_gm_distribution.png")
 plt.show()
 
+# === AI GM Rank vs Score Scatter Plot ===
+plt.figure(figsize=(8, 5))
+sns.scatterplot(
+    x="AI_Rank",
+    y="AI_General_Manager",
+    data=df,
+    color="lightblue",
+    s=100,
+    edgecolor="black",
+)
+
+# Best rank is 1, so flip x-axis
+plt.gca().invert_xaxis()
+
+plt.title("LLM-powered GM Score vs Draft Rank")
+plt.xlabel("LLM-powered GM Rank (1 = Best)")
+plt.ylabel("LLM-powered GM Fantasy Points")
+plt.grid(True)
+plt.tight_layout()
+plt.savefig("draft_results/ai_gm_score_vs_rank.png")
+plt.show()
+
 # === 2. Bar Chart of Key Summary Stats ===
 
 ai_mean = df["AI_General_Manager"].mean()
@@ -44,10 +66,10 @@ overall_league_mean = df["Mean"].mean()  # from 'Mean' column
 
 stats_df = pd.DataFrame(
     {
-        "Metric": [
+        "Team": [
             "ESPN Top Picks Benchmark",
             "Overall League Avg",
-            "AI Mean",
+            "LLM Avg",
         ],
         "Score": [
             1671.6,  # 🔹 ESPN top picks total TTL
@@ -60,7 +82,7 @@ stats_df = pd.DataFrame(
 # Plot: Narrow figure, tall height, narrow bars
 plt.figure(figsize=(7, 5))  # 🔹 Narrow and tall
 ax = sns.barplot(
-    x="Metric", y="Score", data=stats_df, palette="mako", width=0.2
+    x="Team", y="Score", data=stats_df, palette="mako", width=0.2
 )  # 🔹 Narrower bars
 
 # Formatting
