@@ -15,7 +15,7 @@ config_list = [
         # change to gpt-4 for production
         "model": "gpt-4o-mini",
         "api_key": OPENAI_API_KEY,
-        "base_url": "https://nerc.guha-anderson.com/v1",
+        "base_url": os.getenv("BASE_URL"),
     }
 ]
 

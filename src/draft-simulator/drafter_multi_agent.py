@@ -32,7 +32,7 @@ class BaseAgent:
             {
                 "model": "gpt-4o-mini",  # Use gpt-4o-mini for more affordability
                 "api_key": os.getenv("OPENAI_API_KEY"),
-                "base_url": "https://nerc.guha-anderson.com/v1",
+                "base_url": os.getenv("BASE_URL"),
             }
         ]
         self.description = description
@@ -80,7 +80,7 @@ class AutoGenDrafter:
             {
                 "model": "gpt-4o-mini",  # Use gpt-4o-mini for more affordability
                 "api_key": self.api_key,
-                "base_url": "https://nerc.guha-anderson.com/v1",
+                "base_url": os.getenv("BASE_URL"),
             }
         ]
         # Initialize agents dictionary to be created later

@@ -8,5 +8,5 @@
 - `src/draft-simulator/draft_results` - data and analysis for draft simulations 
 
 ### How to run:
-To run, create a `.env` folder in `src/draft-simulator` with an environment variable called `OPENAI_API_KEY` with your API key.
+To run, create a `.env` folder in `src/draft-simulator` with an environment variable called `OPENAI_API_KEY` with your API key and `BASE_URL` from wherever you can get a hosted gpt-4o-mini.
 Next, navigate to `src/draft-simulator`. From there, run `llm_draft_auto_drafting.py` for a single run, or `run_drafting.py` for multiple concurrent runs (can change how many you want at a time).
