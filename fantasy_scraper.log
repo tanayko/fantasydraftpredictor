@@ -1,0 +1,477 @@
+2025-04-04 00:11:27,387 - INFO - Output directory: ./fantasy_data_2023
+2025-04-04 00:11:27,387 - INFO - 
+Starting scraper for all positions...
+2025-04-04 00:11:27,387 - INFO - Using concurrent scraping for multiple positions
+2025-04-04 00:11:27,387 - INFO - Scraping data for QB in 2023 season
+2025-04-04 00:11:27,388 - INFO - Scraping data for RB in 2023 season
+2025-04-04 00:11:27,388 - INFO - Scraping data for WR in 2023 season
+2025-04-04 00:11:27,388 - INFO - ====== WebDriver manager ======
+2025-04-04 00:11:27,388 - INFO - Scraping data for TE in 2023 season
+2025-04-04 00:11:27,388 - INFO - ====== WebDriver manager ======
+2025-04-04 00:11:27,389 - INFO - ====== WebDriver manager ======
+2025-04-04 00:11:27,389 - INFO - ====== WebDriver manager ======
+2025-04-04 00:11:36,932 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:36,932 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:36,939 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:36,942 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:37,003 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:37,004 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:37,004 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:37,004 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:37,031 - INFO - There is no [mac64] chromedriver "135.0.7049.42" for browser google-chrome "135.0.7049" in cache
+2025-04-04 00:11:37,043 - INFO - There is no [mac64] chromedriver "135.0.7049.42" for browser google-chrome "135.0.7049" in cache
+2025-04-04 00:11:37,043 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:37,043 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:37,049 - INFO - There is no [mac64] chromedriver "135.0.7049.42" for browser google-chrome "135.0.7049" in cache
+2025-04-04 00:11:37,049 - INFO - There is no [mac64] chromedriver "135.0.7049.42" for browser google-chrome "135.0.7049" in cache
+2025-04-04 00:11:37,050 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:37,050 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:37,206 - INFO - WebDriver version 135.0.7049.42 selected
+2025-04-04 00:11:37,213 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/135.0.7049.42/mac-x64/chromedriver-mac-x64.zip
+2025-04-04 00:11:37,213 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/135.0.7049.42/mac-x64/chromedriver-mac-x64.zip
+2025-04-04 00:11:37,265 - INFO - WebDriver version 135.0.7049.42 selected
+2025-04-04 00:11:37,289 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/135.0.7049.42/mac-x64/chromedriver-mac-x64.zip
+2025-04-04 00:11:37,290 - INFO - WebDriver version 135.0.7049.42 selected
+2025-04-04 00:11:37,307 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/135.0.7049.42/mac-x64/chromedriver-mac-x64.zip
+2025-04-04 00:11:37,307 - INFO - WebDriver version 135.0.7049.42 selected
+2025-04-04 00:11:37,311 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/135.0.7049.42/mac-x64/chromedriver-mac-x64.zip
+2025-04-04 00:11:37,313 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/135.0.7049.42/mac-x64/chromedriver-mac-x64.zip
+2025-04-04 00:11:37,316 - INFO - Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/135.0.7049.42/mac-x64/chromedriver-mac-x64.zip
+2025-04-04 00:11:37,317 - INFO - About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/135.0.7049.42/mac-x64/chromedriver-mac-x64.zip
+2025-04-04 00:11:37,357 - INFO - Driver downloading response is 200
+2025-04-04 00:11:37,360 - INFO - Driver downloading response is 200
+2025-04-04 00:11:37,363 - INFO - Driver downloading response is 200
+2025-04-04 00:11:37,364 - INFO - Driver downloading response is 200
+2025-04-04 00:11:39,216 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:39,373 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:39,381 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:39,398 - INFO - Driver has been saved in cache [/Users/itsdc03/.wdm/drivers/chromedriver/mac64/135.0.7049.42]
+2025-04-04 00:11:39,426 - ERROR - Failed to initialize WebDriver: tuple index out of range
+2025-04-04 00:11:39,427 - ERROR - Error scraping QB: tuple index out of range
+2025-04-04 00:11:39,435 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:11:39,539 - INFO - Driver has been saved in cache [/Users/itsdc03/.wdm/drivers/chromedriver/mac64/135.0.7049.42]
+2025-04-04 00:11:39,563 - INFO - Driver has been saved in cache [/Users/itsdc03/.wdm/drivers/chromedriver/mac64/135.0.7049.42]
+2025-04-04 00:11:41,647 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=2&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:11:41,649 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=4&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:11:41,880 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=3&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:11:49,620 - INFO - Successfully scraped 25 players
+2025-04-04 00:11:49,633 - INFO - Columns: ['Rank', 'Player', 'Team', 'Position', 'Rush_Yds', 'Rush_TD', 'Rec', 'Rec_Yds', 'Rec_TD', 'Total_Games_Played', 'Total_Avg']
+2025-04-04 00:11:49,667 - INFO - Successfully scraped 25 players
+2025-04-04 00:11:49,667 - INFO - Columns: ['Rank', 'Player', 'Team', 'Position', 'Rush_Yds', 'Rush_TD', 'Rec', 'Rec_Yds', 'Rec_TD', 'Total_Games_Played', 'Total_Avg']
+2025-04-04 00:11:49,682 - INFO - Successfully scraped 25 players
+2025-04-04 00:11:49,683 - INFO - Columns: ['Rank', 'Player', 'Team', 'Position', 'Rush_Yds', 'Rush_TD', 'Rec', 'Rec_Yds', 'Rec_TD', 'Total_Games_Played', 'Total_Avg']
+2025-04-04 00:11:49,712 - INFO - 
+First 5 players:
+   Rank             Player Team Position  Rush_Yds  Rush_TD    Rec  Rec_Yds  Rec_TD  Total_Games_Played  Total_Avg
+0   1.0        CeeDee Lamb   WR      DAL     113.0      2.0  135.0   1749.0    12.0                17.0      23.72
+1   2.0        Tyreek Hill   WR      MIA      15.0      0.0  119.0   1799.0    13.0                17.0      22.14
+2   3.0  Amon-Ra St. Brown   WR      DET      24.0      0.0  119.0   1515.0    10.0                17.0      19.46
+3   4.0         Puka Nacua   WR      LAR      89.0      0.0  105.0   1486.0     6.0                17.0      17.56
+4   5.0         A.J. Brown   WR      PHI       0.0      0.0  106.0   1456.0     7.0                17.0      17.04
+2025-04-04 00:11:49,717 - INFO - 
+First 5 players:
+   Rank               Player Team Position  Rush_Yds  Rush_TD   Rec  Rec_Yds  Rec_TD  Total_Games_Played  Total_Avg
+0   1.0  Christian McCaffrey   RB       SF    1459.0     14.0  67.0    564.0     7.0                17.0      23.02
+1   2.0          Breece Hall   RB      NYJ     994.0      5.0  76.0    591.0     4.0                17.0      17.09
+2   3.0       Travis Etienne   RB      JAX    1008.0     11.0  58.0    476.0     1.0                17.0      16.61
+3   4.0        Rachaad White   RB       TB     990.0      6.0  64.0    549.0     3.0                17.0      15.76
+4   5.0       Raheem Mostert   RB      MIA    1012.0     18.0  25.0    175.0     3.0                17.0      15.75
+2025-04-04 00:11:49,718 - INFO - 
+First 5 players:
+   Rank          Player Team Position  Rush_Yds  Rush_TD    Rec  Rec_Yds  Rec_TD  Total_Games_Played  Total_Avg
+0   1.0     Sam LaPorta   TE      DET       4.0      0.0   86.0    889.0    10.0                17.0      14.08
+1   2.0     Evan Engram   TE      JAX       0.0      0.0  114.0    963.0     4.0                17.0      13.55
+2   3.0    Travis Kelce   TE       KC       0.0      0.0   93.0    984.0     5.0                17.0      12.91
+3   4.0  T.J. Hockenson   TE      MIN       0.0      0.0   95.0    960.0     5.0                17.0      12.88
+4   5.0   George Kittle   TE       SF       2.0      0.0   65.0   1020.0     6.0                17.0      11.95
+2025-04-04 00:11:49,721 - INFO - Data saved to ./fantasy_data_2023/nfl_fantasy_WR_stats_2023.csv
+2025-04-04 00:11:49,722 - INFO - Data saved to ./fantasy_data_2023/nfl_fantasy_RB_stats_2023.csv
+2025-04-04 00:11:49,723 - INFO - Data saved to ./fantasy_data_2023/nfl_fantasy_TE_stats_2023.csv
+2025-04-04 00:11:49,727 - INFO - Combined data saved to ./fantasy_data_2023/nfl_fantasy_all_positions_2023.csv
+2025-04-04 00:11:49,727 - INFO - 
+Scraping Summary:
+2025-04-04 00:11:49,727 - INFO -   - RB: 25 players
+2025-04-04 00:11:49,727 - INFO -   - WR: 25 players
+2025-04-04 00:11:49,727 - INFO -   - TE: 25 players
+2025-04-04 00:11:49,727 - INFO -   - Total: 75 players
+2025-04-04 00:11:49,727 - INFO - 
+Scraping completed successfully!
+2025-04-04 00:29:32,522 - INFO - Output directory: ./fantasy_data_2023
+2025-04-04 00:29:32,523 - INFO - 
+Starting scraper for all positions...
+2025-04-04 00:29:32,523 - INFO - Using concurrent scraping for multiple positions
+2025-04-04 00:29:32,524 - INFO - Scraping data for QB in 2023 season
+2025-04-04 00:29:32,524 - INFO - ====== WebDriver manager ======
+2025-04-04 00:29:32,524 - INFO - Scraping data for RB in 2023 season
+2025-04-04 00:29:32,524 - INFO - Scraping data for WR in 2023 season
+2025-04-04 00:29:32,524 - INFO - ====== WebDriver manager ======
+2025-04-04 00:29:32,525 - INFO - Scraping data for TE in 2023 season
+2025-04-04 00:29:32,529 - INFO - ====== WebDriver manager ======
+2025-04-04 00:29:32,530 - INFO - ====== WebDriver manager ======
+2025-04-04 00:29:33,057 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:29:33,058 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:29:33,061 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:29:33,062 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:29:33,111 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:29:33,115 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:29:33,115 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:29:33,115 - INFO - Get LATEST chromedriver version for google-chrome
+2025-04-04 00:29:33,148 - INFO - Driver [/Users/itsdc03/.wdm/drivers/chromedriver/mac64/135.0.7049.42/chromedriver-mac-x64/chromedriver] found in cache
+2025-04-04 00:29:33,159 - INFO - Driver [/Users/itsdc03/.wdm/drivers/chromedriver/mac64/135.0.7049.42/chromedriver-mac-x64/chromedriver] found in cache
+2025-04-04 00:29:33,165 - INFO - Driver [/Users/itsdc03/.wdm/drivers/chromedriver/mac64/135.0.7049.42/chromedriver-mac-x64/chromedriver] found in cache
+2025-04-04 00:29:33,169 - INFO - Driver [/Users/itsdc03/.wdm/drivers/chromedriver/mac64/135.0.7049.42/chromedriver-mac-x64/chromedriver] found in cache
+2025-04-04 00:29:35,566 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=2&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:29:35,567 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=1&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:29:35,583 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=4&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:29:35,584 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=3&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:29:43,079 - ERROR - Error on attempt 1: 'NFLFantasyScraper' object has no attribute '_extract_common_stats'
+2025-04-04 00:29:43,264 - ERROR - Error on attempt 1: 'NFLFantasyScraper' object has no attribute '_extract_common_stats'
+2025-04-04 00:29:43,369 - ERROR - Error on attempt 1: 'NFLFantasyScraper' object has no attribute '_extract_common_stats'
+2025-04-04 00:29:43,408 - ERROR - Error on attempt 1: 'NFLFantasyScraper' object has no attribute '_extract_common_stats'
+2025-04-04 00:29:48,105 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=3&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:29:48,267 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=2&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:29:48,379 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=4&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:29:48,423 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=1&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:29:54,235 - ERROR - Error on attempt 2: 'NFLFantasyScraper' object has no attribute '_extract_common_stats'
+2025-04-04 00:29:55,006 - ERROR - Error on attempt 2: 'NFLFantasyScraper' object has no attribute '_extract_common_stats'
+2025-04-04 00:29:55,101 - ERROR - Error on attempt 2: 'NFLFantasyScraper' object has no attribute '_extract_common_stats'
+2025-04-04 00:29:55,469 - ERROR - Error on attempt 2: 'NFLFantasyScraper' object has no attribute '_extract_common_stats'
+2025-04-04 00:29:59,392 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=4&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:29:59,393 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d31a090>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/09ac6834331d0909517386a498f5381e/url
+2025-04-04 00:29:59,394 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d319550>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/09ac6834331d0909517386a498f5381e/url
+2025-04-04 00:29:59,394 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d3189d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/09ac6834331d0909517386a498f5381e/url
+2025-04-04 00:29:59,395 - ERROR - Error on attempt 3: HTTPConnectionPool(host='localhost', port=56414): Max retries exceeded with url: /session/09ac6834331d0909517386a498f5381e/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d33fc10>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-04-04 00:30:00,182 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=3&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:30:00,183 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d2e6650>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bfa1855ae46ace003524253a4daf69d5/url
+2025-04-04 00:30:00,183 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d2e5650>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bfa1855ae46ace003524253a4daf69d5/url
+2025-04-04 00:30:00,184 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d2e50d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bfa1855ae46ace003524253a4daf69d5/url
+2025-04-04 00:30:00,185 - ERROR - Error on attempt 3: HTTPConnectionPool(host='localhost', port=56415): Max retries exceeded with url: /session/bfa1855ae46ace003524253a4daf69d5/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d2e4650>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-04-04 00:30:00,241 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=2&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:30:00,243 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d2bb550>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1d1dd38bf15cb2c87c7b1e8732c85a93/url
+2025-04-04 00:30:00,243 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d2bab10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1d1dd38bf15cb2c87c7b1e8732c85a93/url
+2025-04-04 00:30:00,244 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d2b9dd0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1d1dd38bf15cb2c87c7b1e8732c85a93/url
+2025-04-04 00:30:00,245 - ERROR - Error on attempt 3: HTTPConnectionPool(host='localhost', port=56410): Max retries exceeded with url: /session/1d1dd38bf15cb2c87c7b1e8732c85a93/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d277e90>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-04-04 00:30:00,610 - INFO - Loading https://fantasy.nfl.com/research/scoringleaders?position=1&sort=pts&statCategory=stats&statSeason=2023&statType=seasonStats
+2025-04-04 00:30:00,611 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d276e50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1689825d192e424a4b19fa14709374ed/url
+2025-04-04 00:30:00,612 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d275fd0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1689825d192e424a4b19fa14709374ed/url
+2025-04-04 00:30:00,613 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d275850>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1689825d192e424a4b19fa14709374ed/url
+2025-04-04 00:30:00,613 - ERROR - Error on attempt 3: HTTPConnectionPool(host='localhost', port=56409): Max retries exceeded with url: /session/1689825d192e424a4b19fa14709374ed/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d274d10>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2025-04-04 00:30:04,399 - ERROR - Max retries exceeded
+2025-04-04 00:30:04,417 - ERROR - Traceback (most recent call last):
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 975, in send
+    self.connect()
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10d33fc10>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/itsdc03/Desktop/LLM-project/player_ranking_position_scraper/off_ranking.py", line 139, in scrape_fantasy_stats
+    driver.get(url)
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 454, in get
+    self.execute(Command.GET, {"url": url})
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 427, in execute
+    response = self.command_executor.execute(driver_command, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 404, in execute
+    return self._request(command_info[0], url, body=data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 428, in _request
+    response = self._conn.request(method, url, body=body, headers=headers, timeout=self._client_config.timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/_request_methods.py", line 143, in request
+    return self.request_encode_body(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/_request_methods.py", line 278, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=56414): Max retries exceeded with url: /session/09ac6834331d0909517386a498f5381e/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d33fc10>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+2025-04-04 00:30:04,418 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d2e7c50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/09ac6834331d0909517386a498f5381e
+2025-04-04 00:30:04,419 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d1beed0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/09ac6834331d0909517386a498f5381e
+2025-04-04 00:30:04,419 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d1be690>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/09ac6834331d0909517386a498f5381e
+2025-04-04 00:30:05,187 - ERROR - Max retries exceeded
+2025-04-04 00:30:05,189 - ERROR - Traceback (most recent call last):
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 975, in send
+    self.connect()
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10d2e4650>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/itsdc03/Desktop/LLM-project/player_ranking_position_scraper/off_ranking.py", line 139, in scrape_fantasy_stats
+    driver.get(url)
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 454, in get
+    self.execute(Command.GET, {"url": url})
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 427, in execute
+    response = self.command_executor.execute(driver_command, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 404, in execute
+    return self._request(command_info[0], url, body=data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 428, in _request
+    response = self._conn.request(method, url, body=body, headers=headers, timeout=self._client_config.timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/_request_methods.py", line 143, in request
+    return self.request_encode_body(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/_request_methods.py", line 278, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=56415): Max retries exceeded with url: /session/bfa1855ae46ace003524253a4daf69d5/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d2e4650>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+2025-04-04 00:30:05,190 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d2bb5d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bfa1855ae46ace003524253a4daf69d5
+2025-04-04 00:30:05,191 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d1bcf10>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bfa1855ae46ace003524253a4daf69d5
+2025-04-04 00:30:05,192 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d1bc6d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bfa1855ae46ace003524253a4daf69d5
+2025-04-04 00:30:05,247 - ERROR - Max retries exceeded
+2025-04-04 00:30:05,250 - ERROR - Traceback (most recent call last):
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 975, in send
+    self.connect()
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10d277e90>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/itsdc03/Desktop/LLM-project/player_ranking_position_scraper/off_ranking.py", line 139, in scrape_fantasy_stats
+    driver.get(url)
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 454, in get
+    self.execute(Command.GET, {"url": url})
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 427, in execute
+    response = self.command_executor.execute(driver_command, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 404, in execute
+    return self._request(command_info[0], url, body=data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 428, in _request
+    response = self._conn.request(method, url, body=body, headers=headers, timeout=self._client_config.timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/_request_methods.py", line 143, in request
+    return self.request_encode_body(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/_request_methods.py", line 278, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=56410): Max retries exceeded with url: /session/1d1dd38bf15cb2c87c7b1e8732c85a93/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d277e90>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+2025-04-04 00:30:05,252 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d277290>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1d1dd38bf15cb2c87c7b1e8732c85a93
+2025-04-04 00:30:05,253 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d19aa50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1d1dd38bf15cb2c87c7b1e8732c85a93
+2025-04-04 00:30:05,254 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d19a650>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1d1dd38bf15cb2c87c7b1e8732c85a93
+2025-04-04 00:30:05,617 - ERROR - Max retries exceeded
+2025-04-04 00:30:05,620 - ERROR - Traceback (most recent call last):
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 493, in _make_request
+    conn.request(
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 445, in request
+    self.endheaders()
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 1037, in _send_output
+    self.send(msg)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/http/client.py", line 975, in send
+    self.connect()
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 276, in connect
+    self.sock = self._new_conn()
+                ^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connection.py", line 213, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10d274d10>: Failed to establish a new connection: [Errno 61] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/itsdc03/Desktop/LLM-project/player_ranking_position_scraper/off_ranking.py", line 139, in scrape_fantasy_stats
+    driver.get(url)
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 454, in get
+    self.execute(Command.GET, {"url": url})
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py", line 427, in execute
+    response = self.command_executor.execute(driver_command, params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 404, in execute
+    return self._request(command_info[0], url, body=data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/selenium/webdriver/remote/remote_connection.py", line 428, in _request
+    response = self._conn.request(method, url, body=body, headers=headers, timeout=self._client_config.timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/_request_methods.py", line 143, in request
+    return self.request_encode_body(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/_request_methods.py", line 278, in request_encode_body
+    return self.urlopen(method, url, **extra_kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/poolmanager.py", line 443, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 871, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/Users/itsdc03/Desktop/LLM-project/.venv/lib/python3.11/site-packages/urllib3/util/retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=56409): Max retries exceeded with url: /session/1689825d192e424a4b19fa14709374ed/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d274d10>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+2025-04-04 00:30:05,622 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d274a90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1689825d192e424a4b19fa14709374ed
+2025-04-04 00:30:05,623 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d198c90>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1689825d192e424a4b19fa14709374ed
+2025-04-04 00:30:05,624 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10d1984d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/1689825d192e424a4b19fa14709374ed
+2025-04-04 00:30:05,626 - WARNING - No position data to combine
+2025-04-04 00:30:05,626 - INFO - 
+Scraping completed successfully!

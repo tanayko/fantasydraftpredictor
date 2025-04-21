@@ -1,0 +1,950 @@
+Log started for drafting at 20250413_170133
+
+DRAFT ROUND 1, PICK 12
+
+Your roster is currently empty.
+
+Already drafted players (DO NOT SELECT THESE):
+- Christian McCaffrey
+- Bijan Robinson
+- Breece Hall
+- CeeDee Lamb
+- Tyreek Hill
+- Ja'Marr Chase
+- Amon-Ra St. Brown
+- Justin Jefferson
+- Jonathan Taylor
+- Saquon Barkley
+- A.J. Brown
+
+
+You are making a selection for the AI_General_Manager. Remember that a complete roster requires: 1 QB, 2 RB, 3 WR, and 1 TE
+First, ask yourself what your current roster is and based on that clearly write out what positions still have empty slots in.
+Based on the empty slots, make a decision on who you want to draft next.
+
+Your roster is currently empty, which means you still need to fill all positions:
+- 1 Quarterback (QB)
+- 2 Running Backs (RB)
+- 3 Wide Receivers (WR)
+- 1 Tight End (TE)
+
+Next, let's start filling these positions. I will first ask the quarterback analyzer for a recommendation since that position is crucial to start off our roster.
+
+quarterback_analyzer, what is your recommendation?
+I'll need to consult the quarterback_extractor for data on the available quarterbacks. 
+
+quarterback_extractor, can you provide me with the latest stats and analysis for the quarterbacks still available?
+None
+{"position": "QB", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 11, "players": [{"Overall_Rank": 27, "Name": "Josh Allen", "Team": "BUF", "Pos": "QB", "BYE": 12, "ESPN_Rank": 35, "Sleeper_Rank": 20.0, "Yahoo_Rank": 30, "Avg_Rank": 28.3, "ADP": 23, "FantasyPros": 19, "2023_Overall_Rank": 2.0, "Rank_Change": -25.0, "2023_Pos_Rank": 1.0, "2023_Fantasy_Points": 392.64, "2023_Games_Played": 17.0, "2023_Avg_Points": 23.1, "2023_Pass_Yds": 4306.0, "2023_Pass_TD": 29.0, "2023_Pass_Int": 18.0, "2023_Rush_Yds": 524.0, "2023_Rush_TD": "15", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 7.0, "Team_Scoring_Rank": 6.0, "Team_Offense_Quality": 26.6, "Position_Opportunity_Score": 89.5691609977, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 4.0, "Team_Pass_Volume": 6366.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 34, "Name": "Jalen Hurts", "Team": "PHI", "Pos": "QB", "BYE": 5, "ESPN_Rank": 38, "Sleeper_Rank": 31.0, "Yahoo_Rank": 35, "Avg_Rank": 34.7, "ADP": 30, "FantasyPros": 23, "2023_Overall_Rank": 5.0, "Rank_Change": -29.0, "2023_Pos_Rank": 2.0, "2023_Fantasy_Points": 356.82, "2023_Games_Played": 17.0, "2023_Avg_Points": 20.99, "2023_Pass_Yds": 3858.0, "2023_Pass_TD": 23.0, "2023_Pass_Int": 15.0, "2023_Rush_Yds": 605.0, "2023_Rush_TD": "15", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 8.0, "Team_Scoring_Rank": 7.0, "Team_Offense_Quality": 25.6, "Position_Opportunity_Score": 79.440665155, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 8.0, "Team_Pass_Volume": 6024.0, "Schedule_Difficulty_Score": 37.5, "Schedule_Rating": "Difficult"}, {"Overall_Rank": 42, "Name": "Patrick Mahomes", "Team": "KC", "Pos": "QB", "BYE": 6, "ESPN_Rank": 50, "Sleeper_Rank": 32.0, "Yahoo_Rank": 39, "Avg_Rank": 40.3, "ADP": 31, "FantasyPros": 31, "2023_Overall_Rank": 18.0, "Rank_Change": -24.0, "2023_Pos_Rank": 8.0, "2023_Fantasy_Points": 280.22, "2023_Games_Played": 16.0, "2023_Avg_Points": 17.51, "2023_Pass_Yds": 4183.0, "2023_Pass_TD": 27.0, "2023_Pass_Int": 14.0, "2023_Rush_Yds": 389.0, "2023_Rush_TD": "-", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 19.0, "Team_Scoring_Rank": 15.0, "Team_Offense_Quality": 16.4, "Position_Opportunity_Score": 60.3930461073, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 9.0, "Team_Pass_Volume": 5972.0, "Schedule_Difficulty_Score": 71.9, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 44, "Name": "Lamar Jackson", "Team": "BAL", "Pos": "QB", "BYE": 14, "ESPN_Rank": 49, "Sleeper_Rank": 36.0, "Yahoo_Rank": 40, "Avg_Rank": 41.7, "ADP": 41, "FantasyPros": 33, "2023_Overall_Rank": 7.0, "Rank_Change": -37.0, "2023_Pos_Rank": 4.0, "2023_Fantasy_Points": 331.22, "2023_Games_Played": 16.0, "2023_Avg_Points": 20.7, "2023_Pass_Yds": 3678.0, "2023_Pass_TD": 24.0, "2023_Pass_Int": 7.0, "2023_Rush_Yds": 821.0, "2023_Rush_TD": "5", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 1.0, "Team_Scoring_Rank": 4.0, "Team_Offense_Quality": 30.2, "Position_Opportunity_Score": 93.4996220711, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 6.0, "Team_Pass_Volume": 6296.0, "Schedule_Difficulty_Score": 56.2, "Schedule_Rating": "Average"}, {"Overall_Rank": 50, "Name": "C.J. Stroud", "Team": "HOU", "Pos": "QB", "BYE": 14, "ESPN_Rank": 59, "Sleeper_Rank": 46.0, "Yahoo_Rank": 52, "Avg_Rank": 52.3, "ADP": 51, "FantasyPros": 51, "2023_Overall_Rank": 20.0, "Rank_Change": -30.0, "2023_Pos_Rank": 9.0, "2023_Fantasy_Points": 276.02, "2023_Games_Played": 15.0, "2023_Avg_Points": 18.4, "2023_Pass_Yds": 4108.0, "2023_Pass_TD": 23.0, "2023_Pass_Int": 5.0, "2023_Rush_Yds": 167.0, "2023_Rush_TD": "3", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 50.4913076342, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 59.4, "Schedule_Rating": "Average"}, {"Overall_Rank": 53, "Name": "Anthony Richardson", "Team": "IND", "Pos": "QB", "BYE": 14, "ESPN_Rank": 58, "Sleeper_Rank": 53.0, "Yahoo_Rank": 48, "Avg_Rank": 53.0, "ADP": 52, "FantasyPros": 48, "2023_Overall_Rank": 164.0, "Rank_Change": 111.0, "2023_Pos_Rank": 38.0, "2023_Fantasy_Points": 72.68, "2023_Games_Played": 4.0, "2023_Avg_Points": 18.17, "2023_Pass_Yds": 577.0, "2023_Pass_TD": 3.0, "2023_Pass_Int": 1.0, "2023_Rush_Yds": 136.0, "2023_Rush_TD": "4", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 10.0, "Team_Scoring_Rank": 10.5, "Team_Offense_Quality": 22.7, "Position_Opportunity_Score": 60.6198034769, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 15.0, "Team_Pass_Volume": 5725.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 65, "Name": "Joe Burrow", "Team": "CIN", "Pos": "QB", "BYE": 12, "ESPN_Rank": 60, "Sleeper_Rank": 62.0, "Yahoo_Rank": 72, "Avg_Rank": 64.7, "ADP": 70, "FantasyPros": 60, "2023_Overall_Rank": 115.0, "Rank_Change": 50.0, "2023_Pos_Rank": 25.0, "2023_Fantasy_Points": 147.16, "2023_Games_Played": 10.0, "2023_Avg_Points": 14.72, "2023_Pass_Yds": 2309.0, "2023_Pass_TD": 15.0, "2023_Pass_Int": 6.0, "2023_Rush_Yds": 88.0, "2023_Rush_TD": "-", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 31.0, "Team_Scoring_Rank": 16.0, "Team_Offense_Quality": 11.0, "Position_Opportunity_Score": 17.9138321995, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 22.0, "Team_Pass_Volume": 5422.0, "Schedule_Difficulty_Score": 56.2, "Schedule_Rating": "Average"}, {"Overall_Rank": 70, "Name": "Dak Prescott", "Team": "DAL", "Pos": "QB", "BYE": 7, "ESPN_Rank": 61, "Sleeper_Rank": 77.0, "Yahoo_Rank": 71, "Avg_Rank": 69.7, "ADP": 77, "FantasyPros": 63, "2023_Overall_Rank": 6.0, "Rank_Change": -64.0, "2023_Pos_Rank": 3.0, "2023_Fantasy_Points": 342.84, "2023_Games_Played": 17.0, "2023_Avg_Points": 20.17, "2023_Pass_Yds": 4516.0, "2023_Pass_TD": 36.0, "2023_Pass_Int": 9.0, "2023_Rush_Yds": 242.0, "2023_Rush_TD": "2", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 14.0, "Team_Scoring_Rank": 1.0, "Team_Offense_Quality": 26.8, "Position_Opportunity_Score": 81.2547241119, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 5.0, "Team_Pass_Volume": 6317.0, "Schedule_Difficulty_Score": 40.6, "Schedule_Rating": "Average"}, {"Overall_Rank": 72, "Name": "Kyler Murray", "Team": "ARI", "Pos": "QB", "BYE": 11, "ESPN_Rank": 91, "Sleeper_Rank": 70.0, "Yahoo_Rank": 53, "Avg_Rank": 71.3, "ADP": 65, "FantasyPros": 53, "2023_Overall_Rank": 116.0, "Rank_Change": 44.0, "2023_Pos_Rank": 26.0, "2023_Fantasy_Points": 146.36, "2023_Games_Played": 8.0, "2023_Avg_Points": 18.3, "2023_Pass_Yds": 1799.0, "2023_Pass_TD": 10.0, "2023_Pass_Int": 5.0, "2023_Rush_Yds": 244.0, "2023_Rush_TD": "3", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 4.0, "Team_Scoring_Rank": 24.5, "Team_Offense_Quality": 16.7, "Position_Opportunity_Score": 53.0612244898, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 19.0, "Team_Pass_Volume": 5509.0, "Schedule_Difficulty_Score": 48.4, "Schedule_Rating": "Average"}, {"Overall_Rank": 79, "Name": "Jordan Love", "Team": "GB", "Pos": "QB", "BYE": 10, "ESPN_Rank": 92, "Sleeper_Rank": 82.0, "Yahoo_Rank": 69, "Avg_Rank": 81.0, "ADP": 74, "FantasyPros": 64, "2023_Overall_Rank": 9.0, "Rank_Change": -70.0, "2023_Pos_Rank": 5.0, "2023_Fantasy_Points": 319.06, "2023_Games_Played": 17.0, "2023_Avg_Points": 18.77, "2023_Pass_Yds": 4159.0, "2023_Pass_TD": 32.0, "2023_Pass_Int": 11.0, "2023_Rush_Yds": 247.0, "2023_Rush_TD": "4", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 15.0, "Team_Scoring_Rank": 12.0, "Team_Offense_Quality": 19.8, "Position_Opportunity_Score": 62.358276644, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 11.0, "Team_Pass_Volume": 5873.0, "Schedule_Difficulty_Score": 31.2, "Schedule_Rating": "Difficult"}]}
+Based on the data received:
+
+QB RECOMMENDATION: Josh Allen - 4306 Pass Yards, 29 TDs, 18 INTs - Josh Allen has elite passing numbers along with significant rushing ability (524 rush yards, 15 rush TDs). His high pass attempts per game and a strong supporting cast make him a valuable pick.
+Next, I need to fill the running back position. 
+
+running_back_analyzer, what is your recommendation?
+Please give me a moment to consult the running_back_extractor for data on the available running backs.
+None
+{"position": "RB", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 11, "players": [{"Overall_Rank": 14, "Name": "Jahmyr Gibbs", "Team": "DET", "Pos": "RB", "BYE": 5, "ESPN_Rank": 16, "Sleeper_Rank": 10.0, "Yahoo_Rank": 15, "Avg_Rank": 13.7, "ADP": 12, "FantasyPros": 15, "2023_Overall_Rank": 39.0, "Rank_Change": 25.0, "2023_Pos_Rank": 10.0, "2023_Fantasy_Points": 242.1, "2023_Games_Played": 15.0, "2023_Avg_Points": 16.14, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 945.0, "2023_Rush_TD": "10", "2023_Rec": 52.0, "2023_Rec_Yds": 316.0, "2023_Rec_TD": "1", "Team_Offense_Rank": 5.0, "Team_Scoring_Rank": 5.0, "Team_Offense_Quality": 28.0, "Position_Opportunity_Score": 94.2889561271, "Team_Rushing_Rank": 3.0, "Team_Rush_Volume": 394.8, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 62.5, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 15, "Name": "Derrick Henry", "Team": "BAL", "Pos": "RB", "BYE": 14, "ESPN_Rank": 15, "Sleeper_Rank": 18.0, "Yahoo_Rank": 12, "Avg_Rank": 15.0, "ADP": 18, "FantasyPros": 14, "2023_Overall_Rank": 35.0, "Rank_Change": 20.0, "2023_Pos_Rank": 8.0, "2023_Fantasy_Points": 246.66, "2023_Games_Played": 17.0, "2023_Avg_Points": 14.51, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1167.0, "2023_Rush_TD": "12", "2023_Rec": 28.0, "2023_Rec_Yds": 214.0, "2023_Rec_TD": "-", "Team_Offense_Rank": 1.0, "Team_Scoring_Rank": 4.0, "Team_Offense_Quality": 30.2, "Position_Opportunity_Score": 94.4024205749, "Team_Rushing_Rank": 6.0, "Team_Rush_Volume": 370.4, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 53.1, "Schedule_Rating": "Average"}, {"Overall_Rank": 16, "Name": "Kyren Williams", "Team": "LAR", "Pos": "RB", "BYE": 6, "ESPN_Rank": 14, "Sleeper_Rank": 17.0, "Yahoo_Rank": 17, "Avg_Rank": 16.0, "ADP": 17, "FantasyPros": 20, "2023_Overall_Rank": 32.0, "Rank_Change": 16.0, "2023_Pos_Rank": 7.0, "2023_Fantasy_Points": 255.0, "2023_Games_Played": 12.0, "2023_Avg_Points": 21.25, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1144.0, "2023_Rush_TD": "12", "2023_Rec": 32.0, "2023_Rec_Yds": 206.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 11.0, "Team_Scoring_Rank": 8.0, "Team_Offense_Quality": 23.8, "Position_Opportunity_Score": 77.3449319213, "Team_Rushing_Rank": 7.0, "Team_Rush_Volume": 359.3, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 68.8, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 18, "Name": "Travis Etienne", "Team": "JAC", "Pos": "RB", "BYE": 12, "ESPN_Rank": 24, "Sleeper_Rank": 16.0, "Yahoo_Rank": 22, "Avg_Rank": 20.7, "ADP": 16, "FantasyPros": 26, "2023_Overall_Rank": 17.0, "Rank_Change": -1.0, "2023_Pos_Rank": 3.0, "2023_Fantasy_Points": 282.4, "2023_Games_Played": 17.0, "2023_Avg_Points": 16.61, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1008.0, "2023_Rush_TD": "11", "2023_Rec": 58.0, "2023_Rec_Yds": 476.0, "2023_Rec_TD": "1", "Team_Offense_Rank": null, "Team_Scoring_Rank": null, "Team_Offense_Quality": null, "Position_Opportunity_Score": null, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": null, "Schedule_Rating": null}, {"Overall_Rank": 20, "Name": "Isiah Pacheco", "Team": "KC", "Pos": "RB", "BYE": 6, "ESPN_Rank": 17, "Sleeper_Rank": 28.0, "Yahoo_Rank": 18, "Avg_Rank": 21.0, "ADP": 24, "FantasyPros": 27, "2023_Overall_Rank": 62.0, "Rank_Change": 42.0, "2023_Pos_Rank": 15.0, "2023_Fantasy_Points": 213.9, "2023_Games_Played": 14.0, "2023_Avg_Points": 15.28, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 935.0, "2023_Rush_TD": "7", "2023_Rec": 44.0, "2023_Rec_Yds": 244.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 19.0, "Team_Scoring_Rank": 15.0, "Team_Offense_Quality": 16.4, "Position_Opportunity_Score": 58.8880484115, "Team_Rushing_Rank": 9.0, "Team_Rush_Volume": 351.3, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 87.5, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 28, "Name": "Josh Jacobs", "Team": "GB", "Pos": "RB", "BYE": 10, "ESPN_Rank": 28, "Sleeper_Rank": 24.0, "Yahoo_Rank": 33, "Avg_Rank": 28.3, "ADP": 22, "FantasyPros": 38, "2023_Overall_Rank": 89.0, "Rank_Change": 61.0, "2023_Pos_Rank": 28.0, "2023_Fantasy_Points": 181.1, "2023_Games_Played": 13.0, "2023_Avg_Points": 13.93, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 805.0, "2023_Rush_TD": "6", "2023_Rec": 37.0, "2023_Rec_Yds": 296.0, "2023_Rec_TD": "-", "Team_Offense_Rank": 15.0, "Team_Scoring_Rank": 12.0, "Team_Offense_Quality": 19.8, "Position_Opportunity_Score": 62.2163388805, "Team_Rushing_Rank": 11.0, "Team_Rush_Volume": 345.5, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 62.5, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 29, "Name": "De'Von Achane", "Team": "MIA", "Pos": "RB", "BYE": 6, "ESPN_Rank": 41, "Sleeper_Rank": 23.0, "Yahoo_Rank": 25, "Avg_Rank": 29.7, "ADP": 18, "FantasyPros": 37, "2023_Overall_Rank": 83.0, "Rank_Change": 54.0, "2023_Pos_Rank": 24.0, "2023_Fantasy_Points": 190.7, "2023_Games_Played": 11.0, "2023_Avg_Points": 17.34, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 800.0, "2023_Rush_TD": "8", "2023_Rec": 27.0, "2023_Rec_Yds": 197.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 6.0, "Team_Scoring_Rank": 2.0, "Team_Offense_Quality": 29.4, "Position_Opportunity_Score": 98.7897125567, "Team_Rushing_Rank": 1.0, "Team_Rush_Volume": 401.3, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 66.7, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 35, "Name": "Rachaad White", "Team": "TB", "Pos": "RB", "BYE": 11, "ESPN_Rank": 25, "Sleeper_Rank": 37.0, "Yahoo_Rank": 45, "Avg_Rank": 35.7, "ADP": 32, "FantasyPros": 49, "2023_Overall_Rank": 24.0, "Rank_Change": -11.0, "2023_Pos_Rank": 4.0, "2023_Fantasy_Points": 267.9, "2023_Games_Played": 17.0, "2023_Avg_Points": 15.76, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 990.0, "2023_Rush_TD": "6", "2023_Rec": 64.0, "2023_Rec_Yds": 549.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 32.0, "Team_Scoring_Rank": 20.0, "Team_Offense_Quality": 8.2, "Position_Opportunity_Score": 13.3131618759, "Team_Rushing_Rank": 23.0, "Team_Rush_Volume": 313.0, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 41.7, "Schedule_Rating": "Average"}, {"Overall_Rank": 37, "Name": "James Cook", "Team": "BUF", "Pos": "RB", "BYE": 12, "ESPN_Rank": 30, "Sleeper_Rank": 40.0, "Yahoo_Rank": 43, "Avg_Rank": 37.7, "ADP": 32, "FantasyPros": 45, "2023_Overall_Rank": 44.0, "Rank_Change": 7.0, "2023_Pos_Rank": 12.0, "2023_Fantasy_Points": 232.7, "2023_Games_Played": 17.0, "2023_Avg_Points": 13.69, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1122.0, "2023_Rush_TD": "2", "2023_Rec": 44.0, "2023_Rec_Yds": 445.0, "2023_Rec_TD": "4", "Team_Offense_Rank": 7.0, "Team_Scoring_Rank": 6.0, "Team_Offense_Quality": 26.6, "Position_Opportunity_Score": 89.258698941, "Team_Rushing_Rank": 4.0, "Team_Rush_Volume": 374.5, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 66.7, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 41, "Name": "Kenneth Walker", "Team": "SEA", "Pos": "RB", "BYE": 10, "ESPN_Rank": 29, "Sleeper_Rank": 45.0, "Yahoo_Rank": 46, "Avg_Rank": 40.0, "ADP": 43, "FantasyPros": 39, "2023_Overall_Rank": 76.0, "Rank_Change": 35.0, "2023_Pos_Rank": 19.0, "2023_Fantasy_Points": 199.4, "2023_Games_Played": 15.0, "2023_Avg_Points": 13.29, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 905.0, "2023_Rush_TD": "8", "2023_Rec": 29.0, "2023_Rec_Yds": 259.0, "2023_Rec_TD": "1", "Team_Offense_Rank": 28.0, "Team_Scoring_Rank": 17.0, "Team_Offense_Quality": 11.6, "Position_Opportunity_Score": 24.0544629349, "Team_Rushing_Rank": 21.0, "Team_Rush_Volume": 322.9, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 53.1, "Schedule_Rating": "Average"}]}
+RB RECOMMENDATION: Jahmyr Gibbs - 945 Rush Yards, 10 Rush TDs, 52 Receptions - Gibbs has a strong offensive presence with a high volume of touches and exceptional pass-catching ability, making him a valuable asset in both rushing and receiving. His team also ranks highly in offensive quality, which boosts his overall potential.
+Next, I need to ask for a recommendation for a wide receiver.
+
+wide_receiver_analyzer, what is your recommendation?
+Please give me a moment to consult the wide_receiver_extractor for data on the available wide receivers.
+None
+{"position": "WR", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 11, "players": [{"Overall_Rank": 11, "Name": "Garrett Wilson", "Team": "NYJ", "Pos": "WR", "BYE": 12, "ESPN_Rank": 12, "Sleeper_Rank": 13.0, "Yahoo_Rank": 9, "Avg_Rank": 11.3, "ADP": 13, "FantasyPros": 10, "2023_Overall_Rank": 63.0, "Rank_Change": 52.0, "2023_Pos_Rank": 26.0, "2023_Fantasy_Points": 213.2, "2023_Games_Played": 17.0, "2023_Avg_Points": 12.54, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 95.0, "2023_Rec_Yds": 1042.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 29.0, "Team_Offense_Quality": 6.6, "Position_Opportunity_Score": 4.2170953101, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 31.0, "Team_Pass_Volume": 4566.0, "Schedule_Difficulty_Score": 59.4, "Schedule_Rating": "Average"}, {"Overall_Rank": 13, "Name": "Puka Nacua", "Team": "LAR", "Pos": "WR", "BYE": 6, "ESPN_Rank": 13, "Sleeper_Rank": 15.0, "Yahoo_Rank": 13, "Avg_Rank": 13.7, "ADP": 14, "FantasyPros": 13, "2023_Overall_Rank": 10.0, "Rank_Change": -3.0, "2023_Pos_Rank": 4.0, "2023_Fantasy_Points": 298.5, "2023_Games_Played": 17.0, "2023_Avg_Points": 17.56, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 105.0, "2023_Rec_Yds": 1486.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 11.0, "Team_Scoring_Rank": 8.0, "Team_Offense_Quality": 23.8, "Position_Opportunity_Score": 77.3449319213, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 7.0, "Team_Pass_Volume": 6108.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 17, "Name": "Marvin Harrison", "Team": "ARI", "Pos": "WR", "BYE": 11, "ESPN_Rank": 22, "Sleeper_Rank": 14.0, "Yahoo_Rank": 16, "Avg_Rank": 17.3, "ADP": 15, "FantasyPros": 17, "2023_Overall_Rank": null, "Rank_Change": null, "2023_Pos_Rank": null, "2023_Fantasy_Points": null, "2023_Games_Played": null, "2023_Avg_Points": null, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 4.0, "Team_Scoring_Rank": 24.5, "Team_Offense_Quality": 16.7, "Position_Opportunity_Score": 52.6096822995, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 19.0, "Team_Pass_Volume": 5509.0, "Schedule_Difficulty_Score": 67.2, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 19, "Name": "Chris Olave", "Team": "NO", "Pos": "WR", "BYE": 12, "ESPN_Rank": 18, "Sleeper_Rank": 22.0, "Yahoo_Rank": 23, "Avg_Rank": 21.0, "ADP": 25, "FantasyPros": 25, "2023_Overall_Rank": 45.0, "Rank_Change": 26.0, "2023_Pos_Rank": 16.0, "2023_Fantasy_Points": 231.3, "2023_Games_Played": 16.0, "2023_Avg_Points": 14.46, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 87.0, "2023_Rec_Yds": 1123.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 21.0, "Team_Scoring_Rank": 9.0, "Team_Offense_Quality": 19.2, "Position_Opportunity_Score": 51.2102874433, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 14.0, "Team_Pass_Volume": 5732.0, "Schedule_Difficulty_Score": 53.1, "Schedule_Rating": "Average"}, {"Overall_Rank": 21, "Name": "Davante Adams", "Team": "LV", "Pos": "WR", "BYE": 10, "ESPN_Rank": 27, "Sleeper_Rank": 21.0, "Yahoo_Rank": 20, "Avg_Rank": 22.7, "ADP": 20, "FantasyPros": 28, "2023_Overall_Rank": 27.0, "Rank_Change": 6.0, "2023_Pos_Rank": 10.0, "2023_Fantasy_Points": 265.4, "2023_Games_Played": 17.0, "2023_Avg_Points": 15.61, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 103.0, "2023_Rec_Yds": 1144.0, "2023_Rec_TD": "8", "Team_Offense_Rank": 30.0, "Team_Scoring_Rank": 23.0, "Team_Offense_Quality": 7.2, "Position_Opportunity_Score": 6.3540090772, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 27.0, "Team_Pass_Volume": 4922.0, "Schedule_Difficulty_Score": 57.3, "Schedule_Rating": "Average"}, {"Overall_Rank": 22, "Name": "Mike Evans", "Team": "TB", "Pos": "WR", "BYE": 11, "ESPN_Rank": 19, "Sleeper_Rank": 29.0, "Yahoo_Rank": 21, "Avg_Rank": 23.0, "ADP": 37, "FantasyPros": 18, "2023_Overall_Rank": 16.0, "Rank_Change": -6.0, "2023_Pos_Rank": 7.0, "2023_Fantasy_Points": 282.5, "2023_Games_Played": 17.0, "2023_Avg_Points": 16.62, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 79.0, "2023_Rec_Yds": 1255.0, "2023_Rec_TD": "13", "Team_Offense_Rank": 32.0, "Team_Scoring_Rank": 20.0, "Team_Offense_Quality": 8.2, "Position_Opportunity_Score": 13.3131618759, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 23.0, "Team_Pass_Volume": 5321.0, "Schedule_Difficulty_Score": 47.9, "Schedule_Rating": "Average"}, {"Overall_Rank": 23, "Name": "Drake London", "Team": "ATL", "Pos": "WR", "BYE": 12, "ESPN_Rank": 31, "Sleeper_Rank": 19.0, "Yahoo_Rank": 19, "Avg_Rank": 23.0, "ADP": 21, "FantasyPros": 22, "2023_Overall_Rank": 95.0, "Rank_Change": 72.0, "2023_Pos_Rank": 37.0, "2023_Fantasy_Points": 174.38, "2023_Games_Played": 16.0, "2023_Avg_Points": 10.9, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 69.0, "2023_Rec_Yds": 905.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 9.0, "Team_Scoring_Rank": 26.0, "Team_Offense_Quality": 13.8, "Position_Opportunity_Score": 49.0544629349, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 17.0, "Team_Pass_Volume": 5683.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 24, "Name": "Deebo Samuel", "Team": "SF", "Pos": "WR", "BYE": 9, "ESPN_Rank": 20, "Sleeper_Rank": 27.0, "Yahoo_Rank": 27, "Avg_Rank": 24.7, "ADP": 26, "FantasyPros": 16, "2023_Overall_Rank": 37.0, "Rank_Change": 13.0, "2023_Pos_Rank": 15.0, "2023_Fantasy_Points": 243.7, "2023_Games_Played": 15.0, "2023_Avg_Points": 16.25, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 60.0, "2023_Rec_Yds": 892.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 3.0, "Team_Scoring_Rank": 3.0, "Team_Offense_Quality": 30.0, "Position_Opportunity_Score": 100.0, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 2.0, "Team_Pass_Volume": 6773.0, "Schedule_Difficulty_Score": 70.8, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 25, "Name": "Brandon Aiyuk", "Team": "SF", "Pos": "WR", "BYE": 9, "ESPN_Rank": 26, "Sleeper_Rank": 26.0, "Yahoo_Rank": 28, "Avg_Rank": 26.7, "ADP": 35, "FantasyPros": 24, "2023_Overall_Rank": 34.0, "Rank_Change": 9.0, "2023_Pos_Rank": 14.0, "2023_Fantasy_Points": 249.2, "2023_Games_Played": 16.0, "2023_Avg_Points": 15.58, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 75.0, "2023_Rec_Yds": 1342.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 3.0, "Team_Scoring_Rank": 3.0, "Team_Offense_Quality": 30.0, "Position_Opportunity_Score": 100.0, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 2.0, "Team_Pass_Volume": 6773.0, "Schedule_Difficulty_Score": 70.8, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 26, "Name": "Nico Collins", "Team": "HOU", "Pos": "WR", "BYE": 14, "ESPN_Rank": 23, "Sleeper_Rank": 33.0, "Yahoo_Rank": 24, "Avg_Rank": 26.7, "ADP": 27, "FantasyPros": 21, "2023_Overall_Rank": 30.0, "Rank_Change": 4.0, "2023_Pos_Rank": 12.0, "2023_Fantasy_Points": 260.4, "2023_Games_Played": 15.0, "2023_Avg_Points": 17.36, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 80.0, "2023_Rec_Yds": 1297.0, "2023_Rec_TD": "8", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.9810892587, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}]}
+WR RECOMMENDATION: Puka Nacua - 105 Receptions, 1486 Receiving Yards, 6 Touchdowns - Nacua has been a standout with an impressive reception volume and yardage, playing in a potent offense that ranks highly in scoring. His connection with the quarterback has showcased his potential to make big plays consistently, making him a top choice at wide receiver.
+Next, I need to ask for a recommendation for the second wide receiver.
+
+wide_receiver_analyzer, what is your recommendation?
+Please give me a moment to consult the wide_receiver_extractor for data on the available wide receivers.
+None
+{"position": "WR", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 12, "players": [{"Overall_Rank": 11, "Name": "Garrett Wilson", "Team": "NYJ", "Pos": "WR", "BYE": 12, "ESPN_Rank": 12, "Sleeper_Rank": 13.0, "Yahoo_Rank": 9, "Avg_Rank": 11.3, "ADP": 13, "FantasyPros": 10, "2023_Overall_Rank": 63.0, "Rank_Change": 52.0, "2023_Pos_Rank": 26.0, "2023_Fantasy_Points": 213.2, "2023_Games_Played": 17.0, "2023_Avg_Points": 12.54, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 95.0, "2023_Rec_Yds": 1042.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 29.0, "Team_Offense_Quality": 6.6, "Position_Opportunity_Score": 4.2170953101, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 31.0, "Team_Pass_Volume": 4566.0, "Schedule_Difficulty_Score": 59.4, "Schedule_Rating": "Average"}, {"Overall_Rank": 17, "Name": "Marvin Harrison", "Team": "ARI", "Pos": "WR", "BYE": 11, "ESPN_Rank": 22, "Sleeper_Rank": 14.0, "Yahoo_Rank": 16, "Avg_Rank": 17.3, "ADP": 15, "FantasyPros": 17, "2023_Overall_Rank": null, "Rank_Change": null, "2023_Pos_Rank": null, "2023_Fantasy_Points": null, "2023_Games_Played": null, "2023_Avg_Points": null, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 4.0, "Team_Scoring_Rank": 24.5, "Team_Offense_Quality": 16.7, "Position_Opportunity_Score": 52.6096822995, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 19.0, "Team_Pass_Volume": 5509.0, "Schedule_Difficulty_Score": 67.2, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 19, "Name": "Chris Olave", "Team": "NO", "Pos": "WR", "BYE": 12, "ESPN_Rank": 18, "Sleeper_Rank": 22.0, "Yahoo_Rank": 23, "Avg_Rank": 21.0, "ADP": 25, "FantasyPros": 25, "2023_Overall_Rank": 45.0, "Rank_Change": 26.0, "2023_Pos_Rank": 16.0, "2023_Fantasy_Points": 231.3, "2023_Games_Played": 16.0, "2023_Avg_Points": 14.46, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 87.0, "2023_Rec_Yds": 1123.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 21.0, "Team_Scoring_Rank": 9.0, "Team_Offense_Quality": 19.2, "Position_Opportunity_Score": 51.2102874433, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 14.0, "Team_Pass_Volume": 5732.0, "Schedule_Difficulty_Score": 53.1, "Schedule_Rating": "Average"}, {"Overall_Rank": 21, "Name": "Davante Adams", "Team": "LV", "Pos": "WR", "BYE": 10, "ESPN_Rank": 27, "Sleeper_Rank": 21.0, "Yahoo_Rank": 20, "Avg_Rank": 22.7, "ADP": 20, "FantasyPros": 28, "2023_Overall_Rank": 27.0, "Rank_Change": 6.0, "2023_Pos_Rank": 10.0, "2023_Fantasy_Points": 265.4, "2023_Games_Played": 17.0, "2023_Avg_Points": 15.61, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 103.0, "2023_Rec_Yds": 1144.0, "2023_Rec_TD": "8", "Team_Offense_Rank": 30.0, "Team_Scoring_Rank": 23.0, "Team_Offense_Quality": 7.2, "Position_Opportunity_Score": 6.3540090772, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 27.0, "Team_Pass_Volume": 4922.0, "Schedule_Difficulty_Score": 57.3, "Schedule_Rating": "Average"}, {"Overall_Rank": 22, "Name": "Mike Evans", "Team": "TB", "Pos": "WR", "BYE": 11, "ESPN_Rank": 19, "Sleeper_Rank": 29.0, "Yahoo_Rank": 21, "Avg_Rank": 23.0, "ADP": 37, "FantasyPros": 18, "2023_Overall_Rank": 16.0, "Rank_Change": -6.0, "2023_Pos_Rank": 7.0, "2023_Fantasy_Points": 282.5, "2023_Games_Played": 17.0, "2023_Avg_Points": 16.62, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 79.0, "2023_Rec_Yds": 1255.0, "2023_Rec_TD": "13", "Team_Offense_Rank": 32.0, "Team_Scoring_Rank": 20.0, "Team_Offense_Quality": 8.2, "Position_Opportunity_Score": 13.3131618759, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 23.0, "Team_Pass_Volume": 5321.0, "Schedule_Difficulty_Score": 47.9, "Schedule_Rating": "Average"}, {"Overall_Rank": 23, "Name": "Drake London", "Team": "ATL", "Pos": "WR", "BYE": 12, "ESPN_Rank": 31, "Sleeper_Rank": 19.0, "Yahoo_Rank": 19, "Avg_Rank": 23.0, "ADP": 21, "FantasyPros": 22, "2023_Overall_Rank": 95.0, "Rank_Change": 72.0, "2023_Pos_Rank": 37.0, "2023_Fantasy_Points": 174.38, "2023_Games_Played": 16.0, "2023_Avg_Points": 10.9, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 69.0, "2023_Rec_Yds": 905.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 9.0, "Team_Scoring_Rank": 26.0, "Team_Offense_Quality": 13.8, "Position_Opportunity_Score": 49.0544629349, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 17.0, "Team_Pass_Volume": 5683.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 24, "Name": "Deebo Samuel", "Team": "SF", "Pos": "WR", "BYE": 9, "ESPN_Rank": 20, "Sleeper_Rank": 27.0, "Yahoo_Rank": 27, "Avg_Rank": 24.7, "ADP": 26, "FantasyPros": 16, "2023_Overall_Rank": 37.0, "Rank_Change": 13.0, "2023_Pos_Rank": 15.0, "2023_Fantasy_Points": 243.7, "2023_Games_Played": 15.0, "2023_Avg_Points": 16.25, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 60.0, "2023_Rec_Yds": 892.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 3.0, "Team_Scoring_Rank": 3.0, "Team_Offense_Quality": 30.0, "Position_Opportunity_Score": 100.0, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 2.0, "Team_Pass_Volume": 6773.0, "Schedule_Difficulty_Score": 70.8, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 25, "Name": "Brandon Aiyuk", "Team": "SF", "Pos": "WR", "BYE": 9, "ESPN_Rank": 26, "Sleeper_Rank": 26.0, "Yahoo_Rank": 28, "Avg_Rank": 26.7, "ADP": 35, "FantasyPros": 24, "2023_Overall_Rank": 34.0, "Rank_Change": 9.0, "2023_Pos_Rank": 14.0, "2023_Fantasy_Points": 249.2, "2023_Games_Played": 16.0, "2023_Avg_Points": 15.58, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 75.0, "2023_Rec_Yds": 1342.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 3.0, "Team_Scoring_Rank": 3.0, "Team_Offense_Quality": 30.0, "Position_Opportunity_Score": 100.0, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 2.0, "Team_Pass_Volume": 6773.0, "Schedule_Difficulty_Score": 70.8, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 26, "Name": "Nico Collins", "Team": "HOU", "Pos": "WR", "BYE": 14, "ESPN_Rank": 23, "Sleeper_Rank": 33.0, "Yahoo_Rank": 24, "Avg_Rank": 26.7, "ADP": 27, "FantasyPros": 21, "2023_Overall_Rank": 30.0, "Rank_Change": 4.0, "2023_Pos_Rank": 12.0, "2023_Fantasy_Points": 260.4, "2023_Games_Played": 15.0, "2023_Avg_Points": 17.36, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 80.0, "2023_Rec_Yds": 1297.0, "2023_Rec_TD": "8", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.9810892587, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 31, "Name": "DK Metcalf", "Team": "SEA", "Pos": "WR", "BYE": 10, "ESPN_Rank": 21, "Sleeper_Rank": 41.0, "Yahoo_Rank": 34, "Avg_Rank": 32.0, "ADP": 42, "FantasyPros": 29, "2023_Overall_Rank": 53.0, "Rank_Change": 22.0, "2023_Pos_Rank": 21.0, "2023_Fantasy_Points": 225.4, "2023_Games_Played": 16.0, "2023_Avg_Points": 14.09, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 66.0, "2023_Rec_Yds": 1114.0, "2023_Rec_TD": "8", "Team_Offense_Rank": 28.0, "Team_Scoring_Rank": 17.0, "Team_Offense_Quality": 11.6, "Position_Opportunity_Score": 24.0544629349, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 21.0, "Team_Pass_Volume": 5490.0, "Schedule_Difficulty_Score": 64.1, "Schedule_Rating": "Favorable"}]}
+WR RECOMMENDATION: Chris Olave - 87 Receptions, 1123 Receiving Yards, 5 Touchdowns - Olave has shown consistent production with a solid reception count and average yardage, all while playing on a scoring-efficient offense. His ability to get open and create yardage after the catch makes him a valuable asset for the second wide receiver position.
+Based on the recommendations collected:
+
+1. **QB Recommendation**: Josh Allen - 4306 Pass Yards, 29 TDs, 18 INTs
+2. **RB Recommendation**: Jahmyr Gibbs - 945 Rush Yards, 10 Rush TDs, 52 Receptions
+3. **WR Recommendation**: Puka Nacua - 105 Receptions, 1486 Receiving Yards, 6 Touchdowns
+4. **Second WR Recommendation**: Chris Olave - 87 Receptions, 1123 Receiving Yards, 5 Touchdowns
+
+Since I can only draft one player in this round and based on the strategic value of filling high-impact positions, I will prioritize the running back position due to its need for a second selection.
+
+I select: <player>Jahmyr Gibbs</player> 
+**TERMINATE**
+
+DRAFT ROUND 2, PICK 1
+
+Your current roster:
+- Jahmyr Gibbs - RB (DET)
+
+
+Already drafted players (DO NOT SELECT THESE):
+- Christian McCaffrey
+- Bijan Robinson
+- Breece Hall
+- CeeDee Lamb
+- Tyreek Hill
+- Ja'Marr Chase
+- Amon-Ra St. Brown
+- Justin Jefferson
+- Jonathan Taylor
+- Saquon Barkley
+- A.J. Brown
+- Jahmyr Gibbs
+
+
+You are making a selection for the AI_General_Manager. Remember that a complete roster requires: 1 QB, 2 RB, 3 WR, and 1 TE
+First, ask yourself what your current roster is and based on that clearly write out what positions still have empty slots in.
+Based on the empty slots, make a decision on who you want to draft next.
+
+Your current roster:
+- Jahmyr Gibbs - RB (DET)
+
+Positions still needed:
+- 1 Quarterback (QB)
+- 2 Running Backs (RB) (currently have 1)
+- 3 Wide Receivers (WR) (currently have 0)
+- 1 Tight End (TE) (currently have 0)
+
+Now, since I need to fill the positions of Quarterback, Wide Receiver, and Tight End, I will start by asking for a recommendation from the Tight End analyzer.
+
+tight_end_analyzer, what is your recommendation?
+tight_end_extractor, can you provide me with data on the available tight ends?
+None
+{"position": "TE", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 12, "players": [{"Overall_Rank": 30, "Name": "Travis Kelce", "Team": "KC", "Pos": "TE", "BYE": 6, "ESPN_Rank": 37, "Sleeper_Rank": 25.0, "Yahoo_Rank": 29, "Avg_Rank": 30.3, "ADP": 28, "FantasyPros": 34, "2023_Overall_Rank": 58.0, "Rank_Change": 28.0, "2023_Pos_Rank": 3.0, "2023_Fantasy_Points": 219.4, "2023_Games_Played": 15.0, "2023_Avg_Points": 14.63, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 93.0, "2023_Rec_Yds": 984.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 19.0, "Team_Scoring_Rank": 15.0, "Team_Offense_Quality": 16.4, "Position_Opportunity_Score": 57.3807721423, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 9.0, "Team_Pass_Volume": 5972.0, "Schedule_Difficulty_Score": 78.1, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 32, "Name": "Sam LaPorta", "Team": "DET", "Pos": "TE", "BYE": 5, "ESPN_Rank": 36, "Sleeper_Rank": 30.0, "Yahoo_Rank": 31, "Avg_Rank": 32.3, "ADP": 28, "FantasyPros": 30, "2023_Overall_Rank": 41.0, "Rank_Change": 9.0, "2023_Pos_Rank": 1.0, "2023_Fantasy_Points": 239.3, "2023_Games_Played": 17.0, "2023_Avg_Points": 14.08, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 86.0, "2023_Rec_Yds": 889.0, "2023_Rec_TD": "10", "Team_Offense_Rank": 5.0, "Team_Scoring_Rank": 5.0, "Team_Offense_Quality": 28.0, "Position_Opportunity_Score": 94.019682059, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 3.0, "Team_Pass_Volume": 6712.0, "Schedule_Difficulty_Score": 6.2, "Schedule_Rating": "Very Difficult"}, {"Overall_Rank": 48, "Name": "Mark Andrews", "Team": "BAL", "Pos": "TE", "BYE": 14, "ESPN_Rank": 51, "Sleeper_Rank": 49.0, "Yahoo_Rank": 50, "Avg_Rank": 50.0, "ADP": 49, "FantasyPros": 47, "2023_Overall_Rank": 125.0, "Rank_Change": 77.0, "2023_Pos_Rank": 15.0, "2023_Fantasy_Points": 135.4, "2023_Games_Played": 10.0, "2023_Avg_Points": 13.54, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 45.0, "2023_Rec_Yds": 544.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 1.0, "Team_Scoring_Rank": 4.0, "Team_Offense_Quality": 30.2, "Position_Opportunity_Score": 95.3065859198, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 6.0, "Team_Pass_Volume": 6296.0, "Schedule_Difficulty_Score": 85.9, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 49, "Name": "Trey McBride", "Team": "ARI", "Pos": "TE", "BYE": 11, "ESPN_Rank": 57, "Sleeper_Rank": 48.0, "Yahoo_Rank": 47, "Avg_Rank": 50.7, "ADP": 48, "FantasyPros": 62, "2023_Overall_Rank": 88.0, "Rank_Change": 39.0, "2023_Pos_Rank": 7.0, "2023_Fantasy_Points": 181.5, "2023_Games_Played": 17.0, "2023_Avg_Points": 10.68, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 81.0, "2023_Rec_Yds": 825.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 4.0, "Team_Scoring_Rank": 24.5, "Team_Offense_Quality": 16.7, "Position_Opportunity_Score": 52.1574564724, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 19.0, "Team_Pass_Volume": 5509.0, "Schedule_Difficulty_Score": 41.4, "Schedule_Rating": "Average"}, {"Overall_Rank": 57, "Name": "George Kittle", "Team": "SF", "Pos": "TE", "BYE": 9, "ESPN_Rank": 56, "Sleeper_Rank": 58.0, "Yahoo_Rank": 66, "Avg_Rank": 60.0, "ADP": 61, "FantasyPros": 71, "2023_Overall_Rank": 71.0, "Rank_Change": 14.0, "2023_Pos_Rank": 5.0, "2023_Fantasy_Points": 203.2, "2023_Games_Played": 16.0, "2023_Avg_Points": 12.7, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 65.0, "2023_Rec_Yds": 1020.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 3.0, "Team_Scoring_Rank": 3.0, "Team_Offense_Quality": 30.0, "Position_Opportunity_Score": 100.0, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 2.0, "Team_Pass_Volume": 6773.0, "Schedule_Difficulty_Score": 29.2, "Schedule_Rating": "Difficult"}, {"Overall_Rank": 62, "Name": "Dalton Kincaid", "Team": "BUF", "Pos": "TE", "BYE": 12, "ESPN_Rank": 75, "Sleeper_Rank": 51.0, "Yahoo_Rank": 67, "Avg_Rank": 64.3, "ADP": 50, "FantasyPros": 78, "2023_Overall_Rank": 111.0, "Rank_Change": 49.0, "2023_Pos_Rank": 11.0, "2023_Fantasy_Points": 150.3, "2023_Games_Played": 16.0, "2023_Avg_Points": 9.39, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 73.0, "2023_Rec_Yds": 673.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 7.0, "Team_Scoring_Rank": 6.0, "Team_Offense_Quality": 26.6, "Position_Opportunity_Score": 88.9477668433, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 4.0, "Team_Pass_Volume": 6366.0, "Schedule_Difficulty_Score": 52.1, "Schedule_Rating": "Average"}, {"Overall_Rank": 69, "Name": "Kyle Pitts", "Team": "ATL", "Pos": "TE", "BYE": 12, "ESPN_Rank": 73, "Sleeper_Rank": 61.0, "Yahoo_Rank": 75, "Avg_Rank": 69.7, "ADP": 65, "FantasyPros": 76, "2023_Overall_Rank": 123.0, "Rank_Change": 54.0, "2023_Pos_Rank": 13.0, "2023_Fantasy_Points": 137.3, "2023_Games_Played": 17.0, "2023_Avg_Points": 8.08, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 53.0, "2023_Rec_Yds": 667.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 9.0, "Team_Scoring_Rank": 26.0, "Team_Offense_Quality": 13.8, "Position_Opportunity_Score": 47.5397426192, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 17.0, "Team_Pass_Volume": 5683.0, "Schedule_Difficulty_Score": 85.9, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 84, "Name": "David Njoku", "Team": "CLE", "Pos": "TE", "BYE": 10, "ESPN_Rank": 74, "Sleeper_Rank": 87.0, "Yahoo_Rank": 99, "Avg_Rank": 86.7, "ADP": 89, "FantasyPros": 95, "2023_Overall_Rank": 75.0, "Rank_Change": -9.0, "2023_Pos_Rank": 6.0, "2023_Fantasy_Points": 201.2, "2023_Games_Played": 16.0, "2023_Avg_Points": 12.58, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 81.0, "2023_Rec_Yds": 882.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 12.0, "Team_Scoring_Rank": 10.5, "Team_Offense_Quality": 21.9, "Position_Opportunity_Score": 59.3489780469, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 16.0, "Team_Pass_Volume": 5710.0, "Schedule_Difficulty_Score": 85.9, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 86, "Name": "Evan Engram", "Team": "JAC", "Pos": "TE", "BYE": 12, "ESPN_Rank": 100, "Sleeper_Rank": 71.0, "Yahoo_Rank": 91, "Avg_Rank": 87.3, "ADP": 72, "FantasyPros": 92, "2023_Overall_Rank": 47.0, "Rank_Change": -39.0, "2023_Pos_Rank": 2.0, "2023_Fantasy_Points": 230.3, "2023_Games_Played": 17.0, "2023_Avg_Points": 13.55, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 114.0, "2023_Rec_Yds": 963.0, "2023_Rec_TD": "4", "Team_Offense_Rank": null, "Team_Scoring_Rank": null, "Team_Offense_Quality": null, "Position_Opportunity_Score": null, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": null, "Schedule_Rating": null}, {"Overall_Rank": 93, "Name": "Jake Ferguson", "Team": "DAL", "Pos": "TE", "BYE": 7, "ESPN_Rank": 101, "Sleeper_Rank": 85.0, "Yahoo_Rank": 96, "Avg_Rank": 94.0, "ADP": 83, "FantasyPros": 91, "2023_Overall_Rank": 92.0, "Rank_Change": -1.0, "2023_Pos_Rank": 9.0, "2023_Fantasy_Points": 177.1, "2023_Games_Played": 17.0, "2023_Avg_Points": 10.42, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 71.0, "2023_Rec_Yds": 761.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 14.0, "Team_Scoring_Rank": 1.0, "Team_Offense_Quality": 26.8, "Position_Opportunity_Score": 82.8917486752, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 5.0, "Team_Pass_Volume": 6317.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}]}
+TE RECOMMENDATION: Sam LaPorta - 86 receptions, 889 receiving yards, 10 receiving touchdowns - LaPorta stands out with a strong offensive unit ranked 5th in scoring, offering substantial throwing opportunities and potential for big plays in favorable matchups.
+Next, I will now ask for a recommendation from the Wide Receiver analyst.
+
+wide_receiver_analyzer, what is your recommendation?
+wide_receiver_extractor, can you provide me with data on the available wide receivers?
+None
+{"position": "WR", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 12, "players": [{"Overall_Rank": 11, "Name": "Garrett Wilson", "Team": "NYJ", "Pos": "WR", "BYE": 12, "ESPN_Rank": 12, "Sleeper_Rank": 13.0, "Yahoo_Rank": 9, "Avg_Rank": 11.3, "ADP": 13, "FantasyPros": 10, "2023_Overall_Rank": 63.0, "Rank_Change": 52.0, "2023_Pos_Rank": 26.0, "2023_Fantasy_Points": 213.2, "2023_Games_Played": 17.0, "2023_Avg_Points": 12.54, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 95.0, "2023_Rec_Yds": 1042.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 29.0, "Team_Offense_Quality": 6.6, "Position_Opportunity_Score": 4.2170953101, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 31.0, "Team_Pass_Volume": 4566.0, "Schedule_Difficulty_Score": 59.4, "Schedule_Rating": "Average"}, {"Overall_Rank": 13, "Name": "Puka Nacua", "Team": "LAR", "Pos": "WR", "BYE": 6, "ESPN_Rank": 13, "Sleeper_Rank": 15.0, "Yahoo_Rank": 13, "Avg_Rank": 13.7, "ADP": 14, "FantasyPros": 13, "2023_Overall_Rank": 10.0, "Rank_Change": -3.0, "2023_Pos_Rank": 4.0, "2023_Fantasy_Points": 298.5, "2023_Games_Played": 17.0, "2023_Avg_Points": 17.56, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 105.0, "2023_Rec_Yds": 1486.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 11.0, "Team_Scoring_Rank": 8.0, "Team_Offense_Quality": 23.8, "Position_Opportunity_Score": 77.3449319213, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 7.0, "Team_Pass_Volume": 6108.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 17, "Name": "Marvin Harrison", "Team": "ARI", "Pos": "WR", "BYE": 11, "ESPN_Rank": 22, "Sleeper_Rank": 14.0, "Yahoo_Rank": 16, "Avg_Rank": 17.3, "ADP": 15, "FantasyPros": 17, "2023_Overall_Rank": null, "Rank_Change": null, "2023_Pos_Rank": null, "2023_Fantasy_Points": null, "2023_Games_Played": null, "2023_Avg_Points": null, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 4.0, "Team_Scoring_Rank": 24.5, "Team_Offense_Quality": 16.7, "Position_Opportunity_Score": 52.6096822995, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 19.0, "Team_Pass_Volume": 5509.0, "Schedule_Difficulty_Score": 67.2, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 19, "Name": "Chris Olave", "Team": "NO", "Pos": "WR", "BYE": 12, "ESPN_Rank": 18, "Sleeper_Rank": 22.0, "Yahoo_Rank": 23, "Avg_Rank": 21.0, "ADP": 25, "FantasyPros": 25, "2023_Overall_Rank": 45.0, "Rank_Change": 26.0, "2023_Pos_Rank": 16.0, "2023_Fantasy_Points": 231.3, "2023_Games_Played": 16.0, "2023_Avg_Points": 14.46, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 87.0, "2023_Rec_Yds": 1123.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 21.0, "Team_Scoring_Rank": 9.0, "Team_Offense_Quality": 19.2, "Position_Opportunity_Score": 51.2102874433, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 14.0, "Team_Pass_Volume": 5732.0, "Schedule_Difficulty_Score": 53.1, "Schedule_Rating": "Average"}, {"Overall_Rank": 21, "Name": "Davante Adams", "Team": "LV", "Pos": "WR", "BYE": 10, "ESPN_Rank": 27, "Sleeper_Rank": 21.0, "Yahoo_Rank": 20, "Avg_Rank": 22.7, "ADP": 20, "FantasyPros": 28, "2023_Overall_Rank": 27.0, "Rank_Change": 6.0, "2023_Pos_Rank": 10.0, "2023_Fantasy_Points": 265.4, "2023_Games_Played": 17.0, "2023_Avg_Points": 15.61, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 103.0, "2023_Rec_Yds": 1144.0, "2023_Rec_TD": "8", "Team_Offense_Rank": 30.0, "Team_Scoring_Rank": 23.0, "Team_Offense_Quality": 7.2, "Position_Opportunity_Score": 6.3540090772, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 27.0, "Team_Pass_Volume": 4922.0, "Schedule_Difficulty_Score": 57.3, "Schedule_Rating": "Average"}, {"Overall_Rank": 22, "Name": "Mike Evans", "Team": "TB", "Pos": "WR", "BYE": 11, "ESPN_Rank": 19, "Sleeper_Rank": 29.0, "Yahoo_Rank": 21, "Avg_Rank": 23.0, "ADP": 37, "FantasyPros": 18, "2023_Overall_Rank": 16.0, "Rank_Change": -6.0, "2023_Pos_Rank": 7.0, "2023_Fantasy_Points": 282.5, "2023_Games_Played": 17.0, "2023_Avg_Points": 16.62, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 79.0, "2023_Rec_Yds": 1255.0, "2023_Rec_TD": "13", "Team_Offense_Rank": 32.0, "Team_Scoring_Rank": 20.0, "Team_Offense_Quality": 8.2, "Position_Opportunity_Score": 13.3131618759, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 23.0, "Team_Pass_Volume": 5321.0, "Schedule_Difficulty_Score": 47.9, "Schedule_Rating": "Average"}, {"Overall_Rank": 23, "Name": "Drake London", "Team": "ATL", "Pos": "WR", "BYE": 12, "ESPN_Rank": 31, "Sleeper_Rank": 19.0, "Yahoo_Rank": 19, "Avg_Rank": 23.0, "ADP": 21, "FantasyPros": 22, "2023_Overall_Rank": 95.0, "Rank_Change": 72.0, "2023_Pos_Rank": 37.0, "2023_Fantasy_Points": 174.38, "2023_Games_Played": 16.0, "2023_Avg_Points": 10.9, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 69.0, "2023_Rec_Yds": 905.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 9.0, "Team_Scoring_Rank": 26.0, "Team_Offense_Quality": 13.8, "Position_Opportunity_Score": 49.0544629349, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 17.0, "Team_Pass_Volume": 5683.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 24, "Name": "Deebo Samuel", "Team": "SF", "Pos": "WR", "BYE": 9, "ESPN_Rank": 20, "Sleeper_Rank": 27.0, "Yahoo_Rank": 27, "Avg_Rank": 24.7, "ADP": 26, "FantasyPros": 16, "2023_Overall_Rank": 37.0, "Rank_Change": 13.0, "2023_Pos_Rank": 15.0, "2023_Fantasy_Points": 243.7, "2023_Games_Played": 15.0, "2023_Avg_Points": 16.25, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 60.0, "2023_Rec_Yds": 892.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 3.0, "Team_Scoring_Rank": 3.0, "Team_Offense_Quality": 30.0, "Position_Opportunity_Score": 100.0, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 2.0, "Team_Pass_Volume": 6773.0, "Schedule_Difficulty_Score": 70.8, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 25, "Name": "Brandon Aiyuk", "Team": "SF", "Pos": "WR", "BYE": 9, "ESPN_Rank": 26, "Sleeper_Rank": 26.0, "Yahoo_Rank": 28, "Avg_Rank": 26.7, "ADP": 35, "FantasyPros": 24, "2023_Overall_Rank": 34.0, "Rank_Change": 9.0, "2023_Pos_Rank": 14.0, "2023_Fantasy_Points": 249.2, "2023_Games_Played": 16.0, "2023_Avg_Points": 15.58, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 75.0, "2023_Rec_Yds": 1342.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 3.0, "Team_Scoring_Rank": 3.0, "Team_Offense_Quality": 30.0, "Position_Opportunity_Score": 100.0, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 2.0, "Team_Pass_Volume": 6773.0, "Schedule_Difficulty_Score": 70.8, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 26, "Name": "Nico Collins", "Team": "HOU", "Pos": "WR", "BYE": 14, "ESPN_Rank": 23, "Sleeper_Rank": 33.0, "Yahoo_Rank": 24, "Avg_Rank": 26.7, "ADP": 27, "FantasyPros": 21, "2023_Overall_Rank": 30.0, "Rank_Change": 4.0, "2023_Pos_Rank": 12.0, "2023_Fantasy_Points": 260.4, "2023_Games_Played": 15.0, "2023_Avg_Points": 17.36, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 80.0, "2023_Rec_Yds": 1297.0, "2023_Rec_TD": "8", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.9810892587, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}]}
+WR RECOMMENDATION: Puka Nacua - 105 receptions, 1486 receiving yards, 6 receiving touchdowns - Nacua has emerged as a key target in an offense ranked 8th in scoring, indicating significant involvement and high potential for fantasy points, especially with a favorable schedule ahead.
+Now that I have the recommendations from the Tight End analyzer and the Wide Receiver analyzer, I will review my options:
+
+1. Tight End Recommendation:
+   - Sam LaPorta: 86 receptions, 889 receiving yards, 10 touchdowns.
+
+2. Wide Receiver Recommendation:
+   - Puka Nacua: 105 receptions, 1486 receiving yards, 6 touchdowns.
+
+Given that I need to fill the positions of Wide Receiver and Tight End, I can choose one player from either category.
+
+Considering that I need three wide receivers on my roster, and Puka Nacua had an exceptional season with high reception and yard numbers, I will prioritize him.
+
+I select:
+<player>Puka Nacua</player>
+**TERMINATE**
+
+DRAFT ROUND 3, PICK 12
+
+Your current roster:
+- Jahmyr Gibbs - RB (DET)
+- Puka Nacua - WR (LAR)
+
+
+Already drafted players (DO NOT SELECT THESE):
+- Christian McCaffrey
+- Bijan Robinson
+- Breece Hall
+- CeeDee Lamb
+- Tyreek Hill
+- Ja'Marr Chase
+- Amon-Ra St. Brown
+- Justin Jefferson
+- Jonathan Taylor
+- Saquon Barkley
+- A.J. Brown
+- Jahmyr Gibbs
+- Puka Nacua
+- Garrett Wilson
+- Kyren Williams
+- Derrick Henry
+- Isiah Pacheco
+- Chris Olave
+- Mike Evans
+- Deebo Samuel
+- DK Metcalf
+- Marvin Harrison
+- Nico Collins
+- Travis Etienne
+- Brandon Aiyuk
+- Rachaad White
+- Davante Adams
+- Josh Jacobs
+- Kenneth Walker
+- James Cook
+- Josh Allen
+- Drake London
+- Malik Nabers
+- DJ Moore
+- Sam LaPorta
+
+
+You are making a selection for the AI_General_Manager. Remember that a complete roster requires: 1 QB, 2 RB, 3 WR, and 1 TE
+First, ask yourself what your current roster is and based on that clearly write out what positions still have empty slots in.
+Based on the empty slots, make a decision on who you want to draft next.
+
+Your current roster:
+- Jahmyr Gibbs - RB (DET)
+- Puka Nacua - WR (LAR)
+
+Positions still needed to fill:
+- 1 Quarterback (QB)
+- 2 Running Backs (RB)
+- 3 Wide Receivers (WR) - already have 1
+- 1 Tight End (TE)
+
+Currently, I need to fill:
+- 1 QB
+- 1 RB
+- 1 WR
+- 1 TE
+
+Since I need to fill the QB position next, I will ask the quarterback analyzer for their recommendation.
+
+quarterback_analyzer, what is your recommendation?
+I'll need to gather data from the quarterback_extractor for my recommendation. 
+
+quarterback_extractor, can you please provide the latest data on available quarterbacks including their passing yards, TDs, interceptions, rushing ability, and other relevant stats?
+None
+{"position": "QB", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 35, "players": [{"Overall_Rank": 34, "Name": "Jalen Hurts", "Team": "PHI", "Pos": "QB", "BYE": 5, "ESPN_Rank": 38, "Sleeper_Rank": 31.0, "Yahoo_Rank": 35, "Avg_Rank": 34.7, "ADP": 30, "FantasyPros": 23, "2023_Overall_Rank": 5.0, "Rank_Change": -29.0, "2023_Pos_Rank": 2.0, "2023_Fantasy_Points": 356.82, "2023_Games_Played": 17.0, "2023_Avg_Points": 20.99, "2023_Pass_Yds": 3858.0, "2023_Pass_TD": 23.0, "2023_Pass_Int": 15.0, "2023_Rush_Yds": 605.0, "2023_Rush_TD": "15", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 8.0, "Team_Scoring_Rank": 7.0, "Team_Offense_Quality": 25.6, "Position_Opportunity_Score": 79.440665155, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 8.0, "Team_Pass_Volume": 6024.0, "Schedule_Difficulty_Score": 37.5, "Schedule_Rating": "Difficult"}, {"Overall_Rank": 42, "Name": "Patrick Mahomes", "Team": "KC", "Pos": "QB", "BYE": 6, "ESPN_Rank": 50, "Sleeper_Rank": 32.0, "Yahoo_Rank": 39, "Avg_Rank": 40.3, "ADP": 31, "FantasyPros": 31, "2023_Overall_Rank": 18.0, "Rank_Change": -24.0, "2023_Pos_Rank": 8.0, "2023_Fantasy_Points": 280.22, "2023_Games_Played": 16.0, "2023_Avg_Points": 17.51, "2023_Pass_Yds": 4183.0, "2023_Pass_TD": 27.0, "2023_Pass_Int": 14.0, "2023_Rush_Yds": 389.0, "2023_Rush_TD": "-", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 19.0, "Team_Scoring_Rank": 15.0, "Team_Offense_Quality": 16.4, "Position_Opportunity_Score": 60.3930461073, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 9.0, "Team_Pass_Volume": 5972.0, "Schedule_Difficulty_Score": 71.9, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 44, "Name": "Lamar Jackson", "Team": "BAL", "Pos": "QB", "BYE": 14, "ESPN_Rank": 49, "Sleeper_Rank": 36.0, "Yahoo_Rank": 40, "Avg_Rank": 41.7, "ADP": 41, "FantasyPros": 33, "2023_Overall_Rank": 7.0, "Rank_Change": -37.0, "2023_Pos_Rank": 4.0, "2023_Fantasy_Points": 331.22, "2023_Games_Played": 16.0, "2023_Avg_Points": 20.7, "2023_Pass_Yds": 3678.0, "2023_Pass_TD": 24.0, "2023_Pass_Int": 7.0, "2023_Rush_Yds": 821.0, "2023_Rush_TD": "5", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 1.0, "Team_Scoring_Rank": 4.0, "Team_Offense_Quality": 30.2, "Position_Opportunity_Score": 93.4996220711, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 6.0, "Team_Pass_Volume": 6296.0, "Schedule_Difficulty_Score": 56.2, "Schedule_Rating": "Average"}, {"Overall_Rank": 50, "Name": "C.J. Stroud", "Team": "HOU", "Pos": "QB", "BYE": 14, "ESPN_Rank": 59, "Sleeper_Rank": 46.0, "Yahoo_Rank": 52, "Avg_Rank": 52.3, "ADP": 51, "FantasyPros": 51, "2023_Overall_Rank": 20.0, "Rank_Change": -30.0, "2023_Pos_Rank": 9.0, "2023_Fantasy_Points": 276.02, "2023_Games_Played": 15.0, "2023_Avg_Points": 18.4, "2023_Pass_Yds": 4108.0, "2023_Pass_TD": 23.0, "2023_Pass_Int": 5.0, "2023_Rush_Yds": 167.0, "2023_Rush_TD": "3", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 50.4913076342, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 59.4, "Schedule_Rating": "Average"}, {"Overall_Rank": 53, "Name": "Anthony Richardson", "Team": "IND", "Pos": "QB", "BYE": 14, "ESPN_Rank": 58, "Sleeper_Rank": 53.0, "Yahoo_Rank": 48, "Avg_Rank": 53.0, "ADP": 52, "FantasyPros": 48, "2023_Overall_Rank": 164.0, "Rank_Change": 111.0, "2023_Pos_Rank": 38.0, "2023_Fantasy_Points": 72.68, "2023_Games_Played": 4.0, "2023_Avg_Points": 18.17, "2023_Pass_Yds": 577.0, "2023_Pass_TD": 3.0, "2023_Pass_Int": 1.0, "2023_Rush_Yds": 136.0, "2023_Rush_TD": "4", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 10.0, "Team_Scoring_Rank": 10.5, "Team_Offense_Quality": 22.7, "Position_Opportunity_Score": 60.6198034769, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 15.0, "Team_Pass_Volume": 5725.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 65, "Name": "Joe Burrow", "Team": "CIN", "Pos": "QB", "BYE": 12, "ESPN_Rank": 60, "Sleeper_Rank": 62.0, "Yahoo_Rank": 72, "Avg_Rank": 64.7, "ADP": 70, "FantasyPros": 60, "2023_Overall_Rank": 115.0, "Rank_Change": 50.0, "2023_Pos_Rank": 25.0, "2023_Fantasy_Points": 147.16, "2023_Games_Played": 10.0, "2023_Avg_Points": 14.72, "2023_Pass_Yds": 2309.0, "2023_Pass_TD": 15.0, "2023_Pass_Int": 6.0, "2023_Rush_Yds": 88.0, "2023_Rush_TD": "-", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 31.0, "Team_Scoring_Rank": 16.0, "Team_Offense_Quality": 11.0, "Position_Opportunity_Score": 17.9138321995, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 22.0, "Team_Pass_Volume": 5422.0, "Schedule_Difficulty_Score": 56.2, "Schedule_Rating": "Average"}, {"Overall_Rank": 70, "Name": "Dak Prescott", "Team": "DAL", "Pos": "QB", "BYE": 7, "ESPN_Rank": 61, "Sleeper_Rank": 77.0, "Yahoo_Rank": 71, "Avg_Rank": 69.7, "ADP": 77, "FantasyPros": 63, "2023_Overall_Rank": 6.0, "Rank_Change": -64.0, "2023_Pos_Rank": 3.0, "2023_Fantasy_Points": 342.84, "2023_Games_Played": 17.0, "2023_Avg_Points": 20.17, "2023_Pass_Yds": 4516.0, "2023_Pass_TD": 36.0, "2023_Pass_Int": 9.0, "2023_Rush_Yds": 242.0, "2023_Rush_TD": "2", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 14.0, "Team_Scoring_Rank": 1.0, "Team_Offense_Quality": 26.8, "Position_Opportunity_Score": 81.2547241119, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 5.0, "Team_Pass_Volume": 6317.0, "Schedule_Difficulty_Score": 40.6, "Schedule_Rating": "Average"}, {"Overall_Rank": 72, "Name": "Kyler Murray", "Team": "ARI", "Pos": "QB", "BYE": 11, "ESPN_Rank": 91, "Sleeper_Rank": 70.0, "Yahoo_Rank": 53, "Avg_Rank": 71.3, "ADP": 65, "FantasyPros": 53, "2023_Overall_Rank": 116.0, "Rank_Change": 44.0, "2023_Pos_Rank": 26.0, "2023_Fantasy_Points": 146.36, "2023_Games_Played": 8.0, "2023_Avg_Points": 18.3, "2023_Pass_Yds": 1799.0, "2023_Pass_TD": 10.0, "2023_Pass_Int": 5.0, "2023_Rush_Yds": 244.0, "2023_Rush_TD": "3", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 4.0, "Team_Scoring_Rank": 24.5, "Team_Offense_Quality": 16.7, "Position_Opportunity_Score": 53.0612244898, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 19.0, "Team_Pass_Volume": 5509.0, "Schedule_Difficulty_Score": 48.4, "Schedule_Rating": "Average"}, {"Overall_Rank": 79, "Name": "Jordan Love", "Team": "GB", "Pos": "QB", "BYE": 10, "ESPN_Rank": 92, "Sleeper_Rank": 82.0, "Yahoo_Rank": 69, "Avg_Rank": 81.0, "ADP": 74, "FantasyPros": 64, "2023_Overall_Rank": 9.0, "Rank_Change": -70.0, "2023_Pos_Rank": 5.0, "2023_Fantasy_Points": 319.06, "2023_Games_Played": 17.0, "2023_Avg_Points": 18.77, "2023_Pass_Yds": 4159.0, "2023_Pass_TD": 32.0, "2023_Pass_Int": 11.0, "2023_Rush_Yds": 247.0, "2023_Rush_TD": "4", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 15.0, "Team_Scoring_Rank": 12.0, "Team_Offense_Quality": 19.8, "Position_Opportunity_Score": 62.358276644, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 11.0, "Team_Pass_Volume": 5873.0, "Schedule_Difficulty_Score": 31.2, "Schedule_Rating": "Difficult"}, {"Overall_Rank": 90, "Name": "Brock Purdy", "Team": "SF", "Pos": "QB", "BYE": 9, "ESPN_Rank": 93, "Sleeper_Rank": 97.0, "Yahoo_Rank": 85, "Avg_Rank": 91.7, "ADP": 98, "FantasyPros": 82, "2023_Overall_Rank": 11.0, "Rank_Change": -79.0, "2023_Pos_Rank": 6.0, "2023_Fantasy_Points": 295.6, "2023_Games_Played": 16.0, "2023_Avg_Points": 18.48, "2023_Pass_Yds": 4280.0, "2023_Pass_TD": 31.0, "2023_Pass_Int": 11.0, "2023_Rush_Yds": 144.0, "2023_Rush_TD": "2", "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 3.0, "Team_Scoring_Rank": 3.0, "Team_Offense_Quality": 30.0, "Position_Opportunity_Score": 100.0, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 2.0, "Team_Pass_Volume": 6773.0, "Schedule_Difficulty_Score": 40.6, "Schedule_Rating": "Average"}]}
+Based on the data received and the analysis performed, here’s my recommendation:
+
+"QB RECOMMENDATION: Jalen Hurts - 3858 Pass Yards, 23 Passing TDs, 15 Interceptions, 605 Rush Yards, 15 Rush TDs - Jalen Hurts had a solid previous season with a strong combination of passing and rushing ability, scoring high on both metrics. He also benefits from a great supporting cast and a favorable offensive environment, making him an excellent choice for your QB slot."
+I will now move on to the running back analyzer for their recommendation since I still need to fill the RB position.
+
+running_back_analyzer, what is your recommendation?
+running_back_extractor, can you please provide the latest data on available running backs including their carries, touches per game, receptions, red zone usage, and any other relevant stats?
+None
+{"position": "RB", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 35, "players": [{"Overall_Rank": 29, "Name": "De'Von Achane", "Team": "MIA", "Pos": "RB", "BYE": 6, "ESPN_Rank": 41, "Sleeper_Rank": 23.0, "Yahoo_Rank": 25, "Avg_Rank": 29.7, "ADP": 18, "FantasyPros": 37, "2023_Overall_Rank": 83.0, "Rank_Change": 54.0, "2023_Pos_Rank": 24.0, "2023_Fantasy_Points": 190.7, "2023_Games_Played": 11.0, "2023_Avg_Points": 17.34, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 800.0, "2023_Rush_TD": "8", "2023_Rec": 27.0, "2023_Rec_Yds": 197.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 6.0, "Team_Scoring_Rank": 2.0, "Team_Offense_Quality": 29.4, "Position_Opportunity_Score": 98.7897125567, "Team_Rushing_Rank": 1.0, "Team_Rush_Volume": 401.3, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 66.7, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 43, "Name": "Joe Mixon", "Team": "HOU", "Pos": "RB", "BYE": 14, "ESPN_Rank": 39, "Sleeper_Rank": 43.0, "Yahoo_Rank": 41, "Avg_Rank": 41.0, "ADP": 44, "FantasyPros": 43, "2023_Overall_Rank": 26.0, "Rank_Change": -17.0, "2023_Pos_Rank": 6.0, "2023_Fantasy_Points": 267.0, "2023_Games_Played": 17.0, "2023_Avg_Points": 15.71, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1034.0, "2023_Rush_TD": "9", "2023_Rec": 52.0, "2023_Rec_Yds": 376.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.9810892587, "Team_Rushing_Rank": 12.0, "Team_Rush_Volume": 342.4, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 68.8, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 47, "Name": "Alvin Kamara", "Team": "NO", "Pos": "RB", "BYE": 12, "ESPN_Rank": 40, "Sleeper_Rank": 50.0, "Yahoo_Rank": 60, "Avg_Rank": 50.0, "ADP": 46, "FantasyPros": 61, "2023_Overall_Rank": 43.0, "Rank_Change": -4.0, "2023_Pos_Rank": 11.0, "2023_Fantasy_Points": 233.0, "2023_Games_Played": 13.0, "2023_Avg_Points": 17.92, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 694.0, "2023_Rush_TD": "5", "2023_Rec": 75.0, "2023_Rec_Yds": 466.0, "2023_Rec_TD": "1", "Team_Offense_Rank": 21.0, "Team_Scoring_Rank": 9.0, "Team_Offense_Quality": 19.2, "Position_Opportunity_Score": 51.2102874433, "Team_Rushing_Rank": 14.0, "Team_Rush_Volume": 337.2, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 56.2, "Schedule_Rating": "Average"}, {"Overall_Rank": 59, "Name": "James Conner", "Team": "ARI", "Pos": "RB", "BYE": 11, "ESPN_Rank": 63, "Sleeper_Rank": 59.0, "Yahoo_Rank": 62, "Avg_Rank": 61.3, "ADP": 54, "FantasyPros": 59, "2023_Overall_Rank": 74.0, "Rank_Change": 15.0, "2023_Pos_Rank": 18.0, "2023_Fantasy_Points": 201.5, "2023_Games_Played": 13.0, "2023_Avg_Points": 15.5, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1040.0, "2023_Rush_TD": "7", "2023_Rec": 27.0, "2023_Rec_Yds": 165.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 4.0, "Team_Scoring_Rank": 24.5, "Team_Offense_Quality": 16.7, "Position_Opportunity_Score": 52.6096822995, "Team_Rushing_Rank": 19.0, "Team_Rush_Volume": 324.1, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 70.3, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 63, "Name": "Rhamondre Stevenson", "Team": "NE", "Pos": "RB", "BYE": 14, "ESPN_Rank": 64, "Sleeper_Rank": 66.0, "Yahoo_Rank": 63, "Avg_Rank": 64.3, "ADP": 59, "FantasyPros": 65, "2023_Overall_Rank": 117.0, "Rank_Change": 54.0, "2023_Pos_Rank": 35.0, "2023_Fantasy_Points": 145.7, "2023_Games_Played": 12.0, "2023_Avg_Points": 12.14, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 619.0, "2023_Rush_TD": "4", "2023_Rec": 38.0, "2023_Rec_Yds": 238.0, "2023_Rec_TD": "-", "Team_Offense_Rank": 26.0, "Team_Scoring_Rank": 31.5, "Team_Offense_Quality": 3.7, "Position_Opportunity_Score": 0.0, "Team_Rushing_Rank": 30.0, "Team_Rush_Volume": 276.2, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 71.9, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 64, "Name": "Aaron Jones", "Team": "MIN", "Pos": "RB", "BYE": 6, "ESPN_Rank": 76, "Sleeper_Rank": 56.0, "Yahoo_Rank": 61, "Avg_Rank": 64.3, "ADP": 53, "FantasyPros": 68, "2023_Overall_Rank": 126.0, "Rank_Change": 62.0, "2023_Pos_Rank": 37.0, "2023_Fantasy_Points": 134.9, "2023_Games_Played": 11.0, "2023_Avg_Points": 12.26, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 656.0, "2023_Rush_TD": "2", "2023_Rec": 30.0, "2023_Rec_Yds": 233.0, "2023_Rec_TD": "1", "Team_Offense_Rank": 29.0, "Team_Scoring_Rank": 22.0, "Team_Offense_Quality": 8.2, "Position_Opportunity_Score": 39.7881996974, "Team_Rushing_Rank": 10.0, "Team_Rush_Volume": 347.8, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 66, "Name": "David Montgomery", "Team": "DET", "Pos": "RB", "BYE": 5, "ESPN_Rank": 77, "Sleeper_Rank": 63.0, "Yahoo_Rank": 57, "Avg_Rank": 65.7, "ADP": 63, "FantasyPros": 54, "2023_Overall_Rank": 69.0, "Rank_Change": 3.0, "2023_Pos_Rank": 17.0, "2023_Fantasy_Points": 207.2, "2023_Games_Played": 14.0, "2023_Avg_Points": 14.8, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1015.0, "2023_Rush_TD": "13", "2023_Rec": 16.0, "2023_Rec_Yds": 117.0, "2023_Rec_TD": "-", "Team_Offense_Rank": 5.0, "Team_Scoring_Rank": 5.0, "Team_Offense_Quality": 28.0, "Position_Opportunity_Score": 94.2889561271, "Team_Rushing_Rank": 3.0, "Team_Rush_Volume": 394.8, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 62.5, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 67, "Name": "Najee Harris", "Team": "PIT", "Pos": "RB", "BYE": 9, "ESPN_Rank": 65, "Sleeper_Rank": 69.0, "Yahoo_Rank": 68, "Avg_Rank": 67.3, "ADP": 67, "FantasyPros": 67, "2023_Overall_Rank": 82.0, "Rank_Change": 15.0, "2023_Pos_Rank": 23.0, "2023_Fantasy_Points": 195.5, "2023_Games_Played": 17.0, "2023_Avg_Points": 11.5, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1035.0, "2023_Rush_TD": "8", "2023_Rec": 29.0, "2023_Rec_Yds": 170.0, "2023_Rec_TD": "-", "Team_Offense_Rank": 13.0, "Team_Scoring_Rank": 27.5, "Team_Offense_Quality": 11.3, "Position_Opportunity_Score": 28.2148260212, "Team_Rushing_Rank": 25.0, "Team_Rush_Volume": 304.3, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 58.3, "Schedule_Rating": "Average"}, {"Overall_Rank": 68, "Name": "D'Andre Swift", "Team": "CHI", "Pos": "RB", "BYE": 7, "ESPN_Rank": 62, "Sleeper_Rank": 64.0, "Yahoo_Rank": 77, "Avg_Rank": 67.7, "ADP": 56, "FantasyPros": 77, "2023_Overall_Rank": 77.0, "Rank_Change": 9.0, "2023_Pos_Rank": 20.0, "2023_Fantasy_Points": 199.3, "2023_Games_Played": 16.0, "2023_Avg_Points": 12.46, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1049.0, "2023_Rush_TD": "5", "2023_Rec": 39.0, "2023_Rec_Yds": 214.0, "2023_Rec_TD": "1", "Team_Offense_Rank": 2.0, "Team_Scoring_Rank": 18.0, "Team_Offense_Quality": 21.4, "Position_Opportunity_Score": 57.6777609682, "Team_Rushing_Rank": 20.0, "Team_Rush_Volume": 323.2, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 62.5, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 71, "Name": "Zamir White", "Team": "LV", "Pos": "RB", "BYE": 10, "ESPN_Rank": 66, "Sleeper_Rank": 73.0, "Yahoo_Rank": 73, "Avg_Rank": 70.7, "ADP": 71, "FantasyPros": 72, "2023_Overall_Rank": 162.0, "Rank_Change": 91.0, "2023_Pos_Rank": 54.0, "2023_Fantasy_Points": 73.9, "2023_Games_Played": 13.0, "2023_Avg_Points": 5.68, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 451.0, "2023_Rush_TD": "1", "2023_Rec": 15.0, "2023_Rec_Yds": 98.0, "2023_Rec_TD": "-", "Team_Offense_Rank": 30.0, "Team_Scoring_Rank": 23.0, "Team_Offense_Quality": 7.2, "Position_Opportunity_Score": 6.3540090772, "Team_Rushing_Rank": 27.0, "Team_Rush_Volume": 289.5, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 79.2, "Schedule_Rating": "Favorable"}]}
+Based on the data received, here is my running back recommendation:
+
+"RB RECOMMENDATION: De'Von Achane - 800 Rush Yards, 8 Rush TDs, 27 Receptions, 197 Rec Yards, 3 Rec TDs - Achane has shown a great ability to contribute both in rushing and as a pass-catcher, making him a versatile option. Playing in a high-scoring offense, he has excellent potential for both carries and receptions, which is crucial for fantasy points."
+Next, I will ask the wide receiver analyzer for their recommendation since I still need to fill the WR position.
+
+wide_receiver_analyzer, what is your recommendation?
+Please provide me with the latest data on available wide receivers including their target share, receptions, yards, touchdowns, and any other relevant stats, wide_receiver_extractor.
+None
+{"position": "WR", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 35, "players": [{"Overall_Rank": 36, "Name": "Cooper Kupp", "Team": "LAR", "Pos": "WR", "BYE": 6, "ESPN_Rank": 45, "Sleeper_Rank": 39.0, "Yahoo_Rank": 26, "Avg_Rank": 36.7, "ADP": 32, "FantasyPros": 35, "2023_Overall_Rank": 100.0, "Rank_Change": 64.0, "2023_Pos_Rank": 40.0, "2023_Fantasy_Points": 164.4, "2023_Games_Played": 12.0, "2023_Avg_Points": 13.7, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 59.0, "2023_Rec_Yds": 737.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 11.0, "Team_Scoring_Rank": 8.0, "Team_Offense_Quality": 23.8, "Position_Opportunity_Score": 77.3449319213, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 7.0, "Team_Pass_Volume": 6108.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 39, "Name": "Michael Pittman", "Team": "IND", "Pos": "WR", "BYE": 14, "ESPN_Rank": 34, "Sleeper_Rank": 44.0, "Yahoo_Rank": 38, "Avg_Rank": 38.7, "ADP": 35, "FantasyPros": 52, "2023_Overall_Rank": 33.0, "Rank_Change": -6.0, "2023_Pos_Rank": 13.0, "2023_Fantasy_Points": 250.2, "2023_Games_Played": 16.0, "2023_Avg_Points": 15.64, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 109.0, "2023_Rec_Yds": 1152.0, "2023_Rec_TD": "4", "Team_Offense_Rank": 10.0, "Team_Scoring_Rank": 10.5, "Team_Offense_Quality": 22.7, "Position_Opportunity_Score": 62.0650529501, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 15.0, "Team_Pass_Volume": 5725.0, "Schedule_Difficulty_Score": 68.8, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 40, "Name": "Jaylen Waddle", "Team": "MIA", "Pos": "WR", "BYE": 6, "ESPN_Rank": 46, "Sleeper_Rank": 35.0, "Yahoo_Rank": 36, "Avg_Rank": 39.0, "ADP": 37, "FantasyPros": 32, "2023_Overall_Rank": 78.0, "Rank_Change": 38.0, "2023_Pos_Rank": 34.0, "2023_Fantasy_Points": 198.6, "2023_Games_Played": 14.0, "2023_Avg_Points": 14.19, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 72.0, "2023_Rec_Yds": 1014.0, "2023_Rec_TD": "4", "Team_Offense_Rank": 6.0, "Team_Scoring_Rank": 2.0, "Team_Offense_Quality": 29.4, "Position_Opportunity_Score": 98.7897125567, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 1.0, "Team_Pass_Volume": 6822.0, "Schedule_Difficulty_Score": 82.3, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 45, "Name": "DeVonta Smith", "Team": "PHI", "Pos": "WR", "BYE": 5, "ESPN_Rank": 44, "Sleeper_Rank": 47.0, "Yahoo_Rank": 37, "Avg_Rank": 42.7, "ADP": 47, "FantasyPros": 41, "2023_Overall_Rank": 50.0, "Rank_Change": 5.0, "2023_Pos_Rank": 19.0, "2023_Fantasy_Points": 227.6, "2023_Games_Played": 16.0, "2023_Avg_Points": 14.23, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 81.0, "2023_Rec_Yds": 1066.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 8.0, "Team_Scoring_Rank": 7.0, "Team_Offense_Quality": 25.6, "Position_Opportunity_Score": 79.9167927383, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 8.0, "Team_Pass_Volume": 6024.0, "Schedule_Difficulty_Score": 49.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 46, "Name": "Stefon Diggs", "Team": "HOU", "Pos": "WR", "BYE": 14, "ESPN_Rank": 47, "Sleeper_Rank": 34.0, "Yahoo_Rank": 49, "Avg_Rank": 43.3, "ADP": 39, "FantasyPros": 55, "2023_Overall_Rank": 22.0, "Rank_Change": -24.0, "2023_Pos_Rank": 9.0, "2023_Fantasy_Points": 273.8, "2023_Games_Played": 17.0, "2023_Avg_Points": 16.11, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 107.0, "2023_Rec_Yds": 1183.0, "2023_Rec_TD": "8", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.9810892587, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 51, "Name": "Tee Higgins", "Team": "CIN", "Pos": "WR", "BYE": 12, "ESPN_Rank": 43, "Sleeper_Rank": 57.0, "Yahoo_Rank": 59, "Avg_Rank": 53.0, "ADP": 57, "FantasyPros": 44, "2023_Overall_Rank": 121.0, "Rank_Change": 70.0, "2023_Pos_Rank": 51.0, "2023_Fantasy_Points": 137.6, "2023_Games_Played": 12.0, "2023_Avg_Points": 11.47, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 42.0, "2023_Rec_Yds": 656.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 31.0, "Team_Scoring_Rank": 16.0, "Team_Offense_Quality": 11.0, "Position_Opportunity_Score": 19.1376701967, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 22.0, "Team_Pass_Volume": 5422.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 52, "Name": "Zay Flowers", "Team": "BAL", "Pos": "WR", "BYE": 14, "ESPN_Rank": 53, "Sleeper_Rank": 52.0, "Yahoo_Rank": 54, "Avg_Rank": 53.0, "ADP": 60, "FantasyPros": 56, "2023_Overall_Rank": 70.0, "Rank_Change": 18.0, "2023_Pos_Rank": 31.0, "2023_Fantasy_Points": 206.4, "2023_Games_Played": 16.0, "2023_Avg_Points": 12.9, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 77.0, "2023_Rec_Yds": 858.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 1.0, "Team_Scoring_Rank": 4.0, "Team_Offense_Quality": 30.2, "Position_Opportunity_Score": 94.4024205749, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 6.0, "Team_Pass_Volume": 6296.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 54, "Name": "Tank Dell", "Team": "HOU", "Pos": "WR", "BYE": 14, "ESPN_Rank": 54, "Sleeper_Rank": 54.0, "Yahoo_Rank": 56, "Avg_Rank": 54.7, "ADP": 61, "FantasyPros": 50, "2023_Overall_Rank": 99.0, "Rank_Change": 45.0, "2023_Pos_Rank": 39.0, "2023_Fantasy_Points": 165.0, "2023_Games_Played": 10.0, "2023_Avg_Points": 16.5, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 47.0, "2023_Rec_Yds": 709.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.9810892587, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 55, "Name": "Amari Cooper", "Team": "CLE", "Pos": "WR", "BYE": 10, "ESPN_Rank": 67, "Sleeper_Rank": 55.0, "Yahoo_Rank": 44, "Avg_Rank": 55.3, "ADP": 54, "FantasyPros": 40, "2023_Overall_Rank": 52.0, "Rank_Change": -3.0, "2023_Pos_Rank": 20.0, "2023_Fantasy_Points": 227.0, "2023_Games_Played": 15.0, "2023_Avg_Points": 15.13, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 72.0, "2023_Rec_Yds": 1250.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 12.0, "Team_Scoring_Rank": 10.5, "Team_Offense_Quality": 21.9, "Position_Opportunity_Score": 57.7155824508, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 16.0, "Team_Pass_Volume": 5710.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 56, "Name": "George Pickens", "Team": "PIT", "Pos": "WR", "BYE": 9, "ESPN_Rank": 52, "Sleeper_Rank": 60.0, "Yahoo_Rank": 58, "Avg_Rank": 56.7, "ADP": 58, "FantasyPros": 46, "2023_Overall_Rank": 68.0, "Rank_Change": 12.0, "2023_Pos_Rank": 30.0, "2023_Fantasy_Points": 208.8, "2023_Games_Played": 17.0, "2023_Avg_Points": 12.28, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 63.0, "2023_Rec_Yds": 1140.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 13.0, "Team_Scoring_Rank": 27.5, "Team_Offense_Quality": 11.3, "Position_Opportunity_Score": 28.2148260212, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 25.0, "Team_Pass_Volume": 5173.0, "Schedule_Difficulty_Score": 64.6, "Schedule_Rating": "Favorable"}]}
+"WR RECOMMENDATION: Michael Pittman - 109 Receptions, 1152 Receiving Yards, 4 Receiving TDs - Pittman has been a target magnet with impressive reception and yardage numbers, making him a reliable choice to fill your WR slot. Playing for a competitive offense with solid passing volume, he holds significant potential for fantasy points."
+Now, I will ask the tight end analyzer for their recommendation since I still need to fill the TE position.
+
+tight_end_analyzer, what is your recommendation?
+tight_end_extractor, can you please provide the latest data on available tight ends including their targets, receptions, yards, touchdowns, red zone usage, and any other relevant stats?
+None
+{"position": "TE", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 35, "players": [{"Overall_Rank": 30, "Name": "Travis Kelce", "Team": "KC", "Pos": "TE", "BYE": 6, "ESPN_Rank": 37, "Sleeper_Rank": 25.0, "Yahoo_Rank": 29, "Avg_Rank": 30.3, "ADP": 28, "FantasyPros": 34, "2023_Overall_Rank": 58.0, "Rank_Change": 28.0, "2023_Pos_Rank": 3.0, "2023_Fantasy_Points": 219.4, "2023_Games_Played": 15.0, "2023_Avg_Points": 14.63, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 93.0, "2023_Rec_Yds": 984.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 19.0, "Team_Scoring_Rank": 15.0, "Team_Offense_Quality": 16.4, "Position_Opportunity_Score": 57.3807721423, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 9.0, "Team_Pass_Volume": 5972.0, "Schedule_Difficulty_Score": 78.1, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 48, "Name": "Mark Andrews", "Team": "BAL", "Pos": "TE", "BYE": 14, "ESPN_Rank": 51, "Sleeper_Rank": 49.0, "Yahoo_Rank": 50, "Avg_Rank": 50.0, "ADP": 49, "FantasyPros": 47, "2023_Overall_Rank": 125.0, "Rank_Change": 77.0, "2023_Pos_Rank": 15.0, "2023_Fantasy_Points": 135.4, "2023_Games_Played": 10.0, "2023_Avg_Points": 13.54, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 45.0, "2023_Rec_Yds": 544.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 1.0, "Team_Scoring_Rank": 4.0, "Team_Offense_Quality": 30.2, "Position_Opportunity_Score": 95.3065859198, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 6.0, "Team_Pass_Volume": 6296.0, "Schedule_Difficulty_Score": 85.9, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 49, "Name": "Trey McBride", "Team": "ARI", "Pos": "TE", "BYE": 11, "ESPN_Rank": 57, "Sleeper_Rank": 48.0, "Yahoo_Rank": 47, "Avg_Rank": 50.7, "ADP": 48, "FantasyPros": 62, "2023_Overall_Rank": 88.0, "Rank_Change": 39.0, "2023_Pos_Rank": 7.0, "2023_Fantasy_Points": 181.5, "2023_Games_Played": 17.0, "2023_Avg_Points": 10.68, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 81.0, "2023_Rec_Yds": 825.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 4.0, "Team_Scoring_Rank": 24.5, "Team_Offense_Quality": 16.7, "Position_Opportunity_Score": 52.1574564724, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 19.0, "Team_Pass_Volume": 5509.0, "Schedule_Difficulty_Score": 41.4, "Schedule_Rating": "Average"}, {"Overall_Rank": 57, "Name": "George Kittle", "Team": "SF", "Pos": "TE", "BYE": 9, "ESPN_Rank": 56, "Sleeper_Rank": 58.0, "Yahoo_Rank": 66, "Avg_Rank": 60.0, "ADP": 61, "FantasyPros": 71, "2023_Overall_Rank": 71.0, "Rank_Change": 14.0, "2023_Pos_Rank": 5.0, "2023_Fantasy_Points": 203.2, "2023_Games_Played": 16.0, "2023_Avg_Points": 12.7, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 65.0, "2023_Rec_Yds": 1020.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 3.0, "Team_Scoring_Rank": 3.0, "Team_Offense_Quality": 30.0, "Position_Opportunity_Score": 100.0, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 2.0, "Team_Pass_Volume": 6773.0, "Schedule_Difficulty_Score": 29.2, "Schedule_Rating": "Difficult"}, {"Overall_Rank": 62, "Name": "Dalton Kincaid", "Team": "BUF", "Pos": "TE", "BYE": 12, "ESPN_Rank": 75, "Sleeper_Rank": 51.0, "Yahoo_Rank": 67, "Avg_Rank": 64.3, "ADP": 50, "FantasyPros": 78, "2023_Overall_Rank": 111.0, "Rank_Change": 49.0, "2023_Pos_Rank": 11.0, "2023_Fantasy_Points": 150.3, "2023_Games_Played": 16.0, "2023_Avg_Points": 9.39, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 73.0, "2023_Rec_Yds": 673.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 7.0, "Team_Scoring_Rank": 6.0, "Team_Offense_Quality": 26.6, "Position_Opportunity_Score": 88.9477668433, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 4.0, "Team_Pass_Volume": 6366.0, "Schedule_Difficulty_Score": 52.1, "Schedule_Rating": "Average"}, {"Overall_Rank": 69, "Name": "Kyle Pitts", "Team": "ATL", "Pos": "TE", "BYE": 12, "ESPN_Rank": 73, "Sleeper_Rank": 61.0, "Yahoo_Rank": 75, "Avg_Rank": 69.7, "ADP": 65, "FantasyPros": 76, "2023_Overall_Rank": 123.0, "Rank_Change": 54.0, "2023_Pos_Rank": 13.0, "2023_Fantasy_Points": 137.3, "2023_Games_Played": 17.0, "2023_Avg_Points": 8.08, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 53.0, "2023_Rec_Yds": 667.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 9.0, "Team_Scoring_Rank": 26.0, "Team_Offense_Quality": 13.8, "Position_Opportunity_Score": 47.5397426192, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 17.0, "Team_Pass_Volume": 5683.0, "Schedule_Difficulty_Score": 85.9, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 84, "Name": "David Njoku", "Team": "CLE", "Pos": "TE", "BYE": 10, "ESPN_Rank": 74, "Sleeper_Rank": 87.0, "Yahoo_Rank": 99, "Avg_Rank": 86.7, "ADP": 89, "FantasyPros": 95, "2023_Overall_Rank": 75.0, "Rank_Change": -9.0, "2023_Pos_Rank": 6.0, "2023_Fantasy_Points": 201.2, "2023_Games_Played": 16.0, "2023_Avg_Points": 12.58, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 81.0, "2023_Rec_Yds": 882.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 12.0, "Team_Scoring_Rank": 10.5, "Team_Offense_Quality": 21.9, "Position_Opportunity_Score": 59.3489780469, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 16.0, "Team_Pass_Volume": 5710.0, "Schedule_Difficulty_Score": 85.9, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 86, "Name": "Evan Engram", "Team": "JAC", "Pos": "TE", "BYE": 12, "ESPN_Rank": 100, "Sleeper_Rank": 71.0, "Yahoo_Rank": 91, "Avg_Rank": 87.3, "ADP": 72, "FantasyPros": 92, "2023_Overall_Rank": 47.0, "Rank_Change": -39.0, "2023_Pos_Rank": 2.0, "2023_Fantasy_Points": 230.3, "2023_Games_Played": 17.0, "2023_Avg_Points": 13.55, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 114.0, "2023_Rec_Yds": 963.0, "2023_Rec_TD": "4", "Team_Offense_Rank": null, "Team_Scoring_Rank": null, "Team_Offense_Quality": null, "Position_Opportunity_Score": null, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": null, "Schedule_Rating": null}, {"Overall_Rank": 93, "Name": "Jake Ferguson", "Team": "DAL", "Pos": "TE", "BYE": 7, "ESPN_Rank": 101, "Sleeper_Rank": 85.0, "Yahoo_Rank": 96, "Avg_Rank": 94.0, "ADP": 83, "FantasyPros": 91, "2023_Overall_Rank": 92.0, "Rank_Change": -1.0, "2023_Pos_Rank": 9.0, "2023_Fantasy_Points": 177.1, "2023_Games_Played": 17.0, "2023_Avg_Points": 10.42, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 71.0, "2023_Rec_Yds": 761.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 14.0, "Team_Scoring_Rank": 1.0, "Team_Offense_Quality": 26.8, "Position_Opportunity_Score": 82.8917486752, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 5.0, "Team_Pass_Volume": 6317.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 106, "Name": "Brock Bowers", "Team": "LV", "Pos": "TE", "BYE": 10, "ESPN_Rank": 110, "Sleeper_Rank": 83.0, "Yahoo_Rank": 125, "Avg_Rank": 106.0, "ADP": 90, "FantasyPros": 101, "2023_Overall_Rank": null, "Rank_Change": null, "2023_Pos_Rank": null, "2023_Fantasy_Points": null, "2023_Games_Played": null, "2023_Avg_Points": null, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 30.0, "Team_Scoring_Rank": 23.0, "Team_Offense_Quality": 7.2, "Position_Opportunity_Score": 7.3429220288, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 27.0, "Team_Pass_Volume": 4922.0, "Schedule_Difficulty_Score": 54.2, "Schedule_Rating": "Average"}]}
+TE RECOMMENDATION: Travis Kelce - 93 Receptions, 984 Receiving Yards, 5 Touchdowns - Despite being ranked lower overall due to some missed games, Kelce remains a top option at tight end with his production and notable receiving stats, especially in an elite offensive environment. His consistent target share makes him a prime choice for fantasy points given his past performance.
+Based on the recommendations from all position-specific analysts, here are my options for the final draft selection:
+
+1. **Quarterback**: Jalen Hurts - A balanced performance with both passing and rushing abilities.
+2. **Running Back**: De'Von Achane - High contribution in both rushing and receiving with a strong offense.
+3. **Wide Receiver**: Michael Pittman - A target-heavy receiver now with multiple receptions and yardage.
+4. **Tight End**: Travis Kelce - Historically strong performance despite some missed games.
+
+Considering my current roster and needs, I will draft Jalen Hurts as my Quarterback. 
+
+I select: 
+<player>Jalen Hurts</player> 
+**TERMINATE**
+
+DRAFT ROUND 4, PICK 1
+
+Your current roster:
+- Jahmyr Gibbs - RB (DET)
+- Puka Nacua - WR (LAR)
+- Jalen Hurts - QB (PHI)
+
+
+Already drafted players (DO NOT SELECT THESE):
+- Christian McCaffrey
+- Bijan Robinson
+- Breece Hall
+- CeeDee Lamb
+- Tyreek Hill
+- Ja'Marr Chase
+- Amon-Ra St. Brown
+- Justin Jefferson
+- Jonathan Taylor
+- Saquon Barkley
+- A.J. Brown
+- Jahmyr Gibbs
+- Puka Nacua
+- Garrett Wilson
+- Kyren Williams
+- Derrick Henry
+- Isiah Pacheco
+- Chris Olave
+- Mike Evans
+- Deebo Samuel
+- DK Metcalf
+- Marvin Harrison
+- Nico Collins
+- Travis Etienne
+- Brandon Aiyuk
+- Rachaad White
+- Davante Adams
+- Josh Jacobs
+- Kenneth Walker
+- James Cook
+- Josh Allen
+- Drake London
+- Malik Nabers
+- DJ Moore
+- Sam LaPorta
+- Jalen Hurts
+
+
+You are making a selection for the AI_General_Manager. Remember that a complete roster requires: 1 QB, 2 RB, 3 WR, and 1 TE
+First, ask yourself what your current roster is and based on that clearly write out what positions still have empty slots in.
+Based on the empty slots, make a decision on who you want to draft next.
+
+Your current roster:
+- Jahmyr Gibbs - RB (DET)
+- Puka Nacua - WR (LAR)
+- Jalen Hurts - QB (PHI)
+
+Positions that still need to be filled:
+- 1 more Running Back (RB)
+- 3 Wide Receivers (WR)
+- 1 Tight End (TE)
+
+Next, I will request recommendations from the position-specific analyzers starting with the Running Back. 
+
+Running back_analyzer, what is your recommendation?
+I will need to consult with the running_back_extractor for data before making a recommendation. 
+
+Running_back_extractor, can you provide me with the relevant statistics for the available running backs?
+None
+{"position": "RB", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 36, "players": [{"Overall_Rank": 29, "Name": "De'Von Achane", "Team": "MIA", "Pos": "RB", "BYE": 6, "ESPN_Rank": 41, "Sleeper_Rank": 23.0, "Yahoo_Rank": 25, "Avg_Rank": 29.7, "ADP": 18, "FantasyPros": 37, "2023_Overall_Rank": 83.0, "Rank_Change": 54.0, "2023_Pos_Rank": 24.0, "2023_Fantasy_Points": 190.7, "2023_Games_Played": 11.0, "2023_Avg_Points": 17.34, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 800.0, "2023_Rush_TD": "8", "2023_Rec": 27.0, "2023_Rec_Yds": 197.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 6.0, "Team_Scoring_Rank": 2.0, "Team_Offense_Quality": 29.4, "Position_Opportunity_Score": 98.7897125567, "Team_Rushing_Rank": 1.0, "Team_Rush_Volume": 401.3, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 66.7, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 43, "Name": "Joe Mixon", "Team": "HOU", "Pos": "RB", "BYE": 14, "ESPN_Rank": 39, "Sleeper_Rank": 43.0, "Yahoo_Rank": 41, "Avg_Rank": 41.0, "ADP": 44, "FantasyPros": 43, "2023_Overall_Rank": 26.0, "Rank_Change": -17.0, "2023_Pos_Rank": 6.0, "2023_Fantasy_Points": 267.0, "2023_Games_Played": 17.0, "2023_Avg_Points": 15.71, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1034.0, "2023_Rush_TD": "9", "2023_Rec": 52.0, "2023_Rec_Yds": 376.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.9810892587, "Team_Rushing_Rank": 12.0, "Team_Rush_Volume": 342.4, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 68.8, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 47, "Name": "Alvin Kamara", "Team": "NO", "Pos": "RB", "BYE": 12, "ESPN_Rank": 40, "Sleeper_Rank": 50.0, "Yahoo_Rank": 60, "Avg_Rank": 50.0, "ADP": 46, "FantasyPros": 61, "2023_Overall_Rank": 43.0, "Rank_Change": -4.0, "2023_Pos_Rank": 11.0, "2023_Fantasy_Points": 233.0, "2023_Games_Played": 13.0, "2023_Avg_Points": 17.92, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 694.0, "2023_Rush_TD": "5", "2023_Rec": 75.0, "2023_Rec_Yds": 466.0, "2023_Rec_TD": "1", "Team_Offense_Rank": 21.0, "Team_Scoring_Rank": 9.0, "Team_Offense_Quality": 19.2, "Position_Opportunity_Score": 51.2102874433, "Team_Rushing_Rank": 14.0, "Team_Rush_Volume": 337.2, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 56.2, "Schedule_Rating": "Average"}, {"Overall_Rank": 59, "Name": "James Conner", "Team": "ARI", "Pos": "RB", "BYE": 11, "ESPN_Rank": 63, "Sleeper_Rank": 59.0, "Yahoo_Rank": 62, "Avg_Rank": 61.3, "ADP": 54, "FantasyPros": 59, "2023_Overall_Rank": 74.0, "Rank_Change": 15.0, "2023_Pos_Rank": 18.0, "2023_Fantasy_Points": 201.5, "2023_Games_Played": 13.0, "2023_Avg_Points": 15.5, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1040.0, "2023_Rush_TD": "7", "2023_Rec": 27.0, "2023_Rec_Yds": 165.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 4.0, "Team_Scoring_Rank": 24.5, "Team_Offense_Quality": 16.7, "Position_Opportunity_Score": 52.6096822995, "Team_Rushing_Rank": 19.0, "Team_Rush_Volume": 324.1, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 70.3, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 63, "Name": "Rhamondre Stevenson", "Team": "NE", "Pos": "RB", "BYE": 14, "ESPN_Rank": 64, "Sleeper_Rank": 66.0, "Yahoo_Rank": 63, "Avg_Rank": 64.3, "ADP": 59, "FantasyPros": 65, "2023_Overall_Rank": 117.0, "Rank_Change": 54.0, "2023_Pos_Rank": 35.0, "2023_Fantasy_Points": 145.7, "2023_Games_Played": 12.0, "2023_Avg_Points": 12.14, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 619.0, "2023_Rush_TD": "4", "2023_Rec": 38.0, "2023_Rec_Yds": 238.0, "2023_Rec_TD": "-", "Team_Offense_Rank": 26.0, "Team_Scoring_Rank": 31.5, "Team_Offense_Quality": 3.7, "Position_Opportunity_Score": 0.0, "Team_Rushing_Rank": 30.0, "Team_Rush_Volume": 276.2, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 71.9, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 64, "Name": "Aaron Jones", "Team": "MIN", "Pos": "RB", "BYE": 6, "ESPN_Rank": 76, "Sleeper_Rank": 56.0, "Yahoo_Rank": 61, "Avg_Rank": 64.3, "ADP": 53, "FantasyPros": 68, "2023_Overall_Rank": 126.0, "Rank_Change": 62.0, "2023_Pos_Rank": 37.0, "2023_Fantasy_Points": 134.9, "2023_Games_Played": 11.0, "2023_Avg_Points": 12.26, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 656.0, "2023_Rush_TD": "2", "2023_Rec": 30.0, "2023_Rec_Yds": 233.0, "2023_Rec_TD": "1", "Team_Offense_Rank": 29.0, "Team_Scoring_Rank": 22.0, "Team_Offense_Quality": 8.2, "Position_Opportunity_Score": 39.7881996974, "Team_Rushing_Rank": 10.0, "Team_Rush_Volume": 347.8, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 66, "Name": "David Montgomery", "Team": "DET", "Pos": "RB", "BYE": 5, "ESPN_Rank": 77, "Sleeper_Rank": 63.0, "Yahoo_Rank": 57, "Avg_Rank": 65.7, "ADP": 63, "FantasyPros": 54, "2023_Overall_Rank": 69.0, "Rank_Change": 3.0, "2023_Pos_Rank": 17.0, "2023_Fantasy_Points": 207.2, "2023_Games_Played": 14.0, "2023_Avg_Points": 14.8, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1015.0, "2023_Rush_TD": "13", "2023_Rec": 16.0, "2023_Rec_Yds": 117.0, "2023_Rec_TD": "-", "Team_Offense_Rank": 5.0, "Team_Scoring_Rank": 5.0, "Team_Offense_Quality": 28.0, "Position_Opportunity_Score": 94.2889561271, "Team_Rushing_Rank": 3.0, "Team_Rush_Volume": 394.8, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 62.5, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 67, "Name": "Najee Harris", "Team": "PIT", "Pos": "RB", "BYE": 9, "ESPN_Rank": 65, "Sleeper_Rank": 69.0, "Yahoo_Rank": 68, "Avg_Rank": 67.3, "ADP": 67, "FantasyPros": 67, "2023_Overall_Rank": 82.0, "Rank_Change": 15.0, "2023_Pos_Rank": 23.0, "2023_Fantasy_Points": 195.5, "2023_Games_Played": 17.0, "2023_Avg_Points": 11.5, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1035.0, "2023_Rush_TD": "8", "2023_Rec": 29.0, "2023_Rec_Yds": 170.0, "2023_Rec_TD": "-", "Team_Offense_Rank": 13.0, "Team_Scoring_Rank": 27.5, "Team_Offense_Quality": 11.3, "Position_Opportunity_Score": 28.2148260212, "Team_Rushing_Rank": 25.0, "Team_Rush_Volume": 304.3, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 58.3, "Schedule_Rating": "Average"}, {"Overall_Rank": 68, "Name": "D'Andre Swift", "Team": "CHI", "Pos": "RB", "BYE": 7, "ESPN_Rank": 62, "Sleeper_Rank": 64.0, "Yahoo_Rank": 77, "Avg_Rank": 67.7, "ADP": 56, "FantasyPros": 77, "2023_Overall_Rank": 77.0, "Rank_Change": 9.0, "2023_Pos_Rank": 20.0, "2023_Fantasy_Points": 199.3, "2023_Games_Played": 16.0, "2023_Avg_Points": 12.46, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 1049.0, "2023_Rush_TD": "5", "2023_Rec": 39.0, "2023_Rec_Yds": 214.0, "2023_Rec_TD": "1", "Team_Offense_Rank": 2.0, "Team_Scoring_Rank": 18.0, "Team_Offense_Quality": 21.4, "Position_Opportunity_Score": 57.6777609682, "Team_Rushing_Rank": 20.0, "Team_Rush_Volume": 323.2, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 62.5, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 71, "Name": "Zamir White", "Team": "LV", "Pos": "RB", "BYE": 10, "ESPN_Rank": 66, "Sleeper_Rank": 73.0, "Yahoo_Rank": 73, "Avg_Rank": 70.7, "ADP": 71, "FantasyPros": 72, "2023_Overall_Rank": 162.0, "Rank_Change": 91.0, "2023_Pos_Rank": 54.0, "2023_Fantasy_Points": 73.9, "2023_Games_Played": 13.0, "2023_Avg_Points": 5.68, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": 451.0, "2023_Rush_TD": "1", "2023_Rec": 15.0, "2023_Rec_Yds": 98.0, "2023_Rec_TD": "-", "Team_Offense_Rank": 30.0, "Team_Scoring_Rank": 23.0, "Team_Offense_Quality": 7.2, "Position_Opportunity_Score": 6.3540090772, "Team_Rushing_Rank": 27.0, "Team_Rush_Volume": 289.5, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": 79.2, "Schedule_Rating": "Favorable"}]}
+RB RECOMMENDATION: De'Von Achane - 800 Rush Yards, 8 Rush TDs, 27 Receptions, 197 Rec Yards, 3 Rec TDs - Achane has been impressive with a high average of 17.34 fantasy points per game, demonstrating a strong pass-catching ability. With Miami ranking 1st in rushing and 6th in overall offensive quality, he presents a formidable option in the fourth round.
+Next, I will ask the wide receiver analyzer for their recommendation.
+
+wide_receiver_analyzer, what is your recommendation?
+Please provide the available wide receiver data so I can analyze the best option for this pick.
+None
+{"position": "WR", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 36, "players": [{"Overall_Rank": 36, "Name": "Cooper Kupp", "Team": "LAR", "Pos": "WR", "BYE": 6, "ESPN_Rank": 45, "Sleeper_Rank": 39.0, "Yahoo_Rank": 26, "Avg_Rank": 36.7, "ADP": 32, "FantasyPros": 35, "2023_Overall_Rank": 100.0, "Rank_Change": 64.0, "2023_Pos_Rank": 40.0, "2023_Fantasy_Points": 164.4, "2023_Games_Played": 12.0, "2023_Avg_Points": 13.7, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 59.0, "2023_Rec_Yds": 737.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 11.0, "Team_Scoring_Rank": 8.0, "Team_Offense_Quality": 23.8, "Position_Opportunity_Score": 77.3449319213, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 7.0, "Team_Pass_Volume": 6108.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 39, "Name": "Michael Pittman", "Team": "IND", "Pos": "WR", "BYE": 14, "ESPN_Rank": 34, "Sleeper_Rank": 44.0, "Yahoo_Rank": 38, "Avg_Rank": 38.7, "ADP": 35, "FantasyPros": 52, "2023_Overall_Rank": 33.0, "Rank_Change": -6.0, "2023_Pos_Rank": 13.0, "2023_Fantasy_Points": 250.2, "2023_Games_Played": 16.0, "2023_Avg_Points": 15.64, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 109.0, "2023_Rec_Yds": 1152.0, "2023_Rec_TD": "4", "Team_Offense_Rank": 10.0, "Team_Scoring_Rank": 10.5, "Team_Offense_Quality": 22.7, "Position_Opportunity_Score": 62.0650529501, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 15.0, "Team_Pass_Volume": 5725.0, "Schedule_Difficulty_Score": 68.8, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 40, "Name": "Jaylen Waddle", "Team": "MIA", "Pos": "WR", "BYE": 6, "ESPN_Rank": 46, "Sleeper_Rank": 35.0, "Yahoo_Rank": 36, "Avg_Rank": 39.0, "ADP": 37, "FantasyPros": 32, "2023_Overall_Rank": 78.0, "Rank_Change": 38.0, "2023_Pos_Rank": 34.0, "2023_Fantasy_Points": 198.6, "2023_Games_Played": 14.0, "2023_Avg_Points": 14.19, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 72.0, "2023_Rec_Yds": 1014.0, "2023_Rec_TD": "4", "Team_Offense_Rank": 6.0, "Team_Scoring_Rank": 2.0, "Team_Offense_Quality": 29.4, "Position_Opportunity_Score": 98.7897125567, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 1.0, "Team_Pass_Volume": 6822.0, "Schedule_Difficulty_Score": 82.3, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 45, "Name": "DeVonta Smith", "Team": "PHI", "Pos": "WR", "BYE": 5, "ESPN_Rank": 44, "Sleeper_Rank": 47.0, "Yahoo_Rank": 37, "Avg_Rank": 42.7, "ADP": 47, "FantasyPros": 41, "2023_Overall_Rank": 50.0, "Rank_Change": 5.0, "2023_Pos_Rank": 19.0, "2023_Fantasy_Points": 227.6, "2023_Games_Played": 16.0, "2023_Avg_Points": 14.23, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 81.0, "2023_Rec_Yds": 1066.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 8.0, "Team_Scoring_Rank": 7.0, "Team_Offense_Quality": 25.6, "Position_Opportunity_Score": 79.9167927383, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 8.0, "Team_Pass_Volume": 6024.0, "Schedule_Difficulty_Score": 49.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 46, "Name": "Stefon Diggs", "Team": "HOU", "Pos": "WR", "BYE": 14, "ESPN_Rank": 47, "Sleeper_Rank": 34.0, "Yahoo_Rank": 49, "Avg_Rank": 43.3, "ADP": 39, "FantasyPros": 55, "2023_Overall_Rank": 22.0, "Rank_Change": -24.0, "2023_Pos_Rank": 9.0, "2023_Fantasy_Points": 273.8, "2023_Games_Played": 17.0, "2023_Avg_Points": 16.11, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 107.0, "2023_Rec_Yds": 1183.0, "2023_Rec_TD": "8", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.9810892587, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 51, "Name": "Tee Higgins", "Team": "CIN", "Pos": "WR", "BYE": 12, "ESPN_Rank": 43, "Sleeper_Rank": 57.0, "Yahoo_Rank": 59, "Avg_Rank": 53.0, "ADP": 57, "FantasyPros": 44, "2023_Overall_Rank": 121.0, "Rank_Change": 70.0, "2023_Pos_Rank": 51.0, "2023_Fantasy_Points": 137.6, "2023_Games_Played": 12.0, "2023_Avg_Points": 11.47, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 42.0, "2023_Rec_Yds": 656.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 31.0, "Team_Scoring_Rank": 16.0, "Team_Offense_Quality": 11.0, "Position_Opportunity_Score": 19.1376701967, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 22.0, "Team_Pass_Volume": 5422.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 52, "Name": "Zay Flowers", "Team": "BAL", "Pos": "WR", "BYE": 14, "ESPN_Rank": 53, "Sleeper_Rank": 52.0, "Yahoo_Rank": 54, "Avg_Rank": 53.0, "ADP": 60, "FantasyPros": 56, "2023_Overall_Rank": 70.0, "Rank_Change": 18.0, "2023_Pos_Rank": 31.0, "2023_Fantasy_Points": 206.4, "2023_Games_Played": 16.0, "2023_Avg_Points": 12.9, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 77.0, "2023_Rec_Yds": 858.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 1.0, "Team_Scoring_Rank": 4.0, "Team_Offense_Quality": 30.2, "Position_Opportunity_Score": 94.4024205749, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 6.0, "Team_Pass_Volume": 6296.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 54, "Name": "Tank Dell", "Team": "HOU", "Pos": "WR", "BYE": 14, "ESPN_Rank": 54, "Sleeper_Rank": 54.0, "Yahoo_Rank": 56, "Avg_Rank": 54.7, "ADP": 61, "FantasyPros": 50, "2023_Overall_Rank": 99.0, "Rank_Change": 45.0, "2023_Pos_Rank": 39.0, "2023_Fantasy_Points": 165.0, "2023_Games_Played": 10.0, "2023_Avg_Points": 16.5, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 47.0, "2023_Rec_Yds": 709.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.9810892587, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 55, "Name": "Amari Cooper", "Team": "CLE", "Pos": "WR", "BYE": 10, "ESPN_Rank": 67, "Sleeper_Rank": 55.0, "Yahoo_Rank": 44, "Avg_Rank": 55.3, "ADP": 54, "FantasyPros": 40, "2023_Overall_Rank": 52.0, "Rank_Change": -3.0, "2023_Pos_Rank": 20.0, "2023_Fantasy_Points": 227.0, "2023_Games_Played": 15.0, "2023_Avg_Points": 15.13, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 72.0, "2023_Rec_Yds": 1250.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 12.0, "Team_Scoring_Rank": 10.5, "Team_Offense_Quality": 21.9, "Position_Opportunity_Score": 57.7155824508, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 16.0, "Team_Pass_Volume": 5710.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 56, "Name": "George Pickens", "Team": "PIT", "Pos": "WR", "BYE": 9, "ESPN_Rank": 52, "Sleeper_Rank": 60.0, "Yahoo_Rank": 58, "Avg_Rank": 56.7, "ADP": 58, "FantasyPros": 46, "2023_Overall_Rank": 68.0, "Rank_Change": 12.0, "2023_Pos_Rank": 30.0, "2023_Fantasy_Points": 208.8, "2023_Games_Played": 17.0, "2023_Avg_Points": 12.28, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 63.0, "2023_Rec_Yds": 1140.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 13.0, "Team_Scoring_Rank": 27.5, "Team_Offense_Quality": 11.3, "Position_Opportunity_Score": 28.2148260212, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 25.0, "Team_Pass_Volume": 5173.0, "Schedule_Difficulty_Score": 64.6, "Schedule_Rating": "Favorable"}]}
+WR RECOMMENDATION: Michael Pittman - 72 Receptions, 1,014 Receiving Yards, 4 Receiving TDs - Pittman has demonstrated strong target volume with 109 receptions and an average of 15.64 fantasy points per game, making him a reliable option. He also benefits from playing in one of the top offensive teams in the league, increasing his scoring potential.
+Next, I will ask the tight end analyzer for their recommendation.
+
+tight_end_analyzer, what is your recommendation?
+Please provide the available tight end data so I can analyze the best option for this pick.
+None
+{"position": "TE", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 36, "players": [{"Overall_Rank": 30, "Name": "Travis Kelce", "Team": "KC", "Pos": "TE", "BYE": 6, "ESPN_Rank": 37, "Sleeper_Rank": 25.0, "Yahoo_Rank": 29, "Avg_Rank": 30.3, "ADP": 28, "FantasyPros": 34, "2023_Overall_Rank": 58.0, "Rank_Change": 28.0, "2023_Pos_Rank": 3.0, "2023_Fantasy_Points": 219.4, "2023_Games_Played": 15.0, "2023_Avg_Points": 14.63, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 93.0, "2023_Rec_Yds": 984.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 19.0, "Team_Scoring_Rank": 15.0, "Team_Offense_Quality": 16.4, "Position_Opportunity_Score": 57.3807721423, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 9.0, "Team_Pass_Volume": 5972.0, "Schedule_Difficulty_Score": 78.1, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 48, "Name": "Mark Andrews", "Team": "BAL", "Pos": "TE", "BYE": 14, "ESPN_Rank": 51, "Sleeper_Rank": 49.0, "Yahoo_Rank": 50, "Avg_Rank": 50.0, "ADP": 49, "FantasyPros": 47, "2023_Overall_Rank": 125.0, "Rank_Change": 77.0, "2023_Pos_Rank": 15.0, "2023_Fantasy_Points": 135.4, "2023_Games_Played": 10.0, "2023_Avg_Points": 13.54, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 45.0, "2023_Rec_Yds": 544.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 1.0, "Team_Scoring_Rank": 4.0, "Team_Offense_Quality": 30.2, "Position_Opportunity_Score": 95.3065859198, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 6.0, "Team_Pass_Volume": 6296.0, "Schedule_Difficulty_Score": 85.9, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 49, "Name": "Trey McBride", "Team": "ARI", "Pos": "TE", "BYE": 11, "ESPN_Rank": 57, "Sleeper_Rank": 48.0, "Yahoo_Rank": 47, "Avg_Rank": 50.7, "ADP": 48, "FantasyPros": 62, "2023_Overall_Rank": 88.0, "Rank_Change": 39.0, "2023_Pos_Rank": 7.0, "2023_Fantasy_Points": 181.5, "2023_Games_Played": 17.0, "2023_Avg_Points": 10.68, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 81.0, "2023_Rec_Yds": 825.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 4.0, "Team_Scoring_Rank": 24.5, "Team_Offense_Quality": 16.7, "Position_Opportunity_Score": 52.1574564724, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 19.0, "Team_Pass_Volume": 5509.0, "Schedule_Difficulty_Score": 41.4, "Schedule_Rating": "Average"}, {"Overall_Rank": 57, "Name": "George Kittle", "Team": "SF", "Pos": "TE", "BYE": 9, "ESPN_Rank": 56, "Sleeper_Rank": 58.0, "Yahoo_Rank": 66, "Avg_Rank": 60.0, "ADP": 61, "FantasyPros": 71, "2023_Overall_Rank": 71.0, "Rank_Change": 14.0, "2023_Pos_Rank": 5.0, "2023_Fantasy_Points": 203.2, "2023_Games_Played": 16.0, "2023_Avg_Points": 12.7, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 65.0, "2023_Rec_Yds": 1020.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 3.0, "Team_Scoring_Rank": 3.0, "Team_Offense_Quality": 30.0, "Position_Opportunity_Score": 100.0, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 2.0, "Team_Pass_Volume": 6773.0, "Schedule_Difficulty_Score": 29.2, "Schedule_Rating": "Difficult"}, {"Overall_Rank": 62, "Name": "Dalton Kincaid", "Team": "BUF", "Pos": "TE", "BYE": 12, "ESPN_Rank": 75, "Sleeper_Rank": 51.0, "Yahoo_Rank": 67, "Avg_Rank": 64.3, "ADP": 50, "FantasyPros": 78, "2023_Overall_Rank": 111.0, "Rank_Change": 49.0, "2023_Pos_Rank": 11.0, "2023_Fantasy_Points": 150.3, "2023_Games_Played": 16.0, "2023_Avg_Points": 9.39, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 73.0, "2023_Rec_Yds": 673.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 7.0, "Team_Scoring_Rank": 6.0, "Team_Offense_Quality": 26.6, "Position_Opportunity_Score": 88.9477668433, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 4.0, "Team_Pass_Volume": 6366.0, "Schedule_Difficulty_Score": 52.1, "Schedule_Rating": "Average"}, {"Overall_Rank": 69, "Name": "Kyle Pitts", "Team": "ATL", "Pos": "TE", "BYE": 12, "ESPN_Rank": 73, "Sleeper_Rank": 61.0, "Yahoo_Rank": 75, "Avg_Rank": 69.7, "ADP": 65, "FantasyPros": 76, "2023_Overall_Rank": 123.0, "Rank_Change": 54.0, "2023_Pos_Rank": 13.0, "2023_Fantasy_Points": 137.3, "2023_Games_Played": 17.0, "2023_Avg_Points": 8.08, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 53.0, "2023_Rec_Yds": 667.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 9.0, "Team_Scoring_Rank": 26.0, "Team_Offense_Quality": 13.8, "Position_Opportunity_Score": 47.5397426192, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 17.0, "Team_Pass_Volume": 5683.0, "Schedule_Difficulty_Score": 85.9, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 84, "Name": "David Njoku", "Team": "CLE", "Pos": "TE", "BYE": 10, "ESPN_Rank": 74, "Sleeper_Rank": 87.0, "Yahoo_Rank": 99, "Avg_Rank": 86.7, "ADP": 89, "FantasyPros": 95, "2023_Overall_Rank": 75.0, "Rank_Change": -9.0, "2023_Pos_Rank": 6.0, "2023_Fantasy_Points": 201.2, "2023_Games_Played": 16.0, "2023_Avg_Points": 12.58, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 81.0, "2023_Rec_Yds": 882.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 12.0, "Team_Scoring_Rank": 10.5, "Team_Offense_Quality": 21.9, "Position_Opportunity_Score": 59.3489780469, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 16.0, "Team_Pass_Volume": 5710.0, "Schedule_Difficulty_Score": 85.9, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 86, "Name": "Evan Engram", "Team": "JAC", "Pos": "TE", "BYE": 12, "ESPN_Rank": 100, "Sleeper_Rank": 71.0, "Yahoo_Rank": 91, "Avg_Rank": 87.3, "ADP": 72, "FantasyPros": 92, "2023_Overall_Rank": 47.0, "Rank_Change": -39.0, "2023_Pos_Rank": 2.0, "2023_Fantasy_Points": 230.3, "2023_Games_Played": 17.0, "2023_Avg_Points": 13.55, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 114.0, "2023_Rec_Yds": 963.0, "2023_Rec_TD": "4", "Team_Offense_Rank": null, "Team_Scoring_Rank": null, "Team_Offense_Quality": null, "Position_Opportunity_Score": null, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": null, "Schedule_Rating": null}, {"Overall_Rank": 93, "Name": "Jake Ferguson", "Team": "DAL", "Pos": "TE", "BYE": 7, "ESPN_Rank": 101, "Sleeper_Rank": 85.0, "Yahoo_Rank": 96, "Avg_Rank": 94.0, "ADP": 83, "FantasyPros": 91, "2023_Overall_Rank": 92.0, "Rank_Change": -1.0, "2023_Pos_Rank": 9.0, "2023_Fantasy_Points": 177.1, "2023_Games_Played": 17.0, "2023_Avg_Points": 10.42, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 71.0, "2023_Rec_Yds": 761.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 14.0, "Team_Scoring_Rank": 1.0, "Team_Offense_Quality": 26.8, "Position_Opportunity_Score": 82.8917486752, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 5.0, "Team_Pass_Volume": 6317.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 106, "Name": "Brock Bowers", "Team": "LV", "Pos": "TE", "BYE": 10, "ESPN_Rank": 110, "Sleeper_Rank": 83.0, "Yahoo_Rank": 125, "Avg_Rank": 106.0, "ADP": 90, "FantasyPros": 101, "2023_Overall_Rank": null, "Rank_Change": null, "2023_Pos_Rank": null, "2023_Fantasy_Points": null, "2023_Games_Played": null, "2023_Avg_Points": null, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 30.0, "Team_Scoring_Rank": 23.0, "Team_Offense_Quality": 7.2, "Position_Opportunity_Score": 7.3429220288, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 27.0, "Team_Pass_Volume": 4922.0, "Schedule_Difficulty_Score": 54.2, "Schedule_Rating": "Average"}]}
+TE RECOMMENDATION: Travis Kelce - 93 Receptions, 984 Receiving Yards, 5 Receiving TDs - Despite some concerns about his team's overall offensive performance, Kelce remains one of the top tight ends with a strong average of 14.63 fantasy points per game, showcasing his reliability and consistent target volume. His experience and proven track record make him an excellent choice in the fourth round.
+I have gathered the recommendations from the position-specific analyzers:
+
+1. **Running Back Recommendation**: De'Von Achane - Strong rushing and receiving numbers, great offensive situation.
+2. **Wide Receiver Recommendation**: Michael Pittman - High target volume and consistent production.
+3. **Tight End Recommendation**: Travis Kelce - Proven reliability and strong performance metrics.
+
+Now, considering my current roster, I still need to fill one more Running Back and three Wide Receiver slots. Since De'Von Achane is a Running Back, I will choose him to fill the RB slot.
+
+I select:
+<player>De'Von Achane</player>
+**TERMINATE**
+
+DRAFT ROUND 5, PICK 12
+
+Your current roster:
+- Jahmyr Gibbs - RB (DET)
+- De'Von Achane - RB (MIA)
+- Puka Nacua - WR (LAR)
+- Jalen Hurts - QB (PHI)
+
+
+Already drafted players (DO NOT SELECT THESE):
+- Christian McCaffrey
+- Bijan Robinson
+- Breece Hall
+- CeeDee Lamb
+- Tyreek Hill
+- Ja'Marr Chase
+- Amon-Ra St. Brown
+- Justin Jefferson
+- Jonathan Taylor
+- Saquon Barkley
+- A.J. Brown
+- Jahmyr Gibbs
+- Puka Nacua
+- Garrett Wilson
+- Kyren Williams
+- Derrick Henry
+- Isiah Pacheco
+- Chris Olave
+- Mike Evans
+- Deebo Samuel
+- DK Metcalf
+- Marvin Harrison
+- Nico Collins
+- Travis Etienne
+- Brandon Aiyuk
+- Rachaad White
+- Davante Adams
+- Josh Jacobs
+- Kenneth Walker
+- James Cook
+- Josh Allen
+- Drake London
+- Malik Nabers
+- DJ Moore
+- Sam LaPorta
+- Jalen Hurts
+- De'Von Achane
+- Joe Mixon
+- Michael Pittman
+- Travis Kelce
+- Alvin Kamara
+- Mark Andrews
+- Lamar Jackson
+- Patrick Mahomes
+- George Kittle
+- Trey McBride
+- Calvin Ridley
+- Tee Higgins
+- Anthony Richardson
+- C.J. Stroud
+- Joe Burrow
+- Dak Prescott
+- D'Andre Swift
+- James Conner
+- Rhamondre Stevenson
+- Kyle Pitts
+- DeVonta Smith
+- David Njoku
+- Najee Harris
+
+
+You are making a selection for the AI_General_Manager. Remember that a complete roster requires: 1 QB, 2 RB, 3 WR, and 1 TE
+First, ask yourself what your current roster is and based on that clearly write out what positions still have empty slots in.
+Based on the empty slots, make a decision on who you want to draft next.
+
+Your current roster:
+- Jahmyr Gibbs - RB (DET)
+- De'Von Achane - RB (MIA)
+- Puka Nacua - WR (LAR)
+- Jalen Hurts - QB (PHI)
+
+Positions still needed to be filled:
+- 3 Wide Receivers (currently have 1)
+- 1 Tight End
+
+Now, I will request recommendations starting with the Wide Receiver analyzer since we need more wide receivers. 
+
+WR_analyzer, what is your recommendation?
+Wide receiver_extractor, can you provide data on the available wide receivers?
+None
+{"position": "WR", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 59, "players": [{"Overall_Rank": 36, "Name": "Cooper Kupp", "Team": "LAR", "Pos": "WR", "BYE": 6, "ESPN_Rank": 45, "Sleeper_Rank": 39.0, "Yahoo_Rank": 26, "Avg_Rank": 36.7, "ADP": 32, "FantasyPros": 35, "2023_Overall_Rank": 100.0, "Rank_Change": 64.0, "2023_Pos_Rank": 40.0, "2023_Fantasy_Points": 164.4, "2023_Games_Played": 12.0, "2023_Avg_Points": 13.7, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 59.0, "2023_Rec_Yds": 737.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 11.0, "Team_Scoring_Rank": 8.0, "Team_Offense_Quality": 23.8, "Position_Opportunity_Score": 77.3449319213, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 7.0, "Team_Pass_Volume": 6108.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 40, "Name": "Jaylen Waddle", "Team": "MIA", "Pos": "WR", "BYE": 6, "ESPN_Rank": 46, "Sleeper_Rank": 35.0, "Yahoo_Rank": 36, "Avg_Rank": 39.0, "ADP": 37, "FantasyPros": 32, "2023_Overall_Rank": 78.0, "Rank_Change": 38.0, "2023_Pos_Rank": 34.0, "2023_Fantasy_Points": 198.6, "2023_Games_Played": 14.0, "2023_Avg_Points": 14.19, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 72.0, "2023_Rec_Yds": 1014.0, "2023_Rec_TD": "4", "Team_Offense_Rank": 6.0, "Team_Scoring_Rank": 2.0, "Team_Offense_Quality": 29.4, "Position_Opportunity_Score": 98.7897125567, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 1.0, "Team_Pass_Volume": 6822.0, "Schedule_Difficulty_Score": 82.3, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 46, "Name": "Stefon Diggs", "Team": "HOU", "Pos": "WR", "BYE": 14, "ESPN_Rank": 47, "Sleeper_Rank": 34.0, "Yahoo_Rank": 49, "Avg_Rank": 43.3, "ADP": 39, "FantasyPros": 55, "2023_Overall_Rank": 22.0, "Rank_Change": -24.0, "2023_Pos_Rank": 9.0, "2023_Fantasy_Points": 273.8, "2023_Games_Played": 17.0, "2023_Avg_Points": 16.11, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 107.0, "2023_Rec_Yds": 1183.0, "2023_Rec_TD": "8", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.9810892587, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 52, "Name": "Zay Flowers", "Team": "BAL", "Pos": "WR", "BYE": 14, "ESPN_Rank": 53, "Sleeper_Rank": 52.0, "Yahoo_Rank": 54, "Avg_Rank": 53.0, "ADP": 60, "FantasyPros": 56, "2023_Overall_Rank": 70.0, "Rank_Change": 18.0, "2023_Pos_Rank": 31.0, "2023_Fantasy_Points": 206.4, "2023_Games_Played": 16.0, "2023_Avg_Points": 12.9, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 77.0, "2023_Rec_Yds": 858.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 1.0, "Team_Scoring_Rank": 4.0, "Team_Offense_Quality": 30.2, "Position_Opportunity_Score": 94.4024205749, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 6.0, "Team_Pass_Volume": 6296.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 54, "Name": "Tank Dell", "Team": "HOU", "Pos": "WR", "BYE": 14, "ESPN_Rank": 54, "Sleeper_Rank": 54.0, "Yahoo_Rank": 56, "Avg_Rank": 54.7, "ADP": 61, "FantasyPros": 50, "2023_Overall_Rank": 99.0, "Rank_Change": 45.0, "2023_Pos_Rank": 39.0, "2023_Fantasy_Points": 165.0, "2023_Games_Played": 10.0, "2023_Avg_Points": 16.5, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 47.0, "2023_Rec_Yds": 709.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.9810892587, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 55, "Name": "Amari Cooper", "Team": "CLE", "Pos": "WR", "BYE": 10, "ESPN_Rank": 67, "Sleeper_Rank": 55.0, "Yahoo_Rank": 44, "Avg_Rank": 55.3, "ADP": 54, "FantasyPros": 40, "2023_Overall_Rank": 52.0, "Rank_Change": -3.0, "2023_Pos_Rank": 20.0, "2023_Fantasy_Points": 227.0, "2023_Games_Played": 15.0, "2023_Avg_Points": 15.13, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 72.0, "2023_Rec_Yds": 1250.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 12.0, "Team_Scoring_Rank": 10.5, "Team_Offense_Quality": 21.9, "Position_Opportunity_Score": 57.7155824508, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 16.0, "Team_Pass_Volume": 5710.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 56, "Name": "George Pickens", "Team": "PIT", "Pos": "WR", "BYE": 9, "ESPN_Rank": 52, "Sleeper_Rank": 60.0, "Yahoo_Rank": 58, "Avg_Rank": 56.7, "ADP": 58, "FantasyPros": 46, "2023_Overall_Rank": 68.0, "Rank_Change": 12.0, "2023_Pos_Rank": 30.0, "2023_Fantasy_Points": 208.8, "2023_Games_Played": 17.0, "2023_Avg_Points": 12.28, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 63.0, "2023_Rec_Yds": 1140.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 13.0, "Team_Scoring_Rank": 27.5, "Team_Offense_Quality": 11.3, "Position_Opportunity_Score": 28.2148260212, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 25.0, "Team_Pass_Volume": 5173.0, "Schedule_Difficulty_Score": 64.6, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 58, "Name": "Rashee Rice", "Team": "KC", "Pos": "WR", "BYE": 6, "ESPN_Rank": 48, "Sleeper_Rank": 81.0, "Yahoo_Rank": 55, "Avg_Rank": 61.3, "ADP": 68, "FantasyPros": 57, "2023_Overall_Rank": 64.0, "Rank_Change": 6.0, "2023_Pos_Rank": 27.0, "2023_Fantasy_Points": 212.5, "2023_Games_Played": 16.0, "2023_Avg_Points": 13.28, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 79.0, "2023_Rec_Yds": 938.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 19.0, "Team_Scoring_Rank": 15.0, "Team_Offense_Quality": 16.4, "Position_Opportunity_Score": 58.8880484115, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 9.0, "Team_Pass_Volume": 5972.0, "Schedule_Difficulty_Score": 56.2, "Schedule_Rating": "Average"}, {"Overall_Rank": 60, "Name": "Terry McLaurin", "Team": "WAS", "Pos": "WR", "BYE": 14, "ESPN_Rank": 70, "Sleeper_Rank": 68.0, "Yahoo_Rank": 51, "Avg_Rank": 63.0, "ADP": 63, "FantasyPros": 58, "2023_Overall_Rank": 67.0, "Rank_Change": 7.0, "2023_Pos_Rank": 29.0, "2023_Fantasy_Points": 209.2, "2023_Games_Played": 17.0, "2023_Avg_Points": 12.31, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 79.0, "2023_Rec_Yds": 1002.0, "2023_Rec_TD": "4", "Team_Offense_Rank": 27.0, "Team_Scoring_Rank": 24.5, "Team_Offense_Quality": 7.5, "Position_Opportunity_Score": 14.636913767, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 24.0, "Team_Pass_Volume": 5317.0, "Schedule_Difficulty_Score": 43.8, "Schedule_Rating": "Average"}, {"Overall_Rank": 73, "Name": "Diontae Johnson", "Team": "CAR", "Pos": "WR", "BYE": 11, "ESPN_Rank": 55, "Sleeper_Rank": 94.0, "Yahoo_Rank": 65, "Avg_Rank": 71.3, "ADP": 86, "FantasyPros": 74, "2023_Overall_Rank": 108.0, "Rank_Change": 35.0, "2023_Pos_Rank": 45.0, "2023_Fantasy_Points": 152.7, "2023_Games_Played": 13.0, "2023_Avg_Points": 11.75, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 51.0, "2023_Rec_Yds": 717.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 20.0, "Team_Scoring_Rank": 31.5, "Team_Offense_Quality": 6.1, "Position_Opportunity_Score": 3.7821482602, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 32.0, "Team_Pass_Volume": 4510.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}]}
+WR RECOMMENDATION: Jaylen Waddle - 72 receptions, 1014 yards, 4 TDs - Waddle benefits from a high-powered Miami offense with a favorable schedule. His target volume and the quality of the Dolphins' passing game make him a strong candidate to fill your wide receiver slot.
+Next, I will ask the Tight End analyzer for a recommendation since we still need to fill that position.
+
+TE_analyzer, what is your recommendation?
+TE RECOMMENDATION: [Player Name] - [Key Stats] - [Brief 1-2 sentence explanation]
+None
+{"position": "TE", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 59, "players": [{"Overall_Rank": 62, "Name": "Dalton Kincaid", "Team": "BUF", "Pos": "TE", "BYE": 12, "ESPN_Rank": 75, "Sleeper_Rank": 51.0, "Yahoo_Rank": 67, "Avg_Rank": 64.3, "ADP": 50, "FantasyPros": 78, "2023_Overall_Rank": 111.0, "Rank_Change": 49.0, "2023_Pos_Rank": 11.0, "2023_Fantasy_Points": 150.3, "2023_Games_Played": 16.0, "2023_Avg_Points": 9.39, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 73.0, "2023_Rec_Yds": 673.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 7.0, "Team_Scoring_Rank": 6.0, "Team_Offense_Quality": 26.6, "Position_Opportunity_Score": 88.9477668433, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 4.0, "Team_Pass_Volume": 6366.0, "Schedule_Difficulty_Score": 52.1, "Schedule_Rating": "Average"}, {"Overall_Rank": 86, "Name": "Evan Engram", "Team": "JAC", "Pos": "TE", "BYE": 12, "ESPN_Rank": 100, "Sleeper_Rank": 71.0, "Yahoo_Rank": 91, "Avg_Rank": 87.3, "ADP": 72, "FantasyPros": 92, "2023_Overall_Rank": 47.0, "Rank_Change": -39.0, "2023_Pos_Rank": 2.0, "2023_Fantasy_Points": 230.3, "2023_Games_Played": 17.0, "2023_Avg_Points": 13.55, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 114.0, "2023_Rec_Yds": 963.0, "2023_Rec_TD": "4", "Team_Offense_Rank": null, "Team_Scoring_Rank": null, "Team_Offense_Quality": null, "Position_Opportunity_Score": null, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": null, "Schedule_Rating": null}, {"Overall_Rank": 93, "Name": "Jake Ferguson", "Team": "DAL", "Pos": "TE", "BYE": 7, "ESPN_Rank": 101, "Sleeper_Rank": 85.0, "Yahoo_Rank": 96, "Avg_Rank": 94.0, "ADP": 83, "FantasyPros": 91, "2023_Overall_Rank": 92.0, "Rank_Change": -1.0, "2023_Pos_Rank": 9.0, "2023_Fantasy_Points": 177.1, "2023_Games_Played": 17.0, "2023_Avg_Points": 10.42, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 71.0, "2023_Rec_Yds": 761.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 14.0, "Team_Scoring_Rank": 1.0, "Team_Offense_Quality": 26.8, "Position_Opportunity_Score": 82.8917486752, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 5.0, "Team_Pass_Volume": 6317.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 106, "Name": "Brock Bowers", "Team": "LV", "Pos": "TE", "BYE": 10, "ESPN_Rank": 110, "Sleeper_Rank": 83.0, "Yahoo_Rank": 125, "Avg_Rank": 106.0, "ADP": 90, "FantasyPros": 101, "2023_Overall_Rank": null, "Rank_Change": null, "2023_Pos_Rank": null, "2023_Fantasy_Points": null, "2023_Games_Played": null, "2023_Avg_Points": null, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 30.0, "Team_Scoring_Rank": 23.0, "Team_Offense_Quality": 7.2, "Position_Opportunity_Score": 7.3429220288, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 27.0, "Team_Pass_Volume": 4922.0, "Schedule_Difficulty_Score": 54.2, "Schedule_Rating": "Average"}, {"Overall_Rank": 111, "Name": "Dallas Goedert", "Team": "PHI", "Pos": "TE", "BYE": 5, "ESPN_Rank": 111, "Sleeper_Rank": 107.0, "Yahoo_Rank": 113, "Avg_Rank": 110.3, "ADP": 117, "FantasyPros": 108, "2023_Overall_Rank": 124.0, "Rank_Change": 13.0, "2023_Pos_Rank": 14.0, "2023_Fantasy_Points": 136.3, "2023_Games_Played": 14.0, "2023_Avg_Points": 9.74, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 59.0, "2023_Rec_Yds": 592.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 8.0, "Team_Scoring_Rank": 7.0, "Team_Offense_Quality": 25.6, "Position_Opportunity_Score": 80.3936411809, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 8.0, "Team_Pass_Volume": 6024.0, "Schedule_Difficulty_Score": 64.6, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 127, "Name": "Dalton Schultz", "Team": "HOU", "Pos": "TE", "BYE": 14, "ESPN_Rank": 137, "Sleeper_Rank": 118.0, "Yahoo_Rank": 128, "Avg_Rank": 127.7, "ADP": 126, "FantasyPros": 119, "2023_Overall_Rank": 110.0, "Rank_Change": -17.0, "2023_Pos_Rank": 10.0, "2023_Fantasy_Points": 150.5, "2023_Games_Played": 15.0, "2023_Avg_Points": 10.03, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 59.0, "2023_Rec_Yds": 635.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.4700984103, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 75.0, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 131, "Name": "Pat Freiermuth", "Team": "PIT", "Pos": "TE", "BYE": 9, "ESPN_Rank": 136, "Sleeper_Rank": 124.0, "Yahoo_Rank": 131, "Avg_Rank": 130.3, "ADP": 128, "FantasyPros": 120, "2023_Overall_Rank": 160.0, "Rank_Change": 29.0, "2023_Pos_Rank": 30.0, "2023_Fantasy_Points": 76.8, "2023_Games_Played": 11.0, "2023_Avg_Points": 6.98, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 32.0, "2023_Rec_Yds": 308.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 13.0, "Team_Scoring_Rank": 27.5, "Team_Offense_Quality": 11.3, "Position_Opportunity_Score": 28.3118849357, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 25.0, "Team_Pass_Volume": 5173.0, "Schedule_Difficulty_Score": 82.3, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 138, "Name": "T.J. Hockenson", "Team": "MIN", "Pos": "TE", "BYE": 6, "ESPN_Rank": 135, "Sleeper_Rank": 119.0, "Yahoo_Rank": 160, "Avg_Rank": 138.0, "ADP": 125, "FantasyPros": 144, "2023_Overall_Rank": 59.0, "Rank_Change": -79.0, "2023_Pos_Rank": 4.0, "2023_Fantasy_Points": 219.0, "2023_Games_Played": 15.0, "2023_Avg_Points": 14.6, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 95.0, "2023_Rec_Yds": 960.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 29.0, "Team_Scoring_Rank": 22.0, "Team_Offense_Quality": 8.2, "Position_Opportunity_Score": 36.5632096896, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 10.0, "Team_Pass_Volume": 5912.0, "Schedule_Difficulty_Score": 58.3, "Schedule_Rating": "Average"}, {"Overall_Rank": 139, "Name": "Taysom Hill", "Team": "NO", "Pos": "TE", "BYE": 12, "ESPN_Rank": 112, "Sleeper_Rank": 161.0, "Yahoo_Rank": 146, "Avg_Rank": 139.7, "ADP": 148, "FantasyPros": 134, "2023_Overall_Rank": 119.0, "Rank_Change": -20.0, "2023_Pos_Rank": 12.0, "2023_Fantasy_Points": 143.52, "2023_Games_Played": 16.0, "2023_Avg_Points": 8.97, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 33.0, "2023_Rec_Yds": 291.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 21.0, "Team_Scoring_Rank": 9.0, "Team_Offense_Quality": 19.2, "Position_Opportunity_Score": 52.3088569266, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 14.0, "Team_Pass_Volume": 5732.0, "Schedule_Difficulty_Score": 59.4, "Schedule_Rating": "Average"}, {"Overall_Rank": 148, "Name": "Cole Kmet", "Team": "CHI", "Pos": "TE", "BYE": 7, "ESPN_Rank": 169, "Sleeper_Rank": 129.0, "Yahoo_Rank": 164, "Avg_Rank": 154.0, "ADP": 133, "FantasyPros": 151, "2023_Overall_Rank": 90.0, "Rank_Change": -58.0, "2023_Pos_Rank": 8.0, "2023_Fantasy_Points": 181.1, "2023_Games_Played": 16.0, "2023_Avg_Points": 11.32, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 73.0, "2023_Rec_Yds": 719.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 2.0, "Team_Scoring_Rank": 18.0, "Team_Offense_Quality": 21.4, "Position_Opportunity_Score": 59.0461771385, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 20.0, "Team_Pass_Volume": 5495.0, "Schedule_Difficulty_Score": 6.2, "Schedule_Rating": "Very Difficult"}]}
+TE RECOMMENDATION: Dalton Kincaid - 73 receptions, 673 yards, 2 TDs - Kincaid is part of a high-scoring Bills offense and has the potential for increased target volume. His offensive environment is favorable, making him a solid selection for filling the tight end position.
+I have the following recommendations:
+
+- Wide Receiver: Jaylen Waddle - 72 receptions, 1014 yards, 4 TDs
+- Tight End: Dalton Kincaid - 73 receptions, 673 yards, 2 TDs
+
+Based on the current needs to fill 3 wide receiver slots and 1 tight end slot, I will prioritize the wide receiver position since I currently have only 1 wide receiver.
+
+Therefore, I will select Jaylen Waddle.
+
+I select: <player>Jaylen Waddle</player> 
+**TERMINATE**
+
+DRAFT ROUND 6, PICK 1
+
+Your current roster:
+- Jahmyr Gibbs - RB (DET)
+- De'Von Achane - RB (MIA)
+- Puka Nacua - WR (LAR)
+- Jaylen Waddle - WR (MIA)
+- Jalen Hurts - QB (PHI)
+
+
+Already drafted players (DO NOT SELECT THESE):
+- Christian McCaffrey
+- Bijan Robinson
+- Breece Hall
+- CeeDee Lamb
+- Tyreek Hill
+- Ja'Marr Chase
+- Amon-Ra St. Brown
+- Justin Jefferson
+- Jonathan Taylor
+- Saquon Barkley
+- A.J. Brown
+- Jahmyr Gibbs
+- Puka Nacua
+- Garrett Wilson
+- Kyren Williams
+- Derrick Henry
+- Isiah Pacheco
+- Chris Olave
+- Mike Evans
+- Deebo Samuel
+- DK Metcalf
+- Marvin Harrison
+- Nico Collins
+- Travis Etienne
+- Brandon Aiyuk
+- Rachaad White
+- Davante Adams
+- Josh Jacobs
+- Kenneth Walker
+- James Cook
+- Josh Allen
+- Drake London
+- Malik Nabers
+- DJ Moore
+- Sam LaPorta
+- Jalen Hurts
+- De'Von Achane
+- Joe Mixon
+- Michael Pittman
+- Travis Kelce
+- Alvin Kamara
+- Mark Andrews
+- Lamar Jackson
+- Patrick Mahomes
+- George Kittle
+- Trey McBride
+- Calvin Ridley
+- Tee Higgins
+- Anthony Richardson
+- C.J. Stroud
+- Joe Burrow
+- Dak Prescott
+- D'Andre Swift
+- James Conner
+- Rhamondre Stevenson
+- Kyle Pitts
+- DeVonta Smith
+- David Njoku
+- Najee Harris
+- Jaylen Waddle
+
+
+You are making a selection for the AI_General_Manager. Remember that a complete roster requires: 1 QB, 2 RB, 3 WR, and 1 TE
+First, ask yourself what your current roster is and based on that clearly write out what positions still have empty slots in.
+Based on the empty slots, make a decision on who you want to draft next.
+
+Your current roster:
+- Jahmyr Gibbs - RB (DET)
+- De'Von Achane - RB (MIA)
+- Puka Nacua - WR (LAR)
+- Jaylen Waddle - WR (MIA)
+- Jalen Hurts - QB (PHI)
+
+Positions that still need to be filled:
+- Wide Receiver (1 additional needed)
+- Tight End (1 needed)
+
+I will first seek a recommendation for the remaining Wide Receiver position.
+
+Wide receiver_analyzer, what is your recommendation?
+[wide_receiver_extractor]
+None
+{"position": "WR", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 60, "players": [{"Overall_Rank": 36, "Name": "Cooper Kupp", "Team": "LAR", "Pos": "WR", "BYE": 6, "ESPN_Rank": 45, "Sleeper_Rank": 39.0, "Yahoo_Rank": 26, "Avg_Rank": 36.7, "ADP": 32, "FantasyPros": 35, "2023_Overall_Rank": 100.0, "Rank_Change": 64.0, "2023_Pos_Rank": 40.0, "2023_Fantasy_Points": 164.4, "2023_Games_Played": 12.0, "2023_Avg_Points": 13.7, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 59.0, "2023_Rec_Yds": 737.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 11.0, "Team_Scoring_Rank": 8.0, "Team_Offense_Quality": 23.8, "Position_Opportunity_Score": 77.3449319213, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 7.0, "Team_Pass_Volume": 6108.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 46, "Name": "Stefon Diggs", "Team": "HOU", "Pos": "WR", "BYE": 14, "ESPN_Rank": 47, "Sleeper_Rank": 34.0, "Yahoo_Rank": 49, "Avg_Rank": 43.3, "ADP": 39, "FantasyPros": 55, "2023_Overall_Rank": 22.0, "Rank_Change": -24.0, "2023_Pos_Rank": 9.0, "2023_Fantasy_Points": 273.8, "2023_Games_Played": 17.0, "2023_Avg_Points": 16.11, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 107.0, "2023_Rec_Yds": 1183.0, "2023_Rec_TD": "8", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.9810892587, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 52, "Name": "Zay Flowers", "Team": "BAL", "Pos": "WR", "BYE": 14, "ESPN_Rank": 53, "Sleeper_Rank": 52.0, "Yahoo_Rank": 54, "Avg_Rank": 53.0, "ADP": 60, "FantasyPros": 56, "2023_Overall_Rank": 70.0, "Rank_Change": 18.0, "2023_Pos_Rank": 31.0, "2023_Fantasy_Points": 206.4, "2023_Games_Played": 16.0, "2023_Avg_Points": 12.9, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 77.0, "2023_Rec_Yds": 858.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 1.0, "Team_Scoring_Rank": 4.0, "Team_Offense_Quality": 30.2, "Position_Opportunity_Score": 94.4024205749, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 6.0, "Team_Pass_Volume": 6296.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 54, "Name": "Tank Dell", "Team": "HOU", "Pos": "WR", "BYE": 14, "ESPN_Rank": 54, "Sleeper_Rank": 54.0, "Yahoo_Rank": 56, "Avg_Rank": 54.7, "ADP": 61, "FantasyPros": 50, "2023_Overall_Rank": 99.0, "Rank_Change": 45.0, "2023_Pos_Rank": 39.0, "2023_Fantasy_Points": 165.0, "2023_Games_Played": 10.0, "2023_Avg_Points": 16.5, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 47.0, "2023_Rec_Yds": 709.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.9810892587, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 55, "Name": "Amari Cooper", "Team": "CLE", "Pos": "WR", "BYE": 10, "ESPN_Rank": 67, "Sleeper_Rank": 55.0, "Yahoo_Rank": 44, "Avg_Rank": 55.3, "ADP": 54, "FantasyPros": 40, "2023_Overall_Rank": 52.0, "Rank_Change": -3.0, "2023_Pos_Rank": 20.0, "2023_Fantasy_Points": 227.0, "2023_Games_Played": 15.0, "2023_Avg_Points": 15.13, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 72.0, "2023_Rec_Yds": 1250.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 12.0, "Team_Scoring_Rank": 10.5, "Team_Offense_Quality": 21.9, "Position_Opportunity_Score": 57.7155824508, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 16.0, "Team_Pass_Volume": 5710.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 56, "Name": "George Pickens", "Team": "PIT", "Pos": "WR", "BYE": 9, "ESPN_Rank": 52, "Sleeper_Rank": 60.0, "Yahoo_Rank": 58, "Avg_Rank": 56.7, "ADP": 58, "FantasyPros": 46, "2023_Overall_Rank": 68.0, "Rank_Change": 12.0, "2023_Pos_Rank": 30.0, "2023_Fantasy_Points": 208.8, "2023_Games_Played": 17.0, "2023_Avg_Points": 12.28, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 63.0, "2023_Rec_Yds": 1140.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 13.0, "Team_Scoring_Rank": 27.5, "Team_Offense_Quality": 11.3, "Position_Opportunity_Score": 28.2148260212, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 25.0, "Team_Pass_Volume": 5173.0, "Schedule_Difficulty_Score": 64.6, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 58, "Name": "Rashee Rice", "Team": "KC", "Pos": "WR", "BYE": 6, "ESPN_Rank": 48, "Sleeper_Rank": 81.0, "Yahoo_Rank": 55, "Avg_Rank": 61.3, "ADP": 68, "FantasyPros": 57, "2023_Overall_Rank": 64.0, "Rank_Change": 6.0, "2023_Pos_Rank": 27.0, "2023_Fantasy_Points": 212.5, "2023_Games_Played": 16.0, "2023_Avg_Points": 13.28, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 79.0, "2023_Rec_Yds": 938.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 19.0, "Team_Scoring_Rank": 15.0, "Team_Offense_Quality": 16.4, "Position_Opportunity_Score": 58.8880484115, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 9.0, "Team_Pass_Volume": 5972.0, "Schedule_Difficulty_Score": 56.2, "Schedule_Rating": "Average"}, {"Overall_Rank": 60, "Name": "Terry McLaurin", "Team": "WAS", "Pos": "WR", "BYE": 14, "ESPN_Rank": 70, "Sleeper_Rank": 68.0, "Yahoo_Rank": 51, "Avg_Rank": 63.0, "ADP": 63, "FantasyPros": 58, "2023_Overall_Rank": 67.0, "Rank_Change": 7.0, "2023_Pos_Rank": 29.0, "2023_Fantasy_Points": 209.2, "2023_Games_Played": 17.0, "2023_Avg_Points": 12.31, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 79.0, "2023_Rec_Yds": 1002.0, "2023_Rec_TD": "4", "Team_Offense_Rank": 27.0, "Team_Scoring_Rank": 24.5, "Team_Offense_Quality": 7.5, "Position_Opportunity_Score": 14.636913767, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 24.0, "Team_Pass_Volume": 5317.0, "Schedule_Difficulty_Score": 43.8, "Schedule_Rating": "Average"}, {"Overall_Rank": 73, "Name": "Diontae Johnson", "Team": "CAR", "Pos": "WR", "BYE": 11, "ESPN_Rank": 55, "Sleeper_Rank": 94.0, "Yahoo_Rank": 65, "Avg_Rank": 71.3, "ADP": 86, "FantasyPros": 74, "2023_Overall_Rank": 108.0, "Rank_Change": 35.0, "2023_Pos_Rank": 45.0, "2023_Fantasy_Points": 152.7, "2023_Games_Played": 13.0, "2023_Avg_Points": 11.75, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 51.0, "2023_Rec_Yds": 717.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 20.0, "Team_Scoring_Rank": 31.5, "Team_Offense_Quality": 6.1, "Position_Opportunity_Score": 3.7821482602, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 32.0, "Team_Pass_Volume": 4510.0, "Schedule_Difficulty_Score": 50.0, "Schedule_Rating": "Average"}, {"Overall_Rank": 74, "Name": "Keenan Allen", "Team": "CHI", "Pos": "WR", "BYE": 7, "ESPN_Rank": 72, "Sleeper_Rank": 65.0, "Yahoo_Rank": 78, "Avg_Rank": 71.7, "ADP": 73, "FantasyPros": 84, "2023_Overall_Rank": 19.0, "Rank_Change": -55.0, "2023_Pos_Rank": 8.0, "2023_Fantasy_Points": 278.86, "2023_Games_Played": 13.0, "2023_Avg_Points": 21.45, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 108.0, "2023_Rec_Yds": 1243.0, "2023_Rec_TD": "7", "Team_Offense_Rank": 2.0, "Team_Scoring_Rank": 18.0, "Team_Offense_Quality": 21.4, "Position_Opportunity_Score": 57.6777609682, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 20.0, "Team_Pass_Volume": 5495.0, "Schedule_Difficulty_Score": 59.4, "Schedule_Rating": "Average"}]}
+WR RECOMMENDATION: Cooper Kupp - 59 receptions, 737 yards, 5 TDs; Team Offense Rank: 11, Team Scoring Rank: 8 - Kupp has a strong target share and a high-quality offense, making him a solid choice for maximizing your WR potential.
+I will now ask for a recommendation for the Tight End position since that is still empty.
+
+tight_end_analyzer, what is your recommendation?
+Please provide data for tight ends, tight_end_extractor.
+None
+{"position": "TE", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 60, "players": [{"Overall_Rank": 62, "Name": "Dalton Kincaid", "Team": "BUF", "Pos": "TE", "BYE": 12, "ESPN_Rank": 75, "Sleeper_Rank": 51.0, "Yahoo_Rank": 67, "Avg_Rank": 64.3, "ADP": 50, "FantasyPros": 78, "2023_Overall_Rank": 111.0, "Rank_Change": 49.0, "2023_Pos_Rank": 11.0, "2023_Fantasy_Points": 150.3, "2023_Games_Played": 16.0, "2023_Avg_Points": 9.39, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 73.0, "2023_Rec_Yds": 673.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 7.0, "Team_Scoring_Rank": 6.0, "Team_Offense_Quality": 26.6, "Position_Opportunity_Score": 88.9477668433, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 4.0, "Team_Pass_Volume": 6366.0, "Schedule_Difficulty_Score": 52.1, "Schedule_Rating": "Average"}, {"Overall_Rank": 86, "Name": "Evan Engram", "Team": "JAC", "Pos": "TE", "BYE": 12, "ESPN_Rank": 100, "Sleeper_Rank": 71.0, "Yahoo_Rank": 91, "Avg_Rank": 87.3, "ADP": 72, "FantasyPros": 92, "2023_Overall_Rank": 47.0, "Rank_Change": -39.0, "2023_Pos_Rank": 2.0, "2023_Fantasy_Points": 230.3, "2023_Games_Played": 17.0, "2023_Avg_Points": 13.55, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 114.0, "2023_Rec_Yds": 963.0, "2023_Rec_TD": "4", "Team_Offense_Rank": null, "Team_Scoring_Rank": null, "Team_Offense_Quality": null, "Position_Opportunity_Score": null, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": null, "Team_Pass_Volume": null, "Schedule_Difficulty_Score": null, "Schedule_Rating": null}, {"Overall_Rank": 93, "Name": "Jake Ferguson", "Team": "DAL", "Pos": "TE", "BYE": 7, "ESPN_Rank": 101, "Sleeper_Rank": 85.0, "Yahoo_Rank": 96, "Avg_Rank": 94.0, "ADP": 83, "FantasyPros": 91, "2023_Overall_Rank": 92.0, "Rank_Change": -1.0, "2023_Pos_Rank": 9.0, "2023_Fantasy_Points": 177.1, "2023_Games_Played": 17.0, "2023_Avg_Points": 10.42, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 71.0, "2023_Rec_Yds": 761.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 14.0, "Team_Scoring_Rank": 1.0, "Team_Offense_Quality": 26.8, "Position_Opportunity_Score": 82.8917486752, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 5.0, "Team_Pass_Volume": 6317.0, "Schedule_Difficulty_Score": 93.8, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 106, "Name": "Brock Bowers", "Team": "LV", "Pos": "TE", "BYE": 10, "ESPN_Rank": 110, "Sleeper_Rank": 83.0, "Yahoo_Rank": 125, "Avg_Rank": 106.0, "ADP": 90, "FantasyPros": 101, "2023_Overall_Rank": null, "Rank_Change": null, "2023_Pos_Rank": null, "2023_Fantasy_Points": null, "2023_Games_Played": null, "2023_Avg_Points": null, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": null, "2023_Rec_Yds": null, "2023_Rec_TD": null, "Team_Offense_Rank": 30.0, "Team_Scoring_Rank": 23.0, "Team_Offense_Quality": 7.2, "Position_Opportunity_Score": 7.3429220288, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 27.0, "Team_Pass_Volume": 4922.0, "Schedule_Difficulty_Score": 54.2, "Schedule_Rating": "Average"}, {"Overall_Rank": 111, "Name": "Dallas Goedert", "Team": "PHI", "Pos": "TE", "BYE": 5, "ESPN_Rank": 111, "Sleeper_Rank": 107.0, "Yahoo_Rank": 113, "Avg_Rank": 110.3, "ADP": 117, "FantasyPros": 108, "2023_Overall_Rank": 124.0, "Rank_Change": 13.0, "2023_Pos_Rank": 14.0, "2023_Fantasy_Points": 136.3, "2023_Games_Played": 14.0, "2023_Avg_Points": 9.74, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 59.0, "2023_Rec_Yds": 592.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 8.0, "Team_Scoring_Rank": 7.0, "Team_Offense_Quality": 25.6, "Position_Opportunity_Score": 80.3936411809, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 8.0, "Team_Pass_Volume": 6024.0, "Schedule_Difficulty_Score": 64.6, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 127, "Name": "Dalton Schultz", "Team": "HOU", "Pos": "TE", "BYE": 14, "ESPN_Rank": 137, "Sleeper_Rank": 118.0, "Yahoo_Rank": 128, "Avg_Rank": 127.7, "ADP": 126, "FantasyPros": 119, "2023_Overall_Rank": 110.0, "Rank_Change": -17.0, "2023_Pos_Rank": 10.0, "2023_Fantasy_Points": 150.5, "2023_Games_Played": 15.0, "2023_Avg_Points": 10.03, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 59.0, "2023_Rec_Yds": 635.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.4700984103, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 75.0, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 131, "Name": "Pat Freiermuth", "Team": "PIT", "Pos": "TE", "BYE": 9, "ESPN_Rank": 136, "Sleeper_Rank": 124.0, "Yahoo_Rank": 131, "Avg_Rank": 130.3, "ADP": 128, "FantasyPros": 120, "2023_Overall_Rank": 160.0, "Rank_Change": 29.0, "2023_Pos_Rank": 30.0, "2023_Fantasy_Points": 76.8, "2023_Games_Played": 11.0, "2023_Avg_Points": 6.98, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 32.0, "2023_Rec_Yds": 308.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 13.0, "Team_Scoring_Rank": 27.5, "Team_Offense_Quality": 11.3, "Position_Opportunity_Score": 28.3118849357, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 25.0, "Team_Pass_Volume": 5173.0, "Schedule_Difficulty_Score": 82.3, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 138, "Name": "T.J. Hockenson", "Team": "MIN", "Pos": "TE", "BYE": 6, "ESPN_Rank": 135, "Sleeper_Rank": 119.0, "Yahoo_Rank": 160, "Avg_Rank": 138.0, "ADP": 125, "FantasyPros": 144, "2023_Overall_Rank": 59.0, "Rank_Change": -79.0, "2023_Pos_Rank": 4.0, "2023_Fantasy_Points": 219.0, "2023_Games_Played": 15.0, "2023_Avg_Points": 14.6, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 95.0, "2023_Rec_Yds": 960.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 29.0, "Team_Scoring_Rank": 22.0, "Team_Offense_Quality": 8.2, "Position_Opportunity_Score": 36.5632096896, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 10.0, "Team_Pass_Volume": 5912.0, "Schedule_Difficulty_Score": 58.3, "Schedule_Rating": "Average"}, {"Overall_Rank": 139, "Name": "Taysom Hill", "Team": "NO", "Pos": "TE", "BYE": 12, "ESPN_Rank": 112, "Sleeper_Rank": 161.0, "Yahoo_Rank": 146, "Avg_Rank": 139.7, "ADP": 148, "FantasyPros": 134, "2023_Overall_Rank": 119.0, "Rank_Change": -20.0, "2023_Pos_Rank": 12.0, "2023_Fantasy_Points": 143.52, "2023_Games_Played": 16.0, "2023_Avg_Points": 8.97, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 33.0, "2023_Rec_Yds": 291.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 21.0, "Team_Scoring_Rank": 9.0, "Team_Offense_Quality": 19.2, "Position_Opportunity_Score": 52.3088569266, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 14.0, "Team_Pass_Volume": 5732.0, "Schedule_Difficulty_Score": 59.4, "Schedule_Rating": "Average"}, {"Overall_Rank": 148, "Name": "Cole Kmet", "Team": "CHI", "Pos": "TE", "BYE": 7, "ESPN_Rank": 169, "Sleeper_Rank": 129.0, "Yahoo_Rank": 164, "Avg_Rank": 154.0, "ADP": 133, "FantasyPros": 151, "2023_Overall_Rank": 90.0, "Rank_Change": -58.0, "2023_Pos_Rank": 8.0, "2023_Fantasy_Points": 181.1, "2023_Games_Played": 16.0, "2023_Avg_Points": 11.32, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 73.0, "2023_Rec_Yds": 719.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 2.0, "Team_Scoring_Rank": 18.0, "Team_Offense_Quality": 21.4, "Position_Opportunity_Score": 59.0461771385, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 20.0, "Team_Pass_Volume": 5495.0, "Schedule_Difficulty_Score": 6.2, "Schedule_Rating": "Very Difficult"}]}
+TE RECOMMENDATION: Evan Engram - 114 receptions, 963 yards, 4 TDs; Team Offense Rank: N/A, Team Scoring Rank: N/A - Engram has demonstrated reliability and a volume of targets, making him a strong option for the tight end position who can contribute significantly to your roster.
+After considering the recommendations:
+
+1. **Wide Receiver Recommendation:** Cooper Kupp (LAR) - Strong target share and high-quality offense.
+2. **Tight End Recommendation:** Evan Engram (JAC) - High volume of targets and reliable production.
+
+Since we need one additional Wide Receiver and one Tight End, I will select one player based solely on their recommendation as Kupp offers a great opportunity.
+
+I select: 
+<player>Cooper Kupp</player>  
+**TERMINATE**
+
+DRAFT ROUND 7, PICK 12
+
+Your current roster:
+- Jahmyr Gibbs - RB (DET)
+- De'Von Achane - RB (MIA)
+- Puka Nacua - WR (LAR)
+- Jaylen Waddle - WR (MIA)
+- Cooper Kupp - WR (LAR)
+- Jalen Hurts - QB (PHI)
+
+
+Already drafted players (DO NOT SELECT THESE):
+- Christian McCaffrey
+- Bijan Robinson
+- Breece Hall
+- CeeDee Lamb
+- Tyreek Hill
+- Ja'Marr Chase
+- Amon-Ra St. Brown
+- Justin Jefferson
+- Jonathan Taylor
+- Saquon Barkley
+- A.J. Brown
+- Jahmyr Gibbs
+- Puka Nacua
+- Garrett Wilson
+- Kyren Williams
+- Derrick Henry
+- Isiah Pacheco
+- Chris Olave
+- Mike Evans
+- Deebo Samuel
+- DK Metcalf
+- Marvin Harrison
+- Nico Collins
+- Travis Etienne
+- Brandon Aiyuk
+- Rachaad White
+- Davante Adams
+- Josh Jacobs
+- Kenneth Walker
+- James Cook
+- Josh Allen
+- Drake London
+- Malik Nabers
+- DJ Moore
+- Sam LaPorta
+- Jalen Hurts
+- De'Von Achane
+- Joe Mixon
+- Michael Pittman
+- Travis Kelce
+- Alvin Kamara
+- Mark Andrews
+- Lamar Jackson
+- Patrick Mahomes
+- George Kittle
+- Trey McBride
+- Calvin Ridley
+- Tee Higgins
+- Anthony Richardson
+- C.J. Stroud
+- Joe Burrow
+- Dak Prescott
+- D'Andre Swift
+- James Conner
+- Rhamondre Stevenson
+- Kyle Pitts
+- DeVonta Smith
+- David Njoku
+- Najee Harris
+- Jaylen Waddle
+- Cooper Kupp
+- Kyler Murray
+- Jordan Love
+- Brock Purdy
+- Jayden Daniels
+- Zamir White
+- Dalton Kincaid
+- Evan Engram
+- Aaron Jones
+- David Montgomery
+- Jake Ferguson
+- Brock Bowers
+- Stefon Diggs
+- Rashee Rice
+- George Pickens
+- Zay Flowers
+- Tank Dell
+- Diontae Johnson
+- Amari Cooper
+- Chris Godwin
+- Christian Watson
+- Terry McLaurin
+- Christian Kirk
+
+
+You are making a selection for the AI_General_Manager. Remember that a complete roster requires: 1 QB, 2 RB, 3 WR, and 1 TE
+First, ask yourself what your current roster is and based on that clearly write out what positions still have empty slots in.
+Based on the empty slots, make a decision on who you want to draft next.
+
+Your current roster includes:
+- 1 QB: Jalen Hurts (PHI)
+- 2 RB: Jahmyr Gibbs (DET), De'Von Achane (MIA)
+- 3 WR: Puka Nacua (LAR), Jaylen Waddle (MIA), Cooper Kupp (LAR)
+- 0 TE: None
+
+Positions still needed to be filled:
+- 1 Tight End (TE)
+
+Since you still need a Tight End, I will now ask the tight end analyzer for their recommendation.
+
+tight_end_analyzer, what is your recommendation?
+Please provide the latest data on available tight ends.
+None
+{"position": "TE", "sort_by": "Overall_Rank", "count": 10, "filtered": true, "excluded_count": 83, "players": [{"Overall_Rank": 111, "Name": "Dallas Goedert", "Team": "PHI", "Pos": "TE", "BYE": 5, "ESPN_Rank": 111, "Sleeper_Rank": 107.0, "Yahoo_Rank": 113, "Avg_Rank": 110.3, "ADP": 117, "FantasyPros": 108, "2023_Overall_Rank": 124.0, "Rank_Change": 13.0, "2023_Pos_Rank": 14.0, "2023_Fantasy_Points": 136.3, "2023_Games_Played": 14.0, "2023_Avg_Points": 9.74, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 59.0, "2023_Rec_Yds": 592.0, "2023_Rec_TD": "3", "Team_Offense_Rank": 8.0, "Team_Scoring_Rank": 7.0, "Team_Offense_Quality": 25.6, "Position_Opportunity_Score": 80.3936411809, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 8.0, "Team_Pass_Volume": 6024.0, "Schedule_Difficulty_Score": 64.6, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 127, "Name": "Dalton Schultz", "Team": "HOU", "Pos": "TE", "BYE": 14, "ESPN_Rank": 137, "Sleeper_Rank": 118.0, "Yahoo_Rank": 128, "Avg_Rank": 127.7, "ADP": 126, "FantasyPros": 119, "2023_Overall_Rank": 110.0, "Rank_Change": -17.0, "2023_Pos_Rank": 10.0, "2023_Fantasy_Points": 150.5, "2023_Games_Played": 15.0, "2023_Avg_Points": 10.03, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 59.0, "2023_Rec_Yds": 635.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 13.5, "Team_Offense_Quality": 15.9, "Position_Opportunity_Score": 49.4700984103, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 12.0, "Team_Pass_Volume": 5820.0, "Schedule_Difficulty_Score": 75.0, "Schedule_Rating": "Favorable"}, {"Overall_Rank": 131, "Name": "Pat Freiermuth", "Team": "PIT", "Pos": "TE", "BYE": 9, "ESPN_Rank": 136, "Sleeper_Rank": 124.0, "Yahoo_Rank": 131, "Avg_Rank": 130.3, "ADP": 128, "FantasyPros": 120, "2023_Overall_Rank": 160.0, "Rank_Change": 29.0, "2023_Pos_Rank": 30.0, "2023_Fantasy_Points": 76.8, "2023_Games_Played": 11.0, "2023_Avg_Points": 6.98, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 32.0, "2023_Rec_Yds": 308.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 13.0, "Team_Scoring_Rank": 27.5, "Team_Offense_Quality": 11.3, "Position_Opportunity_Score": 28.3118849357, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 25.0, "Team_Pass_Volume": 5173.0, "Schedule_Difficulty_Score": 82.3, "Schedule_Rating": "Very Favorable"}, {"Overall_Rank": 138, "Name": "T.J. Hockenson", "Team": "MIN", "Pos": "TE", "BYE": 6, "ESPN_Rank": 135, "Sleeper_Rank": 119.0, "Yahoo_Rank": 160, "Avg_Rank": 138.0, "ADP": 125, "FantasyPros": 144, "2023_Overall_Rank": 59.0, "Rank_Change": -79.0, "2023_Pos_Rank": 4.0, "2023_Fantasy_Points": 219.0, "2023_Games_Played": 15.0, "2023_Avg_Points": 14.6, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 95.0, "2023_Rec_Yds": 960.0, "2023_Rec_TD": "5", "Team_Offense_Rank": 29.0, "Team_Scoring_Rank": 22.0, "Team_Offense_Quality": 8.2, "Position_Opportunity_Score": 36.5632096896, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 10.0, "Team_Pass_Volume": 5912.0, "Schedule_Difficulty_Score": 58.3, "Schedule_Rating": "Average"}, {"Overall_Rank": 139, "Name": "Taysom Hill", "Team": "NO", "Pos": "TE", "BYE": 12, "ESPN_Rank": 112, "Sleeper_Rank": 161.0, "Yahoo_Rank": 146, "Avg_Rank": 139.7, "ADP": 148, "FantasyPros": 134, "2023_Overall_Rank": 119.0, "Rank_Change": -20.0, "2023_Pos_Rank": 12.0, "2023_Fantasy_Points": 143.52, "2023_Games_Played": 16.0, "2023_Avg_Points": 8.97, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 33.0, "2023_Rec_Yds": 291.0, "2023_Rec_TD": "2", "Team_Offense_Rank": 21.0, "Team_Scoring_Rank": 9.0, "Team_Offense_Quality": 19.2, "Position_Opportunity_Score": 52.3088569266, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 14.0, "Team_Pass_Volume": 5732.0, "Schedule_Difficulty_Score": 59.4, "Schedule_Rating": "Average"}, {"Overall_Rank": 148, "Name": "Cole Kmet", "Team": "CHI", "Pos": "TE", "BYE": 7, "ESPN_Rank": 169, "Sleeper_Rank": 129.0, "Yahoo_Rank": 164, "Avg_Rank": 154.0, "ADP": 133, "FantasyPros": 151, "2023_Overall_Rank": 90.0, "Rank_Change": -58.0, "2023_Pos_Rank": 8.0, "2023_Fantasy_Points": 181.1, "2023_Games_Played": 16.0, "2023_Avg_Points": 11.32, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 73.0, "2023_Rec_Yds": 719.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 2.0, "Team_Scoring_Rank": 18.0, "Team_Offense_Quality": 21.4, "Position_Opportunity_Score": 59.0461771385, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 20.0, "Team_Pass_Volume": 5495.0, "Schedule_Difficulty_Score": 6.2, "Schedule_Rating": "Very Difficult"}, {"Overall_Rank": 152, "Name": "Luke Musgrave", "Team": "GB", "Pos": "TE", "BYE": 10, "ESPN_Rank": 183, "Sleeper_Rank": 147.0, "Yahoo_Rank": 137, "Avg_Rank": 155.7, "ADP": 151, "FantasyPros": 147, "2023_Overall_Rank": 161.0, "Rank_Change": 9.0, "2023_Pos_Rank": 31.0, "2023_Fantasy_Points": 75.2, "2023_Games_Played": 11.0, "2023_Avg_Points": 6.84, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 34.0, "2023_Rec_Yds": 352.0, "2023_Rec_TD": "1", "Team_Offense_Rank": 15.0, "Team_Scoring_Rank": 12.0, "Team_Offense_Quality": 19.8, "Position_Opportunity_Score": 62.0741862226, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 11.0, "Team_Pass_Volume": 5873.0, "Schedule_Difficulty_Score": 6.2, "Schedule_Rating": "Very Difficult"}, {"Overall_Rank": 164, "Name": "Hunter Henry", "Team": "NE", "Pos": "TE", "BYE": 14, "ESPN_Rank": 167, "Sleeper_Rank": 183.0, "Yahoo_Rank": 170, "Avg_Rank": 173.3, "ADP": 185, "FantasyPros": 150, "2023_Overall_Rank": 135.0, "Rank_Change": -29.0, "2023_Pos_Rank": 19.0, "2023_Fantasy_Points": 119.9, "2023_Games_Played": 13.0, "2023_Avg_Points": 9.22, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 42.0, "2023_Rec_Yds": 419.0, "2023_Rec_TD": "6", "Team_Offense_Rank": 26.0, "Team_Scoring_Rank": 31.5, "Team_Offense_Quality": 3.7, "Position_Opportunity_Score": 0.0, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 30.0, "Team_Pass_Volume": 4696.0, "Schedule_Difficulty_Score": 58.6, "Schedule_Rating": "Average"}, {"Overall_Rank": 166, "Name": "Tyler Conklin", "Team": "NYJ", "Pos": "TE", "BYE": 12, "ESPN_Rank": 165, "Sleeper_Rank": 193.0, "Yahoo_Rank": 173, "Avg_Rank": 177.0, "ADP": 182, "FantasyPros": 161, "2023_Overall_Rank": 134.0, "Rank_Change": -32.0, "2023_Pos_Rank": 18.0, "2023_Fantasy_Points": 123.1, "2023_Games_Played": 17.0, "2023_Avg_Points": 7.24, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 61.0, "2023_Rec_Yds": 621.0, "2023_Rec_TD": "-", "Team_Offense_Rank": 22.5, "Team_Scoring_Rank": 29.0, "Team_Offense_Quality": 6.6, "Position_Opportunity_Score": 5.1854655564, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 31.0, "Team_Pass_Volume": 4566.0, "Schedule_Difficulty_Score": 6.2, "Schedule_Rating": "Very Difficult"}, {"Overall_Rank": 169, "Name": "Cade Otton", "Team": "TB", "Pos": "TE", "BYE": 11, "ESPN_Rank": 191, "Sleeper_Rank": 179.0, "Yahoo_Rank": 171, "Avg_Rank": 180.3, "ADP": 198, "FantasyPros": 170, "2023_Overall_Rank": 137.0, "Rank_Change": -32.0, "2023_Pos_Rank": 20.0, "2023_Fantasy_Points": 116.5, "2023_Games_Played": 16.0, "2023_Avg_Points": 7.28, "2023_Pass_Yds": null, "2023_Pass_TD": null, "2023_Pass_Int": null, "2023_Rush_Yds": null, "2023_Rush_TD": null, "2023_Rec": 47.0, "2023_Rec_Yds": 455.0, "2023_Rec_TD": "4", "Team_Offense_Rank": 32.0, "Team_Scoring_Rank": 20.0, "Team_Offense_Quality": 8.2, "Position_Opportunity_Score": 13.8531415594, "Team_Rushing_Rank": null, "Team_Rush_Volume": null, "Team_Passing_Rank": 23.0, "Team_Pass_Volume": 5321.0, "Schedule_Difficulty_Score": 88.5, "Schedule_Rating": "Very Favorable"}]}
+TE RECOMMENDATION: Dalton Schultz - 59 receptions, 635 yards, 5 TDs - Schultz has consistently been a reliable target, ranking 10th among tight ends in fantasy points, and has a favorable schedule ahead, enhancing his potential for the upcoming weeks.
+I will now make my selection based on the provided recommendation.
+
+I select:
+<player>Dalton Schultz</player>
+**TERMINATE**
+
+
+--------------------------------------------------
+Auto Team 1 Current Roster:
+--------------------------------------------------
+
+QB:
+  1. Dak Prescott (DAL)
+
+RB:
+  1. Josh Jacobs (GB)
+  2. Aaron Jones (MIN)
+
+TE:
+  1. George Kittle (SF)
+
+WR:
+  1. CeeDee Lamb (DAL)
+  2. DK Metcalf (SEA)
+  3. Zay Flowers (BAL)
+--------------------------------------------------
+
+--------------------------------------------------
+Auto Team 2 Current Roster:
+--------------------------------------------------
+
+QB:
+  1. Josh Allen (BUF)
+
+RB:
+  1. Rhamondre Stevenson (NE)
+  2. Zamir White (LV)
+
+TE:
+  1. Mark Andrews (BAL)
+
+WR:
+  1. Amon-Ra St. Brown (DET)
+  2. Chris Olave (NO)
+  3. Amari Cooper (CLE)
+--------------------------------------------------
+
+--------------------------------------------------
+Auto Team 3 Current Roster:
+--------------------------------------------------
+
+QB:
+  1. Anthony Richardson (IND)
+
+RB:
+  1. Christian McCaffrey (SF)
+  2. Travis Etienne (JAC)
+
+TE:
+  1. Brock Bowers (LV)
+
+WR:
+  1. Brandon Aiyuk (SF)
+  2. Tee Higgins (CIN)
+  3. Stefon Diggs (HOU)
+--------------------------------------------------
+
+--------------------------------------------------
+Auto Team 4 Current Roster:
+--------------------------------------------------
+
+QB:
+  1. Jayden Daniels (WAS)
+
+RB:
+  1. Isiah Pacheco (KC)
+  2. Alvin Kamara (NO)
+
+TE:
+  1. Kyle Pitts (ATL)
+
+WR:
+  1. Justin Jefferson (MIN)
+  2. Drake London (ATL)
+  3. Chris Godwin (TB)
+--------------------------------------------------
+
+--------------------------------------------------
+Auto Team 5 Current Roster:
+--------------------------------------------------
+
+QB:
+  1. Patrick Mahomes (KC)
+
+RB:
+  1. Kenneth Walker (SEA)
+  2. D'Andre Swift (CHI)
+
+TE:
+  1. Evan Engram (JAC)
+
+WR:
+  1. Tyreek Hill (MIA)
+  2. Deebo Samuel (SF)
+  3. Tank Dell (HOU)
+--------------------------------------------------
+
+--------------------------------------------------
+Auto Team 6 Current Roster:
+--------------------------------------------------
+
+QB:
+  1. C.J. Stroud (HOU)
+
+RB:
+  1. Bijan Robinson (ATL)
+  2. Rachaad White (TB)
+
+TE:
+  1. Jake Ferguson (DAL)
+
+WR:
+  1. Nico Collins (HOU)
+  2. Calvin Ridley (TEN)
+  3. Rashee Rice (KC)
+--------------------------------------------------
+
+--------------------------------------------------
+Auto Team 7 Current Roster:
+--------------------------------------------------
+
+QB:
+  1. Kyler Murray (ARI)
+
+RB:
+  1. Joe Mixon (HOU)
+  2. Najee Harris (PIT)
+
+TE:
+  1. Sam LaPorta (DET)
+
+WR:
+  1. A.J. Brown (PHI)
+  2. Garrett Wilson (NYJ)
+  3. Christian Kirk (JAC)
+--------------------------------------------------
+
+--------------------------------------------------
+Auto Team 8 Current Roster:
+--------------------------------------------------
+
+QB:
+  1. Lamar Jackson (BAL)
+
+RB:
+  1. James Cook (BUF)
+  2. James Conner (ARI)
+
+TE:
+  1. Dalton Kincaid (BUF)
+
+WR:
+  1. Ja'Marr Chase (CIN)
+  2. Mike Evans (TB)
+  3. Diontae Johnson (CAR)
+--------------------------------------------------
+
+--------------------------------------------------
+Auto Team 9 Current Roster:
+--------------------------------------------------
+
+QB:
+  1. Brock Purdy (SF)
+
+RB:
+  1. Jonathan Taylor (IND)
+  2. Derrick Henry (BAL)
+
+TE:
+  1. Travis Kelce (KC)
+
+WR:
+  1. Malik Nabers (NYG)
+  2. DeVonta Smith (PHI)
+  3. Christian Watson (GB)
+--------------------------------------------------
+
+--------------------------------------------------
+Auto Team 10 Current Roster:
+--------------------------------------------------
+
+QB:
+  1. Joe Burrow (CIN)
+
+RB:
+  1. Breece Hall (NYJ)
+  2. David Montgomery (DET)
+
+TE:
+  1. Trey McBride (ARI)
+
+WR:
+  1. Marvin Harrison (ARI)
+  2. Davante Adams (LV)
+  3. George Pickens (PIT)
+--------------------------------------------------
+
+--------------------------------------------------
+Auto Team 11 Current Roster:
+--------------------------------------------------
+
+QB:
+  1. Jordan Love (GB)
+
+RB:
+  1. Saquon Barkley (PHI)
+  2. Kyren Williams (LAR)
+
+TE:
+  1. David Njoku (CLE)
+
+WR:
+  1. DJ Moore (CHI)
+  2. Michael Pittman (IND)
+  3. Terry McLaurin (WAS)
+--------------------------------------------------
+
+--------------------------------------------------
+AI_General_Manager Current Roster:
+--------------------------------------------------
+
+QB:
+  1. Jalen Hurts (PHI)
+
+RB:
+  1. Jahmyr Gibbs (DET)
+  2. De'Von Achane (MIA)
+
+TE:
+  1. Dalton Schultz (HOU)
+
+WR:
+  1. Puka Nacua (LAR)
+  2. Jaylen Waddle (MIA)
+  3. Cooper Kupp (LAR)
+--------------------------------------------------
+
+TEAM RANKINGS BY FANTASY POINTS:
+----------------------------------------------------------------------
+Rank  Team                      Points     Top Player                Player Pts
+----------------------------------------------------------------------
+1     Auto Team 8               1788.2 Lamar Jackson             434.4
+2     Auto Team 10              1696.4 Joe Burrow                381.8
+3     Auto Team 11              1692.5 Saquon Barkley            355.3
+4     Auto Team 9               1633.7 Derrick Henry             336.4
+5     AI_General_Manager        1632.3 Jahmyr Gibbs              362.9
+6     Auto Team 1               1559.9 Josh Jacobs               293.1
+7     Auto Team 4               1554.3 Jayden Daniels            364.8
+8     Auto Team 7               1467.6 Kyler Murray              308.2
+9     Auto Team 6               1352.8 Bijan Robinson            341.7
+10    Auto Team 2               1294.6 Josh Allen                385.0
+11    Auto Team 5               1291.0 Patrick Mahomes           294.0
+12    Auto Team 3               1022.5 Brock Bowers              262.7
